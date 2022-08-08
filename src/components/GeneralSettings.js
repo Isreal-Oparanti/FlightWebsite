@@ -1,23 +1,18 @@
 import React from 'react';
 import Timezones from './BasesComponents/Timezones.js';
 import AddTimezone from './BasesComponents/AddTimezone.js';
+import Wrong from './BasesComponents/Wrong.js';
 import {v4 as uuidv4} from 'uuid';
-// import TodoItem from './TodoItem.js'
-// function GetSelect() {
-//     const [selects,setSelects]=useState();
-//     return [selects,setSelects]
-//   }
-// import React, {useState} from 'react';
+
+
 class Gsettings extends React.Component{
-
-    
-
     state = {
         zones: [
             {
                 id: uuidv4(),
                 name: 'VKO',
                 utc: 'paris (RU, UTC+3:00)'
+                
             },
             {   
                 id:  uuidv4(),
@@ -25,8 +20,9 @@ class Gsettings extends React.Component{
                 utc: 'New York (RU, UTC+3:00)'
                  
             },
-        ]
-
+        ],
+        ErrMessage: '',
+        setToEmpty: ''
     }
    
     Style = () =>{
@@ -40,21 +36,33 @@ class Gsettings extends React.Component{
         this.setState({zones: [...this.state.zones.filter(zone => zone.id !== id)] })
       }
 
-      addTimezone = (name,utc) => {
-        console.log(name)
-        console.log(utc)
-          const newTodo = {
-              id: uuidv4(),
-              name: name,
-              utc: utc
-          }
-          
-          this.setState({ zones:[...this.state.zones, newTodo]});
-
-      }
-    
+      
+      AddErr = (x) => {
+        this.setState({ErrMessage: x}) 
+    } 
+      addTimezone = (name,utc,NameType) => {
+        const newTodo = {
+          id: uuidv4(),
+          name: name,
+          utc: utc
+      }          
+      this.setState({ zones:[...this.state.zones, newTodo]});
+      if(NameType === 'IATA'){
+        if(newTodo.name.length === 3){ 
+            this.setState({ErrMessage: ''})
+        }
+      }else if(NameType === 'ICAO'){
+        if(newTodo.name.length === 4){ 
+            this.setState({ErrMessage: ''})
+        } 
+      }      
+  }
+      
  render(){
+
+    
     return (
+       
     <div>
       
         <fieldset>
@@ -132,16 +140,19 @@ class Gsettings extends React.Component{
                 <div>Name</div>
                 <div>Time zone</div>
             </div>
-               
-          
-            <AddTimezone Style={this.Style} addTimezone={this.addTimezone}/> 
-            <Timezones zones={this.state.zones} delTodo={this.delTodo}/> 
+            <Wrong addErr={this.state.ErrMessage} />
+            <AddTimezone Style={this.Style} AddErr={this.AddErr}  addTimezone={this.addTimezone}/>
+            <Timezones zones={this.state.zones} delTodo={this.delTodo}/>    
+             
         </fieldset>
             
        </div>
        
     )
   }
+
+
 }
 
 export default Gsettings
+

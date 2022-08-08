@@ -45,7 +45,7 @@ function App() {
               <Route path="/sales" element={<Sales />} />
               <Route path="/ops" element={<Ops />} />
               <Route path="/crew" element={<Crew />} />
-              <Route path="/crew" element={<Handling />} />
+              <Route path="/handling" element={<Handling />} />
               <Route path="/mix" element={<Mix />} />
               <Route path="/report" element={<Report />} /> 
               <Route path="/AdminSettings" element={<AdminSettings />} /> 

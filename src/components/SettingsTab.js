@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Gsettings from "./GeneralSettings.js"; 
+import Gsettings from "./GeneralSettings.js";
+import Fediting from "./FlightEditing.js"; 
  function Tab(){
 	
 	const [state,setState] = useState(1);
@@ -18,12 +19,13 @@ import Gsettings from "./GeneralSettings.js";
 						<div onClick={()=>action(5)} className={`${state===5? 'tab active-tab' : 'tab'}`}><span>Documents</span></div>
 
 						<section id="content1" className={`${state===1? 'tab-content active-content':'tab-content'}`}>
-							<Gsettings />
-							<div><button id="Update">Update</button></div>
+						<Gsettings />
+							
 						</section>
-									
+								
 						<section id="content2" className={`${state===2? 'tab-content active-content':'tab-content'}`}>
-							<h3>Headline 2</h3>
+						<Fediting />  
+						 	
 						</section>
 
 						<section id="content3" className={`${state===3? 'tab-content active-content':'tab-content'}`}>
@@ -37,6 +39,7 @@ import Gsettings from "./GeneralSettings.js";
 						<section id="content5" className={`${state===5? 'tab-content active-content':'tab-content'}`}>
 							<h3>Headline 5</h3>
 						</section>
+						<div><button id="Update">Update</button></div>
 				 </div>
       </div>  
     

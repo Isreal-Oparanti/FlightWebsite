@@ -7,8 +7,7 @@ class Zones extends React.Component{
     
        return(
         this.props.zones.map((zone) => (
-           <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>
-           
+           <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>     
          ))
         )
    }
