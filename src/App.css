@@ -46,12 +46,28 @@ nav::after {
   font-size: 1.3rem;
   margin-right: 6px; }
 
-#icon_green {
-  color: #D3D3D3;
-  font-size: 1.5rem;
-  margin: 0px auto;
+#logo{
+  margin-left: 12px;
+  border-radius: 7px;
+  padding: 2px 5px 2px 5px;
+  border: 2px solid #DEDEDE;
+  color: #DEDEDE;
+  font-family:   sans-serif;
+  font-size: 1rem;
+  /* margin-left: 15px; */
+  /* z-index: 1; */
   position: absolute; }
-
+/* .logoS{
+  position: absolute;
+  width: 10px;
+  height: 36px;
+  border-radius: 10px;
+  z-index: -1;
+  margin: -6px 0px 0px -12px;
+  transform: rotateZ(34deg);
+  background-color: green;
+   
+} */
 .top__right-panel {
   width: 20rem;
   float: right; }
@@ -76,15 +92,28 @@ body {
   margin: 0 auto;
   padding-top: 20px;
   position: relative; }
-
+  
+  .tab1_container {
+    width: 50%;
+    padding: 10px;
+     
+    padding-top: 30px;
+   }
+  
 section {
   clear: both;
   padding-top: 10px;
   display: none; }
-
+/* #hr{
+  position: absolute;
+  border: 1px solid black;
+  margin: 59px 0px 0px -10px;
+  width: 100%;
+} */
 .tab {
   box-shadow: 0px 2px 2px #D3D3D3;
   font-weight: 900;
+  letter-spacing: 1px;
   display: block;
   float: left;
   width: 20%;
@@ -93,7 +122,22 @@ section {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  
+  
   background: #f0f0f0; }
+  .tab1 {
+    background-color: yellow;
+    box-shadow: 0px 2px 2px rgba(34, 34, 34, 0.52);
+    font-weight: 500;
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 0.4em;
+    color: #0a0a0a;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: #f0f0f0; }
 
 .tab_container .tab-content fieldset {
   -webkit-animation: fadeInScale 0.7s ease-in-out;
@@ -102,7 +146,8 @@ section {
 
 .tab_container [id^="tab"]:checked + label {
   background: #FFF;
-  box-shadow: inset 0 3px #7ec56f; }
+  box-shadow: inset 0 3px #7ec56f;
+ }
 
 /*----Content Animation-----*/
 @keyframes fadeInScale {
@@ -113,10 +158,9 @@ section {
     transform: scale(1);
     opacity: 1; } }
 
-.no_wrap {
-  text-align: center;
-  color: #0ce; }
-
+  .active-tab1{
+   /* / border-right: 2px solid #222; */
+  }
 .active-content {
   display: block;
   width: 100%;
@@ -124,17 +168,21 @@ section {
   background: #FFF;
   color: #999;
   border-bottom: 2px solid #222; }
-
+.tab-content1{
+  width: 200%;
+  border-bottom: 2px solid transparent;
+}
 .tab_container .active-tab {
   background: #FFF;
-  box-shadow: inset 0 3px #55c578; }
-
+  box-shadow: inset 0 2px #55c578;
+ }
+  
 fieldset {
   font-family: sans-serif;
   color: #000;
   width: 60%;
   font-weight: 400;
-  margin-left: 2rem;
+  margin: 0.6rem  2rem;
   padding: 10px; }
 
 .GS {
@@ -214,6 +262,7 @@ select {
   .BS_Title div{
     flex: 1;
   }
+  
   #Tname{
     outline: none;
     text-transform: uppercase;
@@ -244,7 +293,9 @@ select {
   }
 #smalls {
   font-size: 13px; }
-
+input[type=text]{
+  outline-color: lightgreen;
+}
 .inputs {
   font-family: monospace; }
 
@@ -402,8 +453,9 @@ legend{
    width: 50px;
    height: 100%;
    padding: 0px 1px 0px 3px;
-
+   outline-color: lightgreen;
 }
+
 .dripNote{
   padding: 6px;
   width: 12rem;
@@ -427,3 +479,34 @@ legend{
  .selectAll{
     margin-top: 10px 0px -2px 0px;
  }
+
+
+ /***** Hanling Request *****/
+ #OperatorICAO{
+   flex: 1;
+   width: 4rem;
+ }
+ #OperatorName{
+   flex: 1;
+}
+.OperatorName{
+  width: 100%;
+}
+#cont1{
+  width: 40%;
+  /* background-color: red; */
+}
+.Emails{
+  width: 100%;
+  height: 50px;
+  outline-color: lightgreen;
+}
+.details{
+   height: 80px;
+}
+.ReqApp{
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+ 

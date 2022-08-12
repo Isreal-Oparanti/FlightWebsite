@@ -21,7 +21,7 @@ function App() {
         <Router basename={process.env.PUBLIC_URL}> 
           <header>
             <nav>
-              <i id="icon_green" className="fa fa-users"></i>
+              <h1 id="logo">T<sub>r</sub><span className="logoS"></span></h1>
               <div className="container-menu">
                 <Link to="/"><div id="menu-item">scheduling</div></Link>
                 <Link to="/sales"><div id="menu-item">sales<i className="fas fa-caret-down"></i></div></Link>

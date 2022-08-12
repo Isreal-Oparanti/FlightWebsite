@@ -33,6 +33,8 @@ class Gsettings extends React.Component{
         }
     }
       delTodo = (id) => {
+          
+          
         this.setState({zones: [...this.state.zones.filter(zone => zone.id !== id)] })
       }
 
