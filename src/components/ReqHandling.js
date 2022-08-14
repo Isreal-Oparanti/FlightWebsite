@@ -1,6 +1,6 @@
 import { useState } from "react";
- import Rsettings from "./ReqTabComponents/ReqSettings.js";
-// import Fediting from "./FlightEditing.js";
+import Rsettings from "./ReqTabComponents/ReqSettings.js";
+import SendRule from "./ReqTabComponents/SendingRule.js";
 // import Rhandling from "./ReqHandling.js"; 
  function Tab(){
 	
@@ -24,7 +24,7 @@ import { useState } from "react";
 					</section>
 							
 					<section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
-                        <h1>some content</h1>  	
+                         <SendRule />  	
 					</section>
 
 					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>

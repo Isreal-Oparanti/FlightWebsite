@@ -105,7 +105,7 @@ export class AddTodo extends React.Component{
 
 
        return(
-           <div className="AddApp">
+           <div>
            <form onSubmit={this.onSubmit}>
                 <select value={this.state.NameType} onChange={this.handleChange1}>
                         {options1.map((option1) => (

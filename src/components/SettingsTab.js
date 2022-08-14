@@ -20,7 +20,7 @@ import Rhandling from "./ReqHandling.js";
 
 					<section id="content1" className={`${state===1? 'tab-content active-content':'tab-content'}`}>
 						
-					  <Gsettings />	
+				      <Gsettings />	
 					</section>
 								
 					<section id="content2" className={`${state===2? 'tab-content active-content':'tab-content'}`}>

@@ -1,10 +1,6 @@
 
-import React from 'react';
-class Gsettings extends React.Component{
-       
- render(){
-
-    
+function Gsettings(){
+     
     return (
        
     <div>
@@ -134,20 +130,13 @@ class Gsettings extends React.Component{
                     <div id="OperatorName"><textarea type="text" className="Emails details"  name="check1" /></div>
                 </div>
         </fieldset> 
-            
-
-
-
-
-
-                
+                           
         </div>
        
     )
   }
 
 
-}
 
 export default Gsettings
 

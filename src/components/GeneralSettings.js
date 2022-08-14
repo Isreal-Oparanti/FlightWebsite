@@ -25,13 +25,7 @@ class Gsettings extends React.Component{
         setToEmpty: ''
     }
    
-    Style = () =>{
-        return{
-            color: "#fff",
-            backgroundColor: 'red',
-                        
-        }
-    }
+   
       delTodo = (id) => {
           
           
