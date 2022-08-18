@@ -1,10 +1,7 @@
 
-function Gsettings(){
-     
+function Gsettings(){ 
     return (
-       
     <div>
-      
         <fieldset>
             <legend>
                 <h5>General settings</h5>
