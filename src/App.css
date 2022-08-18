@@ -545,7 +545,7 @@ table tr td #RuleName{
    border-top: 1px solid rgba(135, 210, 250, 0.82);
    border-bottom: 1px solid rgba(135, 210, 250, 0.82); 
    font-family: Verdana, sans-serif;
-   width: 30%;
+   width: 28.6rem;
    padding: 10px 0px 0.5px 10px; 
    background-color: rgba(135, 208, 250, 0.42);
 }
