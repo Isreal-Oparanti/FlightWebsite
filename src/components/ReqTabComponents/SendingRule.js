@@ -27,15 +27,9 @@ class Gsettings extends React.Component{
     
         setCount: '' 
     }
-   
-     
-      delTodo = (id) => {
-          
-          
+      delTodo = (id) => {   
         this.setState({zones: [...this.state.zones.filter(zone => zone.id !== id)] })
       }
-
-      
       AddErr = (x) => {
         this.setState({ErrMessage: x}) 
     } 
@@ -53,9 +47,7 @@ class Gsettings extends React.Component{
              
   }
       
- render(){
-
-    
+ render(){    
     return (
        
     <div id="sendingRule">
@@ -74,12 +66,9 @@ class Gsettings extends React.Component{
                </tr>                
             </table>
         </div>
-
-
             <AddRules  AddErr={this.AddErr}  addTimezone={this.addTimezone}/>
             <Rules zones={this.state.zones} delTodo={this.delTodo}/>    
-            <Records addRecords={this.state.zones.length}/>
-                     
+            <Records addRecords={this.state.zones.length}/>                 
        </div>
        
     )
