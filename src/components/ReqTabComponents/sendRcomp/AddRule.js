@@ -6,7 +6,6 @@ export class AddTodo extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
     }
-    
     handleChange(e){
         // console.log(e.target.value); 
         this.setState({utc: e.target.value})
