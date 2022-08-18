@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/FlightWebsite/static/css/main.6c318e04.css",
+    "main.js": "/FlightWebsite/static/js/main.a243f7d9.js",
+    "static/js/787.d535e6b0.chunk.js": "/FlightWebsite/static/js/787.d535e6b0.chunk.js",
+    "static/media/Cancel.png": "/FlightWebsite/static/media/Cancel.72b833a6363ee62daf9d.png",
+    "index.html": "/FlightWebsite/index.html",
+    "main.6c318e04.css.map": "/FlightWebsite/static/css/main.6c318e04.css.map",
+    "main.a243f7d9.js.map": "/FlightWebsite/static/js/main.a243f7d9.js.map",
+    "787.d535e6b0.chunk.js.map": "/FlightWebsite/static/js/787.d535e6b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c318e04.css",
+    "static/js/main.a243f7d9.js"
+  ]
+}
