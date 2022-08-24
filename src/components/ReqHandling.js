@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Rsettings from "./ReqTabComponents/ReqSettings.js";
 import SendRule from "./ReqTabComponents/SendingRule.js";
-// import Rhandling from "./ReqHandling.js"; 
+import ReqItem from "./ReqTabComponents/ReqItem.js";
+import Billing from "./ReqTabComponents/BillingInfo.js"; 
  function Tab(){
 	
 	const [state,setState] = useState(1);
@@ -28,10 +29,10 @@ import SendRule from "./ReqTabComponents/SendingRule.js";
 					</section>
 
 					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
-                        <h1>some content</h1>
+					     <ReqItem />  	
 					</section>
 					<section id="content4" className={`${state===4? 'tab-content1 active-content':'tab-content'}`}>
-							<h3>Headline 4</h3>			
+			             <Billing />				 			
 					</section>
 					
 				 </div>

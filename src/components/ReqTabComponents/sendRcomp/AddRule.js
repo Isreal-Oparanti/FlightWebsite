@@ -6,15 +6,12 @@ export class AddTodo extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
     }
-    handleChange(e){
-        // console.log(e.target.value); 
+    handleChange(e){ 
         this.setState({utc: e.target.value})
     }
     handleChange1(e){ 
         this.setState({NameType: e.target.value})
     }
-   
-    
     state = {
         name: '',
         utc: 'All',
@@ -24,8 +21,7 @@ export class AddTodo extends React.Component{
     onSubmit = (e) => {
         e.preventDefault();
         this.state.count++        
-        this.props.addTimezone(this.state.NameType,this.state.name,this.state.utc,this.state.count);
-            
+        this.props.addTimezone(this.state.NameType,this.state.name,this.state.utc,this.state.count);       
     }
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value})
@@ -45,9 +41,6 @@ export class AddTodo extends React.Component{
             value: 'No'
         }
        
-
-
-        
     ]
     const options1 = [
         {
@@ -99,16 +92,11 @@ export class AddTodo extends React.Component{
                           <input type='submit' name="submit" id="Update" value="Add Rule" />
                        </td>
                    </tr>    
-               </table>
-                
-               
-                
-               
+               </table>                             
            </form> 
            </div>       
         )
    }
 
 }
-
 export default AddTodo

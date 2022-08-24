@@ -1,6 +1,7 @@
 import React from "react";
 import AdminSettings from './components/AdminSettings.js';
-import SettingsTab from './components/SettingsTab';
+import SettingsTab from './components/SettingsTab.js';
+import Users from './components/Users.js';
 import './App.css';
 import './style.css';
 // importing components....///
@@ -50,6 +51,7 @@ function App() {
               <Route path="/report" element={<Report />} /> 
               <Route path="/AdminSettings" element={<AdminSettings />} /> 
               <Route path="/url/to/SettingsTab" element={<SettingsTab />} />
+              <Route path="/url/to/Users" element={<Users />} />
               {/* <Route path="*" element={<NoMatch />} /> */}
             </Routes>       
           </Router>

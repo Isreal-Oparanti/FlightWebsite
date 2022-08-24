@@ -15,7 +15,6 @@ export class TodoItem extends React.Component{
     const {id, name,utc} = this.props.todo;
        return(  
          <div>
-             {/* <div className="BS"> */}
                 <table>
                      <tr>
                          <td id="count">{ this.props.todo.count }</td>

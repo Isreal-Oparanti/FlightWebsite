@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
-
 header {
   width: 100%;
   background-color: #222;
   padding: 10px;
-   }
+  }
 
 #app {
   width: 100%; }
@@ -48,11 +47,11 @@ nav::after {
 
 #logo{
   margin-left: 12px;
-  border-radius: 6px;
+  border-radius: 100px;
   padding: 2px 6px 2px 6px;
   border: 2px solid #DEDEDE;
   color: #DEDEDE;
-  font-family:   sans-serif;
+  font-family:  sans-serif;
   font-size: 1rem;
   position: absolute; }
  
@@ -183,7 +182,20 @@ fieldset {
   display: flex;
   justify-content: flex-start;
   padding: 1px 2px 2px 2px; }
-
+  .DS {
+    display: flex;
+    justify-content: flex-start;
+    width: 30rem; 
+    padding: 0px 2px 5px 2px; }
+  .DS div {
+     flex: 1;
+   }
+   .DS select {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+    /* padding-right: 0rem; */
+    font-family: monospace; }
+  
 select {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.38);
@@ -399,7 +411,8 @@ input[type=text]{
   margin-top: 30px;
 }
 legend{
-  font-family: tahoma;
+  font-size: 0.85rem;
+  font-family: Verdana, sans-serif;
   letter-spacing: 2px;
 
 } 
@@ -419,6 +432,7 @@ legend{
   flex: 1;
 }
 .FsettingStyle input{
+  border: 1px solid gray;
   outline-color: lightgreen;
   padding: 4px;
   width: 17rem;
@@ -429,6 +443,7 @@ legend{
 }
   
 #Dtnote{
+   border: 1px solid gray;
    font-size: 12px;
    letter-spacing: 1px;
    font-weight: 900;
@@ -440,6 +455,7 @@ legend{
 }
 
 .dripNote{
+  border: 1px solid gray;
   padding: 6px;
   width: 12rem;
   height: 6rem;
@@ -480,6 +496,7 @@ legend{
   /* background-color: red; */
 }
 .Emails{
+  border: 1px solid gray;
   width: 100%;
   height: 50px;
   outline-color: lightgreen;
@@ -541,3 +558,52 @@ table tr td #RuleName{
    font-family: Verdana, sans-serif;
    font-size: 0.9rem;
  }
+.defaults{
+  font-family: sans-serif;
+  font-size: 1rem;
+  border: 1px solid gray;
+  width: 100%;
+  height: 150px;
+  outline-color: lightgreen;
+}
+.overwrite{
+  font-weight: 600;
+}
+.document{
+  width: 45rem;
+  color: #000;
+  margin: 0px 0px 0px 30px;
+  background-color: #FFF;
+}
+/***Users*****/
+.UserApp{
+  background-color: #fff;
+}
+#UserTable{
+  margin-top: 10px;
+  width: 100%;
+  height: 120px;
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+  /* background-color: red; */
+    /* padding: 1px; */
+  /* text-transform: uppercase; */
+}
+.UserTableRow{
+  border: 0px;
+}
+.AddUserButton{
+  background-color: rgba(0, 128, 0, 0.69);
+  border: 2px solid rgba(0, 100, 0, 0.86);
+  color:  #fff;
+  padding: 5px;
+  font-size: 14px;
+  margin: 9px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.plus{
+  font-weight: 900;
+  font-size: 14px;
+}

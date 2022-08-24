@@ -5,7 +5,7 @@ import Records from './sendRcomp/Records';
 import {v4 as uuidv4} from 'uuid';
 
 
-class Gsettings extends React.Component{
+class sendingRule extends React.Component{
     state = {
         zones: [
             {
@@ -77,6 +77,6 @@ class Gsettings extends React.Component{
 
 }
 
-export default Gsettings
+export default sendingRule;
 
 
