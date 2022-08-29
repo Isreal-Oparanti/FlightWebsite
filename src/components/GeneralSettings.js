@@ -24,14 +24,9 @@ class Gsettings extends React.Component{
         ErrMessage: '',
         setToEmpty: ''
     }
-   
-   
       delTodo = (id) => {
-          
-          
         this.setState({zones: [...this.state.zones.filter(zone => zone.id !== id)] })
       }
-
       
       AddErr = (x) => {
         this.setState({ErrMessage: x}) 
@@ -55,14 +50,9 @@ class Gsettings extends React.Component{
   }
       
  render(){
-
-    
     return (
-       
     <div>
-      
         <fieldset>
-        
             <legend>
                 General settings
             </legend>

@@ -1,18 +1,18 @@
 import { useState } from "react";
-import UserTables from "./UserComponents/userTables.js";
-// import Fediting from "./FlightEditing.js";
-// import Rhandling from "./ReqHandling.js";
-// import Document from "./Document.js"; 
-   function Tab(){
-// 	const [state,setState] = useState();
-// 	const action = (index) => {
-// 	  setState(index)
-//    }
-     return (
-        <div className="App">
-		  
-		</div>  
-	  )
- }
 
- export default Tab
+  // import Document from "./Document.js"; 
+   function User(props){
+      
+    //  const [Bt,setBt] = useState(props.trigger.ButtonTrue);
+    //  console.log(props.trigger.ButtonTrue)
+         
+     return (props.trigger) ? (
+        <div className="AddUsers">
+              <div className="UserPop-up">
+                      <button className="close-btn" onClick={()=> props.setTrigger(false)}>&times;</button>
+                    {props.children}
+              </div>
+		</div>  
+	  ) : '';
+ }
+ export default User;

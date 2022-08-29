@@ -5,8 +5,9 @@
 header {
   width: 100%;
   background-color: #222;
-  padding: 10px;
-  }
+  padding: 8px;
+  border-bottom: 2px solid rgb(67, 197, 95); 
+}
 
 #app {
   width: 100%; }
@@ -47,7 +48,7 @@ nav::after {
 
 #logo{
   margin-left: 12px;
-  border-radius: 100px;
+  border-radius: 50px;
   padding: 2px 6px 2px 6px;
   border: 2px solid #DEDEDE;
   color: #DEDEDE;
@@ -606,4 +607,248 @@ table tr td #RuleName{
 .plus{
   font-weight: 900;
   font-size: 14px;
+}
+.AddUsers{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+}
+.UserPop-up{
+  position: relative; 
+  padding: 25px 20px 10px 20px;
+  width: 610px;
+  margin:auto;
+  height: 38rem;
+  background-color: #fff;
+  box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.51);
+  overflow-y: auto !important;
+}
+.UserPop-up::-webkit-scrollbar{
+  width: 5px;
+  
+}
+.UserPop-up::-webkit-scrollbar-track{
+   box-shadow: inset 0 0 5px grey;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.UserPop-up::-webkit-scrollbar-thumb{
+  background-color: darkgray;
+  border-radius: 10px;
+}
+.close-btn{
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 16px;
+  border: none;
+  color: rgba(0, 0, 0, 0.69);
+  font-size: 20px;
+  font-weight: 900;
+  background: #fff;
+}
+.close-btn1{
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.69);
+  font-size: 18px;  
+}
+.UserHeader{
+  margin-top: 10px;
+  padding: 2px;
+  background-color: rgba(71, 205, 223, 0.09);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  border-bottom: 1px solid rgba(71, 205, 223, 0.2);
+  border-top: 1px solid rgba(71, 205, 223, 0.2);
+}
+.AddUsersForm{
+  display: flex;
+}
+#firstChild{
+  margin-top: 10px;
+}
+#firstChild #alignSex{
+  margin-left: 4px;
+}
+.AddUsersForm div{
+  flex: 1;
+  padding: 4px 4px 0px 4px;
+  margin-right: 10px;
+  font-size: 11px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(0, 0, 0, 0.86);
+}
+ .AddUsersForm div input[type=text],select,input[type=email]{
+  border: 1.9px solid #DEDEDE;
+  height: 22px;
+  width: 170px;
+  padding: 3px;
+  border-radius: 2px;
+  outline-color: lightgreen;
+}
+.last1{
+  margin: 0 !important;
+}
+.last2{
+   margin: 0 !important;
+   margin-right: 18.45rem !important;
+}
+.AddUsersForm .userName{
+  width: 165px;
+  display: flex;
+} 
+.AddUsersForm .userName span{ 
+  flex: 1;  
+}
+.AddUsersForm .userName input{
+  flex: 8;  
+}
+.AddUsersForm select{
+  opacity: 0.5;
+}
+
+
+#username{
+  margin-right: -4px;
+}
+.UserHeader button{
+  padding: 3px;
+  color: #fff;
+  font-size: 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: rgba(0, 68, 255, 0.54); 
+}
+.PassportTable{
+  font-size: 12px;
+  height: 20px;
+  font-weight: 900;
+  border-collapse: collapse;
+}
+.PassportTableHead{
+  top: 20px;
+  width: 50px;
+  height: 10px;
+  background-color: rgba(211, 211, 211, 0.19);
+  border-bottom: 1px solid #D3D3D3;
+}
+.PassportTable input{
+  border: 1.5px solid rgba(211, 211, 211, 0.45);
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.8);
+} 
+.PassportTable input[type=text], #number{
+  padding: 3px;
+  padding-top: 3px; 
+  font-size: 11px;
+  border: 2px solid rgba(211, 211, 211, 0.62);
+  height: 19px;
+  width: 46px;
+  outline: none;
+  text-transform: uppercase;
+}
+#number{
+  width: 75px;
+}
+.PassportTableData{
+  border-bottom: 1px solid #D3D3D3;
+}
+.PassportTable input[type=date]{
+  height: 16px;  
+  width: 80px;
+  outline: none;
+  border: 2px solid rgba(211, 211, 211, 0.62);
+}
+.PassportTable tr td{
+  padding-left: 10px;
+}
+/* .PassportTable input[type=date]::-webkit-inner-spin-button,
+.PassportTable input[type=date]::-webkit-calender-picker-indicator{
+  opacity: 0;
+  display: block;
+  width: 10px;
+  margin-right: 20px;
+  color: transparent;
+} */
+input[type=date]:required:invalid::-webkit-datetime-edit{ 
+  font-family:  tahoma;
+  font-size: 9px;
+  padding: 2px;
+}
+input[type=date]:focus::-webkit-datetime-edit{
+  /* color: black !important; */
+  font-family:  tahoma;
+  font-size: 10px;
+  padding: 2px;
+}
+.PassportTableData img{
+  margin-top: 2px;
+  width: 19px;
+}
+.PassportTableData input[type=checkbox]{
+  margin-top: 4px;
+}
+.Ratings{
+  margin-top: 0px;
+  display: flex;
+} 
+.Ratings div{
+  flex: 1;
+}
+.Ratings div:nth-child(2){
+  flex: 2;
+}
+.Ratings div:nth-child(3){
+  flex: 2;
+}
+.RatingsDisplay{
+  margin-top: 6px; 
+}
+.RatingsTitle{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11px; 
+}
+.Ratings div select{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 75px;
+  height: 19px;
+  width: 4rem;
+  padding: 2px;
+  -webkit-appearance: none;
+}
+.Ratings div span{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px; 
+  border-radius: 3px; 
+  border: 2px solid #D3D3D3;
+}
+.SaveUserButtons{
+  margin-top: 45px;
+} 
+.SaveUserButtons button{
+   border: 2px solid #D3D3D3;
+   padding: 3px;
+   cursor: pointer;
+   border-radius: 3px;
+   font-size: 10px;
+   text-transform: uppercase;
+   background-color: #fff;
+  }
+  .SaveUserButtons button:nth-child(1){
+    border: 2px solid rgba(0, 68, 255, 0.54);
+    color: blue;
+    margin-right: 10px;
+    background-color: rgba(0, 68, 255, 0.1);
+    letter-spacing: 1px; 
+  }
+.SaveUserButtons button:nth-child(3){
+  float: right;
+  color: rgba(255, 0, 0, 0.73) !important;
 }
