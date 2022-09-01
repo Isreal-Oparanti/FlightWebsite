@@ -4,47 +4,86 @@ import UserTableItem from "./UserComponents/UserTableItem.js";
 import AddUser from "./UserComponents/AddUser.js";
 import PassportTables from "./UserComponents/passportItem.js";
 import Timezones from './UserComponents/Timezones.js';
-// import Document from "./Document.js"; 
+// import Document from "./FullUserEdit.js"; 
    function Tab(){
 	const [ButtonTrue,setButtonTrue] = useState(false);
-	// const [Users, setUsers] = useState({
-	// 	name: '',
-	// 	middlename:'',
-	// 	surname:'',
-	// 	code: '',
-	// 	email: ''
-	// });
+	const [Users, setUsers] = useState({
+		name: '',
+		middlename:'',
+		surname:'',
+		code: '',
+		email: ''
+	});
+	const users=[
+		{
+		name: 'Abbott Micheal',
+		code: 'GNR',
+		email: 'Abbort@preairways.com',
+		lastvisit: "14-12-2021 10:23 "
+	   },
+	  {
+		name: 'Willson Smart',
+		code: 'GNR',
+		email: 'Abbort@preairways.com',
+		lastvisit: "14-12-2021 10:23 "
+	  }, 
+	  {
+		name: 'Micheal Jackson',
+		code: 'GNR',
+		email: 'Abbort@preairways.com',
+ 		lastvisit: "14-12-2021 10:23 "
+    }
+]
 	const [state,setState] = useState({
-		users:[
+		users: [
 			{
-			user: 'Abbott Micheal',
+			name: 'Abbott Micheal',
 			code: 'GNR',
-			Email: 'Abbort@preairways.com',
-            LastVist: "14-12-2021 10:23 "
-		},
-		{
-			user: 'Willson Smart',
+			email: 'Abbort@preairways.com',
+			lastvisit: "14-12-2021 10:23 "
+		   },
+		  {
+			name: 'Willson Smart',
 			code: 'GNR',
-			Email: 'Abbort@preairways.com',
-            LastVist: "14-12-2021 10:23 "
-		},
-		{
-			user: 'Micheal Jackson',
+			email: 'Abbort@preairways.com',
+			lastvisit: "14-12-2021 10:23 "
+		  }, 
+		  {
+			name: 'Micheal Jackson',
 			code: 'GNR',
-			Email: 'Abbort@preairways.com',
-            LastVist: "14-12-2021 10:23 "
+			email: 'Abbort@preairways.com',
+			lastvisit: "14-12-2021 10:23 "
 		}
 	]
+
 	});
+	
 	const onChange = (e) => {
-		// const {name, value} = e.target;
-		// setUsers((prev) => {
-        //    return {...prev, [name]: value}
-		// });
-	 }
+		const {name, value} = e.target;
+		setUsers((prev) =>{
+			return {...prev, [name]: value}
+			
+		})
+
+	}
+
+	const addUser = () => {
+		  let name = Users.name +" "+ Users.middlename +" "+ Users.surname;
+		  let code = Users.code;
+		  let email = Users.email;
+		  const newTodo = {
+				name: name,
+				code: code,
+				email: email,
+				lastvisit: "14-12-2021 10:23"
+			}
+			  
+			  setState({ users:[...state.users, newTodo]})	 
+			  console.log(state);
+	}
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
+		 addUser()
 	}
 	const [Selectvalue, setSelectvalue] = useState({
 		maps: []
@@ -91,15 +130,15 @@ import Timezones from './UserComponents/Timezones.js';
 	
 	  
      return (
-        <div className="App">
+        <div className="UserApp">
 		  <table id="UserTable" border='1'>
-				<tr>
-					<th>Name</th>
-					<th>Code</th>
-					<th>Email</th>
-					<th>Status</th>
-					<th>Last Visit Date</th>
-					<th>Full edit</th>
+				<tr className='UserTableHead' >
+					<td>Name</td>
+					<td className='code'>Code</td>
+					<td className='Email'>Email</td>
+					<td className='status'>Status</td>
+					<td className='lastvisit'>Last Visit Date</td>
+					<td className='edit'>Full edit</td>
 				</tr>
 				<UserTableItem  User={state.users}/>
 			</table>
@@ -115,21 +154,21 @@ import Timezones from './UserComponents/Timezones.js';
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Middle name</label></div>
-					<div><input type="text" name="midName" placeholder="Middle Name" onChange={onChange} /></div>
+					<div><input type="text" name="middlename" placeholder="Middle Name" onChange={onChange} /></div>
 					<div><label htmlFor="sex">DoB</label></div>
 					<div><input type="text" name="name" /></div>
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Surname*</label></div>
-					<div><input type="text" name="Surname"  placeholder="Surname" onChange={onChange}/></div>
+					<div><input type="text" name="surname"  placeholder="Surname" onChange={onChange}/></div>
 					<div><label htmlFor="sex">Phone</label></div>
 					<div><input type="text" name="name" /></div>
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Known as*</label></div>
 					<div><input type="text" name="name"  onChange={onChange}/></div>
-					<div><label htmlFor="sex">E-mail</label></div>
-					<div><input type="email" name="email" /></div>
+					<div><label htmlFor="email">E-mail</label></div>
+					<div><input type="email" name="email" onChange={onChange} /></div>
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Labels</label></div>
@@ -139,10 +178,11 @@ import Timezones from './UserComponents/Timezones.js';
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name" >Code*</label></div>
-					<div><input type="text" name="code"  placeholder="Code" onChange={onChange}/></div>
+					<div><input type="text" name="code"  placeholder="Code" onChange={onChange} /></div>
 					<div><label htmlFor="sex">Login*</label></div>
 					<div><input type="text" name="name" /></div>
                </div>
+			   {/* style={{textTransform: "uppercase"}} */}
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Homebase 1*</label></div>
 					<div><input type="text" name="name" /></div>
@@ -156,7 +196,7 @@ import Timezones from './UserComponents/Timezones.js';
 			   <form onSubmit={onSubmit}>
 			     <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
 			   </form>	 
-			   <table className="PassportTable" style={{width: "100px"}}>
+			   <table className="PassportTable" style={{widtd: "100px"}}>
 				   <tr className="PassportTableHead"  >
 					   <td><h5>Country*</h5></td>
 					   <td><h5>No*</h5></td>
@@ -176,7 +216,7 @@ import Timezones from './UserComponents/Timezones.js';
 			     <div className="RatingsTitle">B762-762-2002R</div> 
 				 <div>
 					 <select onChange={handleChange}>
-                         <option><span className="threedot">...</span></option>
+                         <option><span className="tdreedot">...</span></option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT2</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT3</option>
@@ -193,7 +233,7 @@ import Timezones from './UserComponents/Timezones.js';
 			     <div className="RatingsTitle">B762-762-2002R</div> 
 				 <div>
 					 <select onChange={handleChange1}>
-                         <option><span className="threedot">...</span></option>
+                         <option><span className="tdreedot">...</span></option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT2</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT3</option>
@@ -210,7 +250,7 @@ import Timezones from './UserComponents/Timezones.js';
 			     <div className="RatingsTitle">B762-762-2002R</div> 
 				 <div>
 					 <select onChange={handleChange2}>
-                         <option><span className="threedot">...</span></option>
+                         <option><span className="tdreedot">...</span></option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT2</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT3</option>
@@ -227,7 +267,7 @@ import Timezones from './UserComponents/Timezones.js';
 			     <div className="RatingsTitle">B762-762-2002R</div> 
 				 <div>
 					 <select onChange={handleChange3}>
-                         <option><span className="threedot">...</span></option>
+                         <option><span className="tdreedot">...</span></option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT2</option>
 						 <option style={{backgroundColor: 'lightgreen'}}>CPT3</option>
@@ -241,7 +281,7 @@ import Timezones from './UserComponents/Timezones.js';
 				  <div><span>{"  "+Selectvalue3.maps.map(mymap => " "+ mymap+" ")}</span></div>
 			   </div>
 			   
-			   <form onSubmit={handleSubmit}><div className='SaveUserButtons'><button>save</button><button>cancel</button><button>Open Full Edit</button></div></form>
+			   <form onSubmit={handleSubmit}><div className='SaveUserButtons'><button >save</button><button onClick={() => {setButtonTrue(false)}}>cancel</button><button>Open Full Edit</button></div></form>
 		  </AddUser>
 		  <button className="AddUserButton" onClick={() => {setButtonTrue(true)}}><span className="plus">+</span> NEW USER</button>
 		</div>  

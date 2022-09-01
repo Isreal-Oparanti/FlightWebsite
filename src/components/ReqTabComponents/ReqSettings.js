@@ -132,7 +132,4 @@ function Gsettings(){
        
     )
   }
-
-
-
 export default Gsettings

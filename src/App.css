@@ -109,7 +109,6 @@ section {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  
   background: #f0f0f0; }
   .tab1 {
      box-shadow: 0px 0.5px 2px lightgray;
@@ -123,7 +122,6 @@ section {
     text-decoration: none;
     text-align: center;
     background: #f0f0f0; }
-
 .tab_container .tab-content fieldset {
   -webkit-animation: fadeInScale 0.7s ease-in-out;
   -moz-animation: fadeInScale 0.7s ease-in-out;
@@ -156,6 +154,10 @@ section {
   border-bottom: 2px solid transparent;
 }
 .tab_container .active-tab {
+  background: #FFF;
+  box-shadow: inset 0 2px #55c578;
+ }
+ .tab_container1 .active-tab {
   background: #FFF;
   box-shadow: inset 0 2px #55c578;
  }
@@ -530,14 +532,12 @@ table{
 }
  table tr td{
    width: 90px;
-   text-transform: uppercase;
 }
    
 table tr td #RuleName{
   width: 3.5rem;
   border: 1px solid gray;
   padding: 1px;
-  text-transform: uppercase;
 }
 .Records{
   font-size: 0.8rem;
@@ -579,19 +579,68 @@ table tr td #RuleName{
 /***Users*****/
 .UserApp{
   background-color: #fff;
+  border-bottom: 1px solid #222;
 }
 #UserTable{
   margin-top: 10px;
   width: 100%;
   height: 120px;
-  border: 2px solid lightgray;
+  border: 1px solid rgba(0, 0, 0, 0.49);
   border-collapse: collapse;
   /* background-color: red; */
     /* padding: 1px; */
   /* text-transform: uppercase; */
 }
+.UserTableHead{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: left;
+  margin: 30px;
+  height: 45px !important; 
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.46) !important;
+}
+ 
+.code, .status, .edit{
+  width: 40px;
+}
+ .code{
+    text-transform: capitalize !important;
+ }
+.lastvisit{
+  width: 55px;
+}
+.Email{
+  width: 130px; 
+}
+/* #UserTable tr:nth-child(1){
+  background-color: yellowgreen;
+  text-transform: uppercase;
+} */
+#UserTable td:nth-child(2){
+  text-transform: uppercase;
+}
+
+#UserTable tr td,th{
+   padding-left: 30px;
+}
+#UserTable tr td:first-child{
+  text-transform: capitalize; 
+}
+
+#UserTable tr{
+   height: 30px;
+   border-bottom: 1px solid lightgrey;
+}
+tr:nth-child(even){
+  background-color: rgba(211, 211, 211, 0.12);
+}
 .UserTableRow{
-  border: 0px;
+  border: 0.9px;
+}
+.UserTableRow img{
+  width: 12px;
+  cursor: pointer;
 }
 .AddUserButton{
   background-color: rgba(0, 128, 0, 0.69);
@@ -627,6 +676,7 @@ table tr td #RuleName{
   background-color: #fff;
   box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.51);
   overflow-y: auto !important;
+  transition: all .2s;
 }
 .UserPop-up::-webkit-scrollbar{
   width: 5px;
@@ -651,11 +701,16 @@ table tr td #RuleName{
   font-size: 20px;
   font-weight: 900;
   background: #fff;
+  transition: all .2s;
 }
+
 .close-btn1{
   cursor: pointer;
   color: rgba(0, 0, 0, 0.69);
   font-size: 18px;  
+}
+.close-btn:active{
+   font-size: 24px; 
 }
 .UserHeader{
   margin-top: 10px;
@@ -712,8 +767,6 @@ table tr td #RuleName{
 .AddUsersForm select{
   opacity: 0.5;
 }
-
-
 #username{
   margin-right: -4px;
 }
@@ -754,6 +807,7 @@ table tr td #RuleName{
   outline: none;
   text-transform: uppercase;
 }
+
 #number{
   width: 75px;
 }
@@ -832,6 +886,7 @@ input[type=date]:focus::-webkit-datetime-edit{
 .SaveUserButtons{
   margin-top: 45px;
 } 
+ 
 .SaveUserButtons button{
    border: 2px solid #D3D3D3;
    padding: 3px;
@@ -851,4 +906,90 @@ input[type=date]:focus::-webkit-datetime-edit{
 .SaveUserButtons button:nth-child(3){
   float: right;
   color: rgba(255, 0, 0, 0.73) !important;
+}
+
+.UserEdit{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 48px;
+  width: 100%;
+  height: 92%;
+  background-color:  #fff;
+  display: flex;
+  /* justify-content: center; */
+
+}
+.UserPop-Edit{
+  width: 100%;
+  position: relative; 
+  padding: 0px 10px 10px 10px;
+  background-color: #fff;
+  overflow-y: auto !important;
+  /* background-color:  rgba(34, 34, 34, 0.35); */
+ 
+}
+.back-btn{
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  height: 30px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid  #D6D4D4;
+  padding: 0px 8px 0px 0px !important;
+  }
+.btn-span{
+   position: absolute;
+   width: 100%;
+   outline: none;
+   height: 11px;
+   background-color: #28BE28;
+   font-size: 10px;
+   color: #fff;
+   margin-bottom: 20px;
+}
+
+ .User__info{
+   padding: 20px;
+   display: flex;
+   background-color: rgba(0, 68, 255, 0.1);
+ }
+ .User__info div{
+   flex: 1;
+   width: 53%;
+ }
+ .User__info #lastChild{
+   color: #fff;
+   flex: 1.5;
+ }
+ .User__info h5{
+   color: rgba(0, 0, 0, 0.75);
+   font-size: 20px;
+ }
+ .User__info textarea, input[type=date],select {
+  border: 2px solid rgba(211, 211, 211, 0.62);
+  outline-color: lightgreen;
+  padding: 2px;
+}
+.User__info input[type=checkbox]{
+   margin-left: -8px;
+}
+.AddUsersPassports{
+  background-color: green;
+  padding: 3px;
+  display: flex;
+  width: 30rem !important;
+  border-radius: 2px; 
+}
+.AddUsersPassports1{
+  background-color: #FFF;
+  border-radius: 3px; 
+}
+.AddUsersPassports select{
+  width: 150px;
+}
+.AddUsersPassports input{
+  border: 2px solid rgba(211, 211, 211, 0.62);
+  width: 50px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import AdminSettings from './components/AdminSettings.js';
 import SettingsTab from './components/SettingsTab.js';
 import Users from './components/Users.js';
+import FullUserEdit from './components/UserComponents/FullUserEdit.js';
 import './App.css';
 import './style.css';
 // importing components....///
@@ -12,7 +13,6 @@ import Crew from './components/Crew.js';
 import Handling from './components/Handling.js';
 import Mix from './components/Mix.js';
 import Report from './components/Report';
-
 
 import { BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom';
 window.myUTC = 'mine';
@@ -52,6 +52,7 @@ function App() {
               <Route path="/AdminSettings" element={<AdminSettings />} /> 
               <Route path="/url/to/SettingsTab" element={<SettingsTab />} />
               <Route path="/url/to/Users" element={<Users />} />
+              <Route path="/url/to/FullUserEdit" element={<FullUserEdit />} />
               {/* <Route path="*" element={<NoMatch />} /> */}
             </Routes>       
           </Router>
