@@ -9,7 +9,6 @@ function Gsettings(props){
         var middlename = props.user.users.name.split(' ')[1]
             surname = props.user.users.name.split(' ')[2]
     }
-    console.log(name,middlename,surname)
     return (
     <div>
        <div className="User__info">

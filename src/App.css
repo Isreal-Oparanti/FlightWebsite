@@ -581,6 +581,7 @@ table tr td #RuleName{
   background-color: #fff;
   border-bottom: 1px solid #222;
 }
+
 #UserTable{
   margin-top: 10px;
   width: 100%;
@@ -713,6 +714,7 @@ tr:nth-child(even){
    font-size: 24px; 
 }
 .UserHeader{
+  display: flex;
   margin-top: 10px;
   padding: 2px;
   background-color: rgba(71, 205, 223, 0.09);
@@ -721,6 +723,27 @@ tr:nth-child(even){
   font-weight: 900;
   border-bottom: 1px solid rgba(71, 205, 223, 0.2);
   border-top: 1px solid rgba(71, 205, 223, 0.2);
+}
+.UserHeader div{
+  flex: 1;
+}
+.UserHeader div:nth-child(2), .UserHeader div:nth-child(6){
+  flex: 2;
+}
+.UserHeader2{
+  display: flex;
+  margin-top: 4px;
+}
+.UserHeader2 div{
+  flex: 1;
+  color: #000;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.21); 
+}
+.UserHeader2 div:nth-child(2), .UserHeader2 div:nth-child(6){
+   flex: 2;
+}
+.UserHeader2 div:nth-child(2) input, .UserHeader2 div:nth-child(6) input{
+ width: 200px;
 }
 .AddUsersForm{
   display: flex;
@@ -790,7 +813,7 @@ tr:nth-child(even){
   width: 50px;
   height: 10px;
   background-color: rgba(211, 211, 211, 0.19);
-  border-bottom: 1px solid #D3D3D3;
+  border-bottom: 1px solid #0F0404;
 }
 .PassportTable input{
   border: 1.5px solid rgba(211, 211, 211, 0.45);
@@ -807,7 +830,6 @@ tr:nth-child(even){
   outline: none;
   text-transform: uppercase;
 }
-
 #number{
   width: 75px;
 }
@@ -815,10 +837,10 @@ tr:nth-child(even){
   border-bottom: 1px solid #D3D3D3;
 }
 .PassportTable input[type=date]{
-  height: 16px;  
+  height: 19px;  
   width: 80px;
   outline: none;
-  border: 2px solid rgba(211, 211, 211, 0.62);
+  border: 1px solid rgba(211, 211, 211, 0.62);
 }
 .PassportTable tr td{
   padding-left: 10px;
@@ -873,22 +895,21 @@ input[type=date]:focus::-webkit-datetime-edit{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-left: 75px;
   height: 19px;
-  width: 4rem;
-  padding: 2px;
+  width: 5rem;
+  padding: 1px;
+  border: 1px solid rgba(128, 128, 128, 0.74);
   -webkit-appearance: none;
 }
 .Ratings div span{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px; 
-  border-radius: 3px; 
-  border: 2px solid #D3D3D3;
+  font-size: 12px;  
 }
+ 
 .SaveUserButtons{
   margin-top: 45px;
 } 
- 
 .SaveUserButtons button{
-   border: 2px solid #D3D3D3;
+   border: 1px solid gray;
    padding: 3px;
    cursor: pointer;
    border-radius: 3px;
@@ -897,7 +918,7 @@ input[type=date]:focus::-webkit-datetime-edit{
    background-color: #fff;
   }
   .SaveUserButtons button:nth-child(1){
-    border: 2px solid rgba(0, 68, 255, 0.54);
+    border: 1px solid rgba(0, 68, 255, 0.54);
     color: blue;
     margin-right: 10px;
     background-color: rgba(0, 68, 255, 0.1);
@@ -905,7 +926,9 @@ input[type=date]:focus::-webkit-datetime-edit{
   }
 .SaveUserButtons button:nth-child(3){
   float: right;
-  color: rgba(255, 0, 0, 0.73) !important;
+  border: 1px solid rgba(17, 97, 43, 0.73);
+  color: rgba(17, 97, 43, 0.73);
+
 }
 
 .UserEdit{
@@ -987,9 +1010,54 @@ input[type=date]:focus::-webkit-datetime-edit{
   border-radius: 3px; 
 }
 .AddUsersPassports select{
+  border: 1px solid rgba(114, 102, 102, 0.62); 
   width: 150px;
+  height: 20px;
 }
 .AddUsersPassports input{
-  border: 2px solid rgba(211, 211, 211, 0.62);
+  height: 20px;
+  border: 1px solid rgba(114, 102, 102, 0.62);
   width: 50px;
+}
+.Group__container{
+  padding: 20px;
+  display: flex;
+  width: 45%;
+  color: rgba(0, 0, 0, 0.79);
+}
+.Group__container div{
+  flex: 1;
+  padding: 2px; 
+  width: 100%;
+  padding: 12px;
+  border: 1px solid green;
+  border-radius: 7px;
+  
+}
+.member__group{
+  margin: 5px 5px 7px 0px;
+  height: 15rem;
+}
+.member{
+  border-radius: 0px !important;
+  padding: 3px !important;
+  padding-left: 9px !important;
+}
+.Memarrow{
+  margin: auto;
+  color: green;
+  font-size: 60px;
+  font-weight: 900;
+}
+.Group__container span{
+   padding: 2px;
+   border: 1px solid green;
+   border-radius: 2px;  
+}
+.UserHeader2 input[type=text]{
+   border: 1px solid rgba(128, 128, 128, 0.44);
+   width: 70px;
+}
+.UserHeader2 div:last-child{
+   color: rgba(134, 15, 15, 0.59);
 }

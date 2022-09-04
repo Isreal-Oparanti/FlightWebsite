@@ -55,7 +55,6 @@ import Timezones from './UserComponents/Timezones.js';
 			lastvisit: "14-12-2021 10:23 "
 		}
 	]
-
 	});
 	
 	const onChange = (e) => {
@@ -116,9 +115,11 @@ import Timezones from './UserComponents/Timezones.js';
 	}
 	const handleChange = (e) => {
 			setSelectvalue({maps: [...Selectvalue.maps, e.target.value]})
+			console.log(Selectvalue.maps);
 	}
 	const handleChange1 = (e) => {
 			setSelectvalue1({maps: [...Selectvalue1.maps, e.target.value]})
+			console.log(Selectvalue1);
 	}
 	const handleChange2 = (e) => {
 			setSelectvalue2({maps: [...Selectvalue2.maps, e.target.value]})
@@ -140,7 +141,7 @@ import Timezones from './UserComponents/Timezones.js';
 					<td className='lastvisit'>Last Visit Date</td>
 					<td className='edit'>Full edit</td>
 				</tr>
-				<UserTableItem  User={state.users}/>
+				<UserTableItem  User={state.users}  Ratings={Selectvalue}/>
 			</table>
 		  <AddUser trigger={ButtonTrue} setTrigger={setButtonTrue}>
 			   <h5 style={{textAlign: "center", fontSize: '20px', marginBottom: "8px"}}>USER EDIT</h5>
