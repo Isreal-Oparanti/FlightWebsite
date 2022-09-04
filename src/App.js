@@ -39,7 +39,6 @@ function App() {
                   <a href="/"><i id='icon' className="fas fa-user"></i></a>
               </div>
               </nav>
-         
             </header>
             <Routes>
               <Route path="/" element={<Sched />} />
@@ -53,7 +52,7 @@ function App() {
               <Route path="/url/to/SettingsTab" element={<SettingsTab />} />
               <Route path="/url/to/Users" element={<Users />} />
               <Route path="/url/to/FullUserEdit" element={<FullUserEdit />} />
-              {/* <Route path="*" element={<NoMatch />} /> */}
+              {/* <Route path="*" element={<NoMatch />}/> */}
             </Routes>       
           </Router>
     </div>
