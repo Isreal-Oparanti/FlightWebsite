@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+
+// local storage for storing, updating and deleting scheduled maintenance input form  //
+
 const getStorageData = ({keyName, defaultValue}) => {
     const savedItem = localStorage.getItem(keyName);
     const parsedItem = JSON.parse(savedItem);

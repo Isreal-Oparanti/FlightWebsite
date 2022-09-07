@@ -11,6 +11,20 @@
     color: #fff;
     cursor: pointer;
 }
+.sched-filter-div{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.sched-filter-div div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.select-type{
+    width: 150px;
+}
+.table-tab-content2-p{
+    padding: 10px;
+}
 .filter-data-d{
 width: 80px;
 margin: 10px;
@@ -116,7 +130,126 @@ span{
 }
 .table-tab-conts{
     width: 100%;
+    
 }
+.myradio{
+    padding-top: 150px;
+}
+.content{
+    display: none;
+}
+.my-active-content{
+    display: block;
+}
+
+/*------- Tab AREA-----*/
+.Tab {
+    font-family: sans-serif;
+  }
+.top__right-panel {
+    width: 20rem;
+    float: right; }
+  
+  .top__right-panel a {
+    margin-right: 20px; }
+  
+  .clearfix:before,
+  .clearfix:after {
+    content: " ";
+    display: table; }
+  
+  .clearfix:after {
+    clear: both; }
+  
+.tab_container {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: absolute; 
+    z-index: -1;
+}
+  
+  section {
+    clear: both;
+    padding-top: 10px;
+    display: none; 
+  }
+  
+  .mytab {
+    font-weight: 900;
+    display: block;
+    float: left;
+    width: 70%;
+    margin-bottom: 3px;
+    padding: 0.1em;
+    cursor: pointer;
+    border: 0.5px solid #000;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    text-align: center;
+ }
+ .mytab:hover{
+    font-weight: 900;
+    display: block;
+    float: left;
+    width: 70%;
+    padding: 0.11em;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background-color: #1888ff;
+ }
+  
+  .tab_container .my-tab-content fieldset {
+    -webkit-animation: fadeInScale 0.7s ease-in-out;
+    -moz-animation: fadeInScale 0.7s ease-in-out;
+    animation: fadeInScale 0.7s ease-in-out; }
+  
+  .tab_container [id^="tab"]:checked + label {
+    box-shadow: inset 0 3px #7ec56f; }
+    #Update {
+
+        padding: 7px;
+        margin: 9px;
+        outline: none;
+        cursor: pointer;
+        border-radius: 3px;
+        border: none; 
+    }
+        .AddApp #Update{
+          font-size: 0.75rem;
+          cursor: pointer;
+          margin-left: 40px; 
+          letter-spacing: 1px;
+        }
+        #Update:active{
+            transform: scale(90%); 
+         } 
+  
+  /*----Content Animation-----*/
+  @keyframes fadeInScale {
+    0% {
+      transform: scale(0.9);
+      opacity: 0; }
+    100% {
+      transform: scale(1);
+      opacity: 1; } }
+  
+  .no_wrap {
+    text-align: center;
+    color: #0ce; }
+  
+  .my-active-content {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid #222; }
+  
+  .tab_container .my-active-tab {
+    box-shadow: inset 0 3px #55c578;
+ }
+  
 
 @media screen and (max-width: 525px){
     .filter-content{

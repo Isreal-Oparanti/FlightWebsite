@@ -41,6 +41,9 @@ text-align: center;
 thead #translate{
   text-indent: -30px;
 }
+thead #translates{
+  text-indent: -60px;
+}
 thead #translatee{
   text-indent: -65px;
 }
@@ -139,7 +142,26 @@ tr:hover{
 .add-schedule{
   padding: 5px;
   outline: none;
+ 
   background-color: #8eb1d6;
+  
+}
+.add-schedule:hover{
+  padding: 6px;
+  outline: none;
+  background-color: #44aa6f;
+}
+.delete-schedule{
+  background-color: #db6767;
+  padding: 5px;
+  margin-left: 8px;
+  outline: none;
+}
+.delete-schedule:hover{
+  background-color: #a12626;
+  padding: 6px;
+  margin-left: 8px;
+  outline: none;
 }
 .add-schedule a{
   text-decoration: none;
@@ -182,6 +204,14 @@ padding: 10px;
  }
  .input-name{
   width: 20rem;
+ }
+
+ .file-label{
+  text-decoration: underline;
+  padding: 5px;
+  display:inline-block;
+  color: #0a79f8;
+   cursor: pointer;
  }
  .input-right{
   margin-left: 40px;
@@ -256,6 +286,12 @@ padding: 5px;
 .datewidth{
   width: 100px;
 }
+.errorrmsg{
+color:#a12626;
+}
+#real-file{
+display: none;
+}
 /*-----CAM TABS-----*/
 .form-containers{
   display: grid;
@@ -277,6 +313,9 @@ padding: 5px;
 .griditems{
   padding: 8px;
 
+}
+.serial-num{
+width: 165px;
 }
 .SPN1{
   width: 220px;

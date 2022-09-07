@@ -1,20 +1,30 @@
 import React from 'react';
 import '../App.css'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 
 
 export default function TabDocument() {
- 
+const [file, setFiles] = useState(false)
+
+// handle file upload
+  const fileInputField = useRef(null);
+
+const handleFileChange = (e) => {
+   setFiles(e.target.files[0].name);
+}
+
+
   const [val, setValue] = useState([]);
   const [val1, setFirstValue] = useState([]);
   const [val2, setSecValue] = useState([]);
+
   // input td  input states 
   const handleInputAdd = e =>{
     const inputfield =[...val,[]]
     setValue(inputfield)
   }
-  const handleChange = (onChangeValue,i) =>{
+  const handleChange = (onChangeValue,i) => {
     const inputdata=[...val]
     inputdata[i]=onChangeValue.target.value;
     setValue(inputdata)
@@ -68,7 +78,10 @@ export default function TabDocument() {
         <td><input type="date" id='IssueDate'  name='issuedate' className='datewidth' /></td>
         <td><input type="date" id='IssueDate'  name='issuedate' className='datewidth' /></td>
         <td><textarea className='input-number' id='note'></textarea></td>
-        <td>(max 12MB)</td>
+        <td>(max 12MB)
+        <input type='file' id='real-file'onChange={ e => handleFileChange(e) } ref={fileInputField}/>
+        <p><label htmlFor="file" id='custombutton' className='file-label' onClick={() =>fileInputField.current.click()}>Add new file</label><span id='custom-text'>{file}</span></p>
+        </td>
       </tr>
 
       <tr>
@@ -77,7 +90,10 @@ export default function TabDocument() {
         <td>{val.map((data,i) => { return( <input type="date" value={data} className='datewidth' onChange={e=>handleChange(e,i)} />)})}</td>
         <td>{val.map((data,i) => { return( <input type="date" value={data} className='datewidth' onChange={e=>handleChange(e,i)} />)})}</td>
         <td>{val.map((data,i)  => { return(<textarea value={data} type="date" className='input-number' onChange={e=>handleChange(e,i)}></textarea>) })}</td>
-        <td>(max 12MB)</td>
+        <td>(max 12MB)
+        <input type='file' id='real-file'onChange={handleFileChange} ref={fileInputField}/>
+        <p><label htmlFor="file" id='custombutton' className='file-label' onClick={() =>fileInputField.current.click()}>Add new file</label><span id='custom-text'>{file}</span></p>
+        </td>
 
       </tr>
       
@@ -88,7 +104,10 @@ export default function TabDocument() {
         <td>{val1.map((data,i)  => { return( <input value={data} type="date" className='datewidth' onChange={e=>handleFirstChange(e,i)}/>) })}</td>
       
         <td>{val1.map((data,i)  => { return(<textarea value={data} type="date" className='input-number' onChange={e=>handleFirstChange(e,i)}></textarea>) })}</td>
-        <td>(max 12MB)</td>
+        <td>(max 12MB)
+        <input type='file' id='real-file'onChange={handleFileChange} ref={fileInputField}/>
+        <p><label htmlFor="file" id='custombutton' className='file-label' onClick={() =>fileInputField.current.click()}>Add new file</label> <span id='custom-text'>{file}</span></p>
+        </td>
       </tr>
 
       <tr>
@@ -97,7 +116,10 @@ export default function TabDocument() {
         <td>{val2.map((data,i)  => { return( <input value={data} type="date" className='datewidth' onChange={e=>handleSecChange(e,i)}/>) })}</td>
         <td>{val2.map((data,i)  => { return( <input value={data} type="date" className='datewidth' onChange={e=>handleSecChange(e,i)}/>) })}</td>
         <td>{val2.map((data,i)  => { return(<textarea value={data} type="date" className='input-number' onChange={e=>handleSecChange(e,i)}></textarea>) })}</td>
-        <td>(max 12MB)</td>
+        <td>(max 12MB)
+        <input type='file' id='real-file'onChange={handleFileChange} ref={fileInputField}/>
+        <p><label htmlFor="file" id='custombutton' className='file-label' onClick={() =>fileInputField.current.click()}>Add new file</label> <span id='custom-text'>{file}</span></p>
+        </td>
       </tr>
 
       

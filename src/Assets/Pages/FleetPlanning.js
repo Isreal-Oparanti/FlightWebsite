@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css'
-import FilterPlanning from '../../Components/FilterPlanning';
+import FilterPlanning from '../../Components/Filters/FilterPlanning';
 
 
 
@@ -17,7 +17,7 @@ export default function FleetPlanning() {
        <thead>
        <tr>
          <th>Date</th>
-         <th>Bloff</th>
+         <th>BLOFF</th>
          <th>Route</th>   
          <th>BLON</th>
          <th>BLK</th>
@@ -136,6 +136,7 @@ export default function FleetPlanning() {
     </tbody>
        {/*-----table body end------*/}
     </table>
+    <div><button id="Update">Update</button></div>
     </div>
   )
 };

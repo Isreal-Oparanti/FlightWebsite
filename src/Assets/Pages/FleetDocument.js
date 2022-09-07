@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css'
 import { useNavigate } from 'react-router-dom';
-
+import Filter from '../../Components/Filters/FleetDocumentFilter';
 
 
 
@@ -13,6 +13,7 @@ export default function FleetDocument() {
 
   return(
     <div className='table-container'>
+      <div className='pre-content'><p className='precont-link'></p>  <p className='filt'>{<Filter />} </p></div>
       <table>
 {/*-----table head start ------*/}
        <thead>

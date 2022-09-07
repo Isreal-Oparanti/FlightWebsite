@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import{BrowserRouter as Router ,Routes, Route} from 'react-router-dom';
-import ContactUs from './Assets/Pages/ContactUs';
 import Fleet from './Assets/Pages/Fleet';
 import FleetDocument from './Assets/Pages/FleetDocument';
 import FleetDocumentForm from './Assets/Pages/FleetDocumentForm'
@@ -25,7 +24,6 @@ function App() {
     <Navbar />
     <Routes>
 <Route exact path='/'  element={<Home />} />
-<Route exact path='/contact-us'  element={<ContactUs />} />
 <Route exact path='/fleetplanning' element={<FleetPlanning />} />
 <Route exact path='/fleet' element={<Fleet />} />
 <Route exact path='/fleetdocuments' element={<FleetDocument />} />

@@ -28,7 +28,8 @@
   section {
     clear: both;
     padding-top: 10px;
-    display: none; }
+    display: none; 
+  }
   
   .tab {
     box-shadow: 0px 2px 2px #D3D3D3;

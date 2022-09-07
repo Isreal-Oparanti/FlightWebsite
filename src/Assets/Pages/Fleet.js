@@ -29,7 +29,7 @@ export default function Fleet() {
          <th>Status</th>
          <th>ACMI</th>
          <th></th>
-         <th id="translate">Airframe</th>
+         <th id="translates">Airframe</th>
       <th><button className='clear'>Clear</button></th>
        </tr>
        </thead>

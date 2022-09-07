@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {useLocation } from 'react-router-dom';
 import '../../App.css';
 import { useNavigate } from 'react-router-dom';
-import Filter from '../../Components/Filter';
+import Filter from '../../Components/Filters/ScheduledMaintenanceFilter';
 
 
 
@@ -16,11 +17,11 @@ const ScheduledMaintenance =(props) => {
     let state= location.state
     setLocationState(state)
   }
- }, [])
+ }, [location.state])
  
 const navigate = useNavigate();
   const handleRowClick = () => {
-    navigate('/add-new-scheduled-maintenance');
+    navigate('/new-scheduled-maintenance');
   }  
 
   return(
@@ -31,7 +32,7 @@ const navigate = useNavigate();
    
     <div>
    
-      <div className='pre-content'><p className='precont-link'><p className='mylink'> Add new scheduled maintenance | PDF Version | Export to excel</p>  <p className='filt'>{<Filter />} </p></p></div>
+      <div className='pre-content'><p className='precont-link'><p className='mylink'><Link to='/add-new-scheduled-maintenance' className='mylink'> Add new scheduled maintenance </Link>| PDF Version | Export to excel</p>  <p className='filt'>{<Filter />} </p></p></div>
     <table>
      <thead className='firsthead'>
       <tr>
