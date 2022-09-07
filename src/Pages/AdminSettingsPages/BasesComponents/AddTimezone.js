@@ -84,8 +84,6 @@ export class AddTodo extends React.Component{
             label: "st-thomas (RU, UTC+3:00)",
             value: 'st-thomas (RU, UTC+3:00)'
         }
-
-
         
     ]
     const options1 = [
@@ -98,8 +96,6 @@ export class AddTodo extends React.Component{
             value: 'ICAO'
         }
     ]
-
-
 
        return(
            <div>
@@ -115,7 +111,7 @@ export class AddTodo extends React.Component{
                         <option key={uuidv4()} value={option.value} > {option.label}</option>
                   ))}
                </select>
-               <input type='submit' name="submit" id="Update" value="ADD" />
+               <input type='submit' name="submit" id="Update" className='Update' value="Add" />
            </form> 
            </div>       
         )

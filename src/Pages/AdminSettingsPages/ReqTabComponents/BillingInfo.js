@@ -3,21 +3,14 @@ import Alt1 from "./AlternativeComp/alt1.js";
 function ReqItem(){
     
     const [isSubscribed, setIsSubscribed] = useState(false)
-    console.log(isSubscribed)
-
     const handleChange = (event) => {
-        if (event.target.checked) {
-            console.log('kk')
-        } else {
-            console.log('boo')
-        }
         setIsSubscribed(current => !current)
     }
     return (
     <div>
         <fieldset>
             <legend>
-                <h4>General settings</h4>
+                General settings
             </legend>
             <div className="GS">    
                 <div id="cont1" ><label htmlFor="operator"><span><b>Default</b></span></label></div>
@@ -57,12 +50,8 @@ function ReqItem(){
          </div>
         </fieldset>    
                             
-        </div>
-       
+        </div>    
     )
   }
-
-
-
 export default ReqItem
 

@@ -9,10 +9,10 @@ import Alt1 from "./AlternativeComp/alt1.js";
     <div>
         <fieldset>
             <legend>
-                <h4>General settings</h4>
+                General settings
             </legend>
             <div className="GS">    
-                <div id="cont1" ><label htmlFor="operator"><span><b>Default</b></span><div>items are seperated by new line, for example: Standard Handling <br/>Slot if required <br/>Refueling</div></label></div>
+                <div id="cont1" ><label htmlFor="operator"><span className="overwrite">Default</span><div>items are seperated by new line, for example: Standard Handling <br/>Slot if required <br/>Refueling</div></label></div>
              <div id="OperatorName"><textarea type="text" className="defaults"  name="check1" /></div>
             </div>
               <div>Items specified per an aircraft will overwrite default items defined above the entire fleet</div><br/>

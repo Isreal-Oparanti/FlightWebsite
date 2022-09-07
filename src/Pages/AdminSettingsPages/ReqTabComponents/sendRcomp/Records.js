@@ -6,6 +6,5 @@ function Record(props){
              <span className="Records">Records 1 - {props.addRecords}</span> 
            </div>       
         )
-   
 }
 export default Record;

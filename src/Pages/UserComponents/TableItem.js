@@ -1,7 +1,7 @@
 import { React, Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
-import edit from "./images/edit.png";
+import edit from "../../Assets/images/edit.png";
 import Edit from "./FullUserEdit.js";
 
 import BasicInfo from "./UserTabComponents/ReqSettings.js";
@@ -10,7 +10,6 @@ import Endorsement from "./UserTabComponents/Endorsement.js";
 import Ratings from "./UserTabComponents/Ratings.js"; 
 
  function TableItem(props){
-    
     const [ButtonTrue,setButtonTrue] = useState(false);
     const [state,setState] = useState(1);
         const action = (index) => {

@@ -51,21 +51,19 @@ class sendingRule extends React.Component{
     return (
        
     <div id="sendingRule">
-           <h3 className="Reg">Registration</h3>     
-            {/* <div className="BS BS_name">     */}
-                {/* <div>Name</div> */}
-                {/* <div>Time zone</div> */}
-            {/* </div> */}
-        <div className="AddTzoneTable">
-            <table>
-               <tr> 
-                  <td className="serial">S/N</td> 
-                  <td>Aircraft</td>
-                  <td>Airport</td>
-                  <td>Send</td>
-               </tr>                
-            </table>
-        </div>
+        <h3 className="Reg">Registration</h3>     
+            <div className="AddTzoneTable">
+                <table>
+                    <tbody>
+                        <tr> 
+                            <td className="serial">S/N</td> 
+                            <td>Aircraft</td>
+                            <td>Airport</td>
+                            <td>Send</td>
+                        </tr>
+                    </tbody>                
+                </table>
+            </div>
             <AddRules  AddErr={this.AddErr}  addTimezone={this.addTimezone}/>
             <Rules zones={this.state.zones} delTodo={this.delTodo}/>    
             <Records addRecords={this.state.zones.length}/>                 

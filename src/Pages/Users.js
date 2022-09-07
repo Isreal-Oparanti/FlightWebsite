@@ -78,7 +78,7 @@ import Timezones from './UserComponents/Timezones.js';
 			}
 			  
 			  setState({ users:[...state.users, newTodo]})	 
-			  console.log(state);
+			   
 	}
 	const handleSubmit = (e) => {
 		e.preventDefault();

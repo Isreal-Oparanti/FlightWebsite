@@ -4,7 +4,7 @@ function Gsettings(){
     <div>
         <fieldset>
             <legend>
-                <h4>General settings</h4>
+                General settings
             </legend>
             <div className="GS">    
                 <div id="cont1" ><label htmlFor="operator"><span>Operator ICAO</span></label></div>
@@ -24,14 +24,14 @@ function Gsettings(){
             </div>
         </fieldset>    
         <fieldset>
-                <legend><h4>Maching flights</h4></legend>
+                <legend>Maching flights</legend>
                 <div className="GS">    
                     <div id="cont"><label htmlFor="Notify"><span>Include options by default</span></label></div>
                     <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
                 </div>   
         </fieldset>
         <fieldset>
-                <legend><h4>Handling Request status changes</h4></legend>
+                <legend>Handling Request status changes</legend>
                 <div className="GS">    
                     <div id="cont"><label htmlFor="Notify"><span>Schedule</span></label></div>
                     <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
@@ -69,7 +69,7 @@ function Gsettings(){
         </fieldset> 
 
         <fieldset>
-                <legend><h4>Handling Request emails</h4></legend>
+                <legend>Handling Request emails</legend>
                 <div className="GS">    
                     <div id="cont"><label htmlFor="Notify"><span>Handler comfirmation recipient e-mail ?</span></label></div>
                     <div id="OperatorName"><input type="text" className="OperatorName" /></div>

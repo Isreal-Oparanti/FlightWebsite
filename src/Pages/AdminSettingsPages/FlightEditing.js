@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Fsettings extends React.Component{
+class FlightSettings extends React.Component{
     render(){
         return(
             <div className="FE">
@@ -33,7 +33,7 @@ class Fsettings extends React.Component{
                </div>
                <div className="Fsettings"> 
                    <div><label htmlFor="radio1">Default Rotation Time</label></div>
-                   <div><input type="text" value="01:00" id="Dtnote" name="check1"   /></div>
+                   <div><input type="text" defultvalue="01:00" id="Dtnote" name="check1"   /></div>
                </div>
                <div className="Fsettings"> 
                    <div><label htmlFor="radio1">Check Airport opening hour</label></div>
@@ -95,14 +95,10 @@ class Fsettings extends React.Component{
                         <div><input type="checkbox" name="check1" /><label htmlFor="radio1">Infants</label></div>
                         <div className="occupy2"><input type="checkbox" name="check1" /><label htmlFor="radio1">Deicing</label></div>
                    </div>
-                   {/* <div className="timeline">    
-                     <a href="/">Select all | Select none</a>
-                   </div> */}
                </fieldset>
                <fieldset>
                    <legend>
                        Ops checkout Items
-
                    </legend>
                    <div className="Fsettings"> 
                         <div><input type="checkbox" name="check1" /><label htmlFor="radio1">ATC flight plan</label></div>
@@ -174,7 +170,7 @@ class Fsettings extends React.Component{
                    </legend>
                    <div className="Fsettings"> 
                       <div><label htmlFor="radio1">End limit(days from actual time)</label></div>
-                      <div><input type="text" value="30" id="Dtnote" name="check1" /></div>
+                      <div><input type="text" defultvalue="30" id="Dtnote" name="check1" /></div>
                   </div>
                   <div className="Fsettings"> 
                       <div><label htmlFor="radio1">Email to Notification</label></div>
@@ -214,4 +210,4 @@ class Fsettings extends React.Component{
         )
     }
 }
-export default Fsettings;
+export default FlightSettings;

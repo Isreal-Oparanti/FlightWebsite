@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Cancel from "./images/Cancel.png";
-import scan from "./images/scan.png";
+import Cancel from "../../Assets/images/cancel.png";
+import scan from "../../Assets/images/scan.png";
 export class TodoItem extends React.Component{
     render(){
 

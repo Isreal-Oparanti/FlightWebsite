@@ -1,6 +1,5 @@
 import React from 'react';
 import TimezoneItem from './TimezoneItem.js';
-import PropTypes from "prop-types";
 
 class Zones extends React.Component{
    render(){
@@ -12,7 +11,4 @@ class Zones extends React.Component{
         )
    }
 }
-Zones.propTypes = {
-  zone: PropTypes.object.isRequired
-}    
-export default Zones 
+ export default Zones 
