@@ -1,25 +1,32 @@
 import { React, Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 import edit from "../../Assets/images/edit.png";
 import Edit from "./FullUserEdit.js";
 
-import BasicInfo from "./UserTabComponents/ReqSettings.js";
+import BasicInfo from "./UserTabComponents/BasicInfo.js";
 import Groups from "./UserTabComponents/Groups.js";
 import Endorsement from "./UserTabComponents/Endorsement.js";
 import Ratings from "./UserTabComponents/Ratings.js"; 
-
+import UserSettings from "./UserTabComponents/UserSettings.js";
+ 
  function TableItem(props){
+  
+    let Rate = props.Ratings;
+    let Ratings1 = props.Ratings1;
+    let Ratings2 = props.Ratings2;
+    let Ratings3 = props.Ratings3;
     const [ButtonTrue,setButtonTrue] = useState(false);
     const [state,setState] = useState(1);
         const action = (index) => {
           setState(index)
-        }
+    }
        return(  
          <Fragment>      
             <tr className="UserTableRow" border='1'>
                 <td>{props.users.name}</td>
                 <td>{props.users.code}</td>
+                <td>{props.users.login}</td>
                 <td>{props.users.email}</td>
                 <td><input type="checkbox" defaultChecked="true"/></td>
                 <td>{props.users.lastvisit}</td>
@@ -27,9 +34,8 @@ import Ratings from "./UserTabComponents/Ratings.js";
             </tr>
             <Edit trigger={ButtonTrue} setTrigger={setButtonTrue}>
                    <h1>{props.users.name}</h1>
-                   <div className="ReqApp">
-			{/* <div id="hr"></div> */}
-			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px', padding: '0px'}}>
+        <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
+			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>action(1)} className={`${state===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
                         <div onClick={()=>action(2)} className={`${state===2? 'tab1 active-tab' : 'tab1'}`}><span>Groups</span></div>
                         <div onClick={()=>action(3)} className={`${state===3? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
@@ -38,25 +44,22 @@ import Ratings from "./UserTabComponents/Ratings.js";
 					<section id="content1" className={`${state===1? 'tab-content1 active-content':'tab-content'}`}>
 					    <BasicInfo user={props} />
 					</section>
-							
 					<section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
-                        
-                         <Groups />  	
+                         <Groups user={props} />  	
 					</section>
 					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
-                         wssw
 					     <Endorsement />  	
 					</section>
 					<section id="content4" className={`${state===4? 'tab-content1 active-content':'tab-content'}`}>
-			             <Ratings  Ratings={props.Ratings}/>
+			             <Ratings Rate={Rate} Ratings1={Ratings1} Ratings2={Ratings2} Ratings3={Ratings3} />
 					</section>
                     <section id="content5" className={`${state===5? 'tab-content1 active-content':'tab-content'}`}>
-			              lk
+			              <UserSettings />
 					</section>
-					
 				 </div>
+                 
 			</div>
-                    
+            <button id="Update" style={{marginLeft: 0}}>Update</button>   
             </Edit>    
             
                       
@@ -64,8 +67,5 @@ import Ratings from "./UserTabComponents/Ratings.js";
        )
    }    
 //PropTypes
-TableItem.propTypes = {
-    todo: PropTypes.object.isRequired
-}
- 
+
 export default TableItem

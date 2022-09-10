@@ -18,7 +18,7 @@ import PracticalTraining from "./EndorsementComp/PersonalTraning.js";
                 <Endorsements/>
             </section>
             <section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
-                more.. 	
+                more... 	
             </section>
             <section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
                 more.. and more..

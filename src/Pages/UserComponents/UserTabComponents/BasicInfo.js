@@ -1,5 +1,6 @@
 
 function Gsettings(props){ 
+    
     if(props.user.users.name.split(' ').length === 2){
      var name = props.user.users.name.split(' ')[0]
     var surname = props.user.users.name.split(' ')[1]    
@@ -118,15 +119,15 @@ function Gsettings(props){
                 <h5>User data</h5><br/>
                 <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Login</label></div>
-                    <div><input type="text" name="name"  /></div>
+                    <div><input type="text" name="name" value={props.user.users.login}  /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Code</label></div>
-                    <div><input type="text" name="name"  /></div>
+                    <div><input type="text" name="name" value={props.user.users.code}  /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Home base</label></div>
-                    <div><input type="text" name="name"  /></div>
+                    <div><input type="text" name="name" value={props.user.users.login} /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">User base</label></div>

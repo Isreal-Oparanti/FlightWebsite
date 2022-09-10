@@ -87,7 +87,7 @@ body {
     padding: 4 10px 10px 10px;
    }
   
-section {
+  section{
   clear: both;
   padding-top: 10px;
   display: none; }
@@ -146,7 +146,7 @@ section {
 .active-content {
   display: block;
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   background: #FFF;
   color: #999;
   border-bottom: 2px solid #222; }
@@ -328,14 +328,14 @@ input[type=text]{
   cursor: pointer;
   border-radius: 3px;
   border: none; }
-  .Update{
-    font-size: 11px !important;
-    cursor: pointer;
-    padding: 4px !important;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    margin-left: 45px !important; 
-    letter-spacing: 2px;
-  }
+.Update{
+  font-size: 11px !important;
+  cursor: pointer;
+  padding: 4px !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  margin-left: 45px !important; 
+  letter-spacing: 2px;
+}
 
  #Update:active{
    transform: scale(90%); 
@@ -582,7 +582,7 @@ table tr td #RuleName{
   border-bottom: 1px solid #222;
 }
 
-#UserTable{
+.UserTable{
   margin-top: 10px;
   width: 100%;
   height: 120px;
@@ -619,23 +619,22 @@ table tr td #RuleName{
   background-color: yellowgreen;
   text-transform: uppercase;
 } */
-#UserTable td:nth-child(2){
+.UserTable td:nth-child(2){
   text-transform: uppercase;
 }
 
-#UserTable tr td,th{
+.UserTable tr td,th{
    padding-left: 30px;
 }
-#UserTable tr td:first-child{
+.UserTable tr td:first-child{
   text-transform: capitalize; 
 }
 
-#UserTable tr{
+.UserTable tr{
    height: 30px;
-   border-bottom: 1px solid lightgrey;
 }
-tr:nth-child(even){
-  background-color: rgba(211, 211, 211, 0.12);
+.UserTable tr:nth-child(even){
+  background-color: rgba(211, 211, 211, 0.23);
 }
 .UserTableRow{
   border: 0.9px;
@@ -789,7 +788,7 @@ tr:nth-child(even){
   flex: 8;  
 }
 .AddUsersForm select{
-  opacity: 0.5;
+  opacity: 0.7;
 }
 #username{
   margin-right: -4px;
@@ -811,13 +810,14 @@ tr:nth-child(even){
 }
 .PassportTableHead{
   top: 20px;
+  text-transform: uppercase;
   width: 50px;
   height: 10px;
   background-color: rgba(211, 211, 211, 0.19);
-  border-bottom: 1px solid #0F0404;
+  border-bottom: 2px solid rgba(15, 4, 4, 0.23);
 }
 .PassportTable input{
-  border: 1.5px solid rgba(211, 211, 211, 0.45);
+  border: 1.5px solid rgba(211, 211, 211, 0.62);
   border-radius: 2px;
   color: rgba(0, 0, 0, 0.8);
 } 
@@ -976,14 +976,15 @@ input[type=date]:focus::-webkit-datetime-edit{
  .User__info{
    padding: 20px;
    display: flex;
-   background-color: rgba(0, 68, 255, 0.1);
+   margin-top: -10px;
+   background-color: rgba(0, 68, 255, 0.07);
  }
  .User__info div{
    flex: 1;
    width: 53%;
  }
  .User__info #lastChild{
-   color: #fff;
+   color: rgba(0, 0, 0, 0.88);
    flex: 1.5;
  }
  .User__info h5{
@@ -999,25 +1000,36 @@ input[type=date]:focus::-webkit-datetime-edit{
    margin-left: -8px;
 }
 .AddUsersPassports{
-  background-color: green;
+  background-color: rgba(128, 128, 128, 0.2);
   padding: 3px;
   display: flex;
   width: 30rem !important;
-  border-radius: 2px; 
+  border-radius: 2px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
+
 .AddUsersPassports1{
-  background-color: #FFF;
-  border-radius: 3px; 
+  background-color: rgba(255, 255, 255, 0.53); 
 }
 .AddUsersPassports select{
-  border: 1px solid rgba(114, 102, 102, 0.62); 
-  width: 150px;
+  border: 1px solid rgba(114, 102, 102, 0.4); 
+  width: 155px;
   height: 20px;
+  border-radius: 2px; 
 }
 .AddUsersPassports input{
   height: 20px;
-  border: 1px solid rgba(114, 102, 102, 0.62);
+  border-radius: 2px;
+  border: 1px solid rgba(114, 102, 102, 0.27);
   width: 50px;
+}
+.hrline{
+  position: absolute;
+  height: 45px;
+  width: 1px;
+  margin: -14px 12px 30px -8px;
+  background-color: rgba(0, 0, 0, 0.56);
 }
 .Group__container{
   padding: 20px;
@@ -1059,4 +1071,40 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 .UserHeader2 div:last-child{
    color: rgba(134, 15, 15, 0.59);
+}
+
+#Ratingstable{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-collapse: collapse;
+  margin-left: 30px !important; 
+  border: 1px solid black !important;
+  width: 35% !important; 
+  padding-left: 0 !important;
+  margin: 0;  
+  color: #000;
+}
+.RatingsContainer{
+  display: flex;
+}
+#Ratingstable th{
+  background-color: rgba(153, 153, 153, 0.16);
+  padding-left: 0 !important;
+}
+#Ratingstable td{
+  padding-left: 20px !important;
+}
+#Ratingstable tr:nth-child(even){
+   background-color: #fff;
+}
+.rateParagraph{
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.Usersettings{
+  margin-left: 15px;
+  color: #000;
+}
+.Usersettings input[type='date']{
+   padding: 0;
+   border-radius: 2px; 
 }

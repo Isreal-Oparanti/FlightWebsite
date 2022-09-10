@@ -4,9 +4,9 @@ import Cancel from "../../Assets/images/cancel.png";
 import scan from "../../Assets/images/scan.png";
 export class TodoItem extends React.Component{
     render(){
-
-    const {id, name,utc} = this.props.todo;
-     
+        
+    const id = this.props.todo;
+    
        return(  
          <React.Fragment>
                  <tr className="PassportTableData">
@@ -18,6 +18,7 @@ export class TodoItem extends React.Component{
                     <td><input type="checkbox" defaultChecked={true}/></td>
                     <td id="close-btn"><b><span className="close-btn1" onClick={this.props.delTodo.bind(this, id)}>&times;</span></b></td>
 				</tr>
+                
              {/* <div className="BS">
                 <div><span id="zoneName"></span></div>
                 <div className="first"><span id="zoneName"></span></div> */}
