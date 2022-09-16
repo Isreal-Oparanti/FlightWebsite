@@ -5,7 +5,14 @@ import AddUser from "./UserComponents/AddUser.js";
 import Edit from "./UserComponents/FullUserEdit.js";
 // import PassportTables from "./UserComponents/passportItem.js";
 import Timezones from './UserComponents/Timezones.js';
-// import Document from "./FullUserEdit.js"; 
+// import Document from "./FullUserEdit.js";
+
+import BasicInfo from "./UserComponents/UserTabComponents/BasicInfo.js";
+import Groups from "./UserComponents/UserTabComponents/Groups.js";
+import Endorsement from "./UserComponents/UserTabComponents/Endorsement.js";
+import Ratings from "./UserComponents/UserTabComponents/Ratings.js"; 
+import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
+
    function Tab(){
 	const [btnstyle,setBtnstyle] = useState(true)
 	var val1 = '1px solid #D3D3D3'
@@ -19,6 +26,11 @@ import Timezones from './UserComponents/Timezones.js';
 	const BtnStyle = {
 		opacity: val
 	}
+
+	const [tabstate,setTabState] = useState(1);
+	const action = (index) => {
+	  setTabState(index)
+     }
     /**Validatin input state */
 	const [Mustfill,setMustfill] =useState({border: val1})
 	const [Mustfill1,setMustfill1] =useState({border: val1})
@@ -29,6 +41,7 @@ import Timezones from './UserComponents/Timezones.js';
 	const [Mustfill6,setMustfill6] =useState({color: 'rgba(0, 0, 0, 0.86)'})
 	/**fullEdit popup state */
 	const [ButtonTrue,setButtonTrue] = useState(false);
+	const [ButtonTrue1,setButtonTrue1] = useState(false);
 	const [fulledit,setfulledit] = useState();
 	const [search, setSearch] = useState('');
 	
@@ -101,8 +114,9 @@ import Timezones from './UserComponents/Timezones.js';
 			setBtnstyle(true)
 		}
 	}
+var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,Ratings2,Ratings3	
 	const addUser = () => {
-		  var name = Users.name +" "+ Users.middlename +" "+ Users.surname;
+		  let name = Users.name +" "+ Users.middlename +" "+ Users.surname;
 		  let code = Users.code;
 		  let email = Users.email;
 		  let login = Users.login;
@@ -132,24 +146,24 @@ import Timezones from './UserComponents/Timezones.js';
 	const handleSubmit = (e) => {
 		e.preventDefault();
     
-		if(Users.name.trim() == 0){
+		if(Users.name.trim() === 0){
            setMustfill({border : val2})
-		}else if(Users.surname.trim() == 0){
+		}else if(Users.surname.trim() === 0){
 			setMustfill1({border : val2})
 		}
-		else if(Users.code.trim() == 0){
+		else if(Users.code.trim() === 0){
 			setMustfill2({border : val2})
 		}
-		else if(Users.homebase1.trim() == 0){
+		else if(Users.homebase1.trim() === 0){
 			setMustfill3({border : val2})
 		}
-		else if(Users.login.trim() == 0){
+		else if(Users.login.trim() === 0){
 			setMustfill4({border : val2})
 		}
-		else if(Users.permissionGroup.trim() == 0){
+		else if(Users.permissionGroup.trim() === 0){
 			setMustfill5({border : val2})
 		}
-		else if(Users.gender.trim() == 0){
+		else if(Users.gender.trim() === 0){
 			setMustfill6({color : 'red'})
 		}
 		else{
@@ -220,8 +234,7 @@ import Timezones from './UserComponents/Timezones.js';
 	}
 	const handleFulledit = (e) => {
 		 setfulledit(e.target);
-		 addUser()
-	     console.log(state.users)
+		//  addUser()
 		 btn(true);
 	}
 	var btn;
@@ -402,11 +415,41 @@ import Timezones from './UserComponents/Timezones.js';
 				   </div> 
 				  <div><span>{"  "+Selectvalue3.maps.map(mymap => " "+ mymap+" ")}</span></div>
 			   </div>
-			   <div className='SaveUserButtons'><form onSubmit={handleSubmit}><button style={BtnStyle} disabled={btnstyle}>save</button></form><button onClick={() => {setButtonTrue(false)}}>cancel</button><button onClick={handleFulledit}>Open Full Edit</button></div>
+			   <div className='SaveUserButtons'><form onSubmit={handleSubmit}><button style={BtnStyle} disabled={btnstyle}>save</button></form><button onClick={() => {setButtonTrue(false)}}>cancel</button><button onClick={() => {setButtonTrue1(true)}}>Open Full Edit</button></div>
 		  </AddUser>
-
+          
 				<button className="AddUserButton" onClick={() => {setButtonTrue(true)}}><span className="plus">+</span> NEW USER</button>
 			{/* <Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1}/> */}
+			<Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1} >
+                       <h1>{Users.name +" "+Users.middlename+" "+Users.surname}</h1>
+        <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
+			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
+                        <div onClick={()=>action(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
+                        <div onClick={()=>action(2)} className={`${tabstate===2? 'tab1 active-tab' : 'tab1'}`}><span>Groups</span></div>
+                        <div onClick={()=>action(3)} className={`${tabstate===3? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
+                        <div onClick={()=>action(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
+                        <div onClick={()=>action(5)} className={`${tabstate===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
+					<section id="content1" className={`${state===1? 'tab-content1 active-content':'tab-content'}`}>
+					    {/* <BasicInfo user={state} /> */}
+					
+					</section>
+					<section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
+                         {/* <Groups />   */}
+					</section>
+					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
+					     <Endorsement />  
+					</section>
+					<section id="content4" className={`${state===4? 'tab-content1 active-content':'tab-content'}`}>
+			            {/* <Ratings /> */}
+					</section>
+                    <section id="content5" className={`${state===5? 'tab-content1 active-content':'tab-content'}`}>
+			              <UserSettings />
+					</section>
+				 </div>
+			</div>
+            <button id="Update" style={{marginLeft: 0}} >Update</button>   
+            </Edit>    
+    
 		</div>  
 	  )
  }

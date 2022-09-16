@@ -1,6 +1,5 @@
 
-function Gsettings(props){ 
-    
+function Gsettings(props){  
     if(props.user.users.name.split(' ').length === 2){
      var name = props.user.users.name.split(' ')[0]
     var surname = props.user.users.name.split(' ')[1]    

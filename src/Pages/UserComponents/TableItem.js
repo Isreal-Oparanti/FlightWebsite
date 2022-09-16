@@ -12,7 +12,7 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
  
  function TableItem(props){
     
-   console.log(props.users)
+   console.log(props)
     const [ButtonTrue,setButtonTrue] = useState(false);
     props.handlefulledit(ButtonTrue,setButtonTrue)
     const [state,setState] = useState(1);
