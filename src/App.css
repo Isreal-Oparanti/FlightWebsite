@@ -11,11 +11,9 @@ header {
 }
 #app {
   width: 100%; }
-
 .container-menu {
   float: left;
   margin-left: 45px; }
-
 div #menu-item {
   display: inline-block;
   margin-right: 5px;
@@ -86,7 +84,6 @@ body {
     padding-top: 0px;
     padding: 4 10px 10px 10px;
    }
-  
   section{
   clear: both;
   padding-top: 10px;
@@ -141,7 +138,6 @@ body {
   100% {
     transform: scale(1);
     opacity: 1; } }
-
    
 .active-content {
   display: block;
@@ -161,8 +157,7 @@ body {
  .tab_container1 .active-tab {
   background: #FFF;
   box-shadow: inset 0 2px #55c578;
- }
-  
+ }  
 fieldset {
   font-family: sans-serif;
   color: #000;
@@ -237,7 +232,6 @@ select {
   padding-bottom: 2px;
   font-family: monospace;
   }
-
 #date::-webkit-inner-spin-button,
 #date::-webkit-calender-picker-indicator {
   display: none !important;
@@ -361,7 +355,7 @@ input[type=text]{
   height: 5.8rem;
   background-color: #FFF;
   box-shadow: 0px 2px 2px #D3D3D3; }
-
+  
 .General_Settings div {
   width: 7.5rem;
   font-size: 25px;
@@ -509,11 +503,8 @@ legend{
   margin: 0;
   padding: 10px;
   background: #f0f0f0;
-}
- 
-
+} 
 /********* Sending Rules *******/
-
 #sendingRule{
    padding: 20px;
    color: #000;
@@ -530,8 +521,7 @@ table{
 }
  table tr td{
    width: 90px;
-}
-   
+}  
 table tr td #RuleName{
   width: 3.5rem;
   border: 1px solid gray;
@@ -554,7 +544,8 @@ table tr td #RuleName{
    background-color: rgba(135, 208, 250, 0.42);
 }
  #count{
-   font-family: Verdana, sans-serif;
+ 
+  font-family: Verdana, sans-serif;
    font-size: 0.9rem;
  }
 .defaults{
@@ -588,17 +579,15 @@ table tr td #RuleName{
   height: 120px;
   border: 1px solid rgba(0, 0, 0, 0.49);
   border-collapse: collapse;
-  /* background-color: red; */
-    /* padding: 1px; */
-  /* text-transform: uppercase; */
+  color: rgba(0, 0, 0, 0.92);
 }
 
 .UserTableHead{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:  Arial, Helvetica, sans-serif;
   text-align: left;
   margin: 30px;
   height: 45px !important; 
-  font-weight: 700;
+  font-weight: 900;
   color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.46) !important;
 }
@@ -924,11 +913,24 @@ input[type=date]:focus::-webkit-datetime-edit{
     background-color: rgba(0, 68, 255, 0.1);
     letter-spacing: 1px; 
   }
+  .SaveUserButtons button:nth-child(1):hover{
+    background-color: rgba(0, 68, 255, 0.66);
+    color: #fff;
+  }
+  .SaveUserButtons button:nth-child(1):active{
+    transform: scale(95%);
+  }
+  .SaveUserButtons button:nth-child(2):hover{
+    background-color:rgba(211, 211, 211, 0.65);
+  }
 .SaveUserButtons button:nth-child(3){
   float: right;
   border: 1px solid rgba(17, 97, 43, 0.73);
   color: rgba(17, 97, 43, 0.73);
-
+}
+.SaveUserButtons button:nth-child(3):hover{
+  background-color:  rgba(17, 97, 43, 0.73);
+  color: #fff;
 }
 
 .UserEdit{
@@ -1026,9 +1028,9 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 .hrline{
   position: absolute;
-  height: 45px;
+  height: 46px;
   width: 1px;
-  margin: -14px 12px 30px -8px;
+  margin: -12px 12px 30px -8px;
   background-color: rgba(0, 0, 0, 0.56);
 }
 .Group__container{
@@ -1107,4 +1109,9 @@ input[type=date]:focus::-webkit-datetime-edit{
 .Usersettings input[type='date']{
    padding: 0;
    border-radius: 2px; 
+}
+.SearchInput, .SearchInputs select{
+  margin: 10px 100px 0 22px;
+  border: 1px solid rgba(0, 0, 0, 0.36) !important;
+  padding: 5px;
 }

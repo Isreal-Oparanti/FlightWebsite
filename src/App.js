@@ -2,9 +2,9 @@ import React from "react";
 import AdminSettings from './Pages/AdminSettings.js';
 import SettingsTab from './Pages/AdminSettingsPages/SettingsTab.js';
 import Users from './Pages/Users.js';
-import FullUserEdit from './Pages/UserComponents/FullUserEdit.js';
 import './App.css';
-// importing components........//
+import './style.css';
+// importing components....///
 import Sched from './Pages/NavPages/Sched.js';
 import Sales from './Pages/NavPages/Sales.js';
 import Ops from './Pages/NavPages/Ops.js';
@@ -12,7 +12,10 @@ import Crew from './Pages/NavPages/Crew.js';
 import Handling from './Pages/NavPages/Handling.js';
 import Mix from './Pages/NavPages/Mix.js';
 import Report from './Pages/NavPages/Report';
+
+
 import { BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom';
+window.myUTC = 'mine';
 function App() {
   return (
     <div id="app">
@@ -36,6 +39,7 @@ function App() {
                   <a href="/"><i id='icon' className="fas fa-user"></i></a>
               </div>
               </nav>
+         
             </header>
             <Routes>
               <Route path="/" element={<Sched />} />
@@ -48,8 +52,7 @@ function App() {
               <Route path="/AdminSettings" element={<AdminSettings />} /> 
               <Route path="/url/to/SettingsTab" element={<SettingsTab />} />
               <Route path="/url/to/Users" element={<Users />} />
-              <Route path="/url/to/FullUserEdit" element={<FullUserEdit />} />
-              {/* <Route path="*" element={<NoMatch />}/> */}
+              {/* <Route path="*" element={<NoMatch />} /> */}
             </Routes>       
           </Router>
     </div>

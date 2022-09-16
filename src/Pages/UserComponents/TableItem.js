@@ -11,16 +11,15 @@ import Ratings from "./UserTabComponents/Ratings.js";
 import UserSettings from "./UserTabComponents/UserSettings.js";
  
  function TableItem(props){
-  
-    let Rate = props.Ratings;
-    let Ratings1 = props.Ratings1;
-    let Ratings2 = props.Ratings2;
-    let Ratings3 = props.Ratings3;
+    
+   console.log(props.users)
     const [ButtonTrue,setButtonTrue] = useState(false);
+    props.handlefulledit(ButtonTrue,setButtonTrue)
     const [state,setState] = useState(1);
         const action = (index) => {
           setState(index)
     }
+    // props.Gettingfunc(setButtonTrue)
        return(  
          <Fragment>      
             <tr className="UserTableRow" border='1'>
@@ -32,8 +31,8 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
                 <td>{props.users.lastvisit}</td>
                 <td><img src={edit} alt="edit images" onClick={() => {setButtonTrue(true)}}/></td>         
             </tr>
-            <Edit trigger={ButtonTrue} setTrigger={setButtonTrue}>
-                   <h1>{props.users.name}</h1>
+            <Edit trigger={ButtonTrue} setTrigger={setButtonTrue} >
+                       <h1>{props.users.name}</h1>
         <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>action(1)} className={`${state===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
@@ -51,17 +50,15 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
 					     <Endorsement />  	
 					</section>
 					<section id="content4" className={`${state===4? 'tab-content1 active-content':'tab-content'}`}>
-			             <Ratings Rate={Rate} Ratings1={Ratings1} Ratings2={Ratings2} Ratings3={Ratings3} />
+			             <Ratings users={props.users}/>
 					</section>
                     <section id="content5" className={`${state===5? 'tab-content1 active-content':'tab-content'}`}>
 			              <UserSettings />
 					</section>
 				 </div>
-                 
 			</div>
-            <button id="Update" style={{marginLeft: 0}}>Update</button>   
+            <button id="Update" style={{marginLeft: 0}} >Update</button>   
             </Edit>    
-            
                       
         </Fragment>
        )

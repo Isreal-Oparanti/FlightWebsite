@@ -1,6 +1,8 @@
  import React from "react";
  import { Link } from 'react-router-dom';
+ 
    function Asettings(){
+    
     return (
       <div className="Admin">
          <div className="Flist"><span>Settings</span></div>   

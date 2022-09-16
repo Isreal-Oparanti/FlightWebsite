@@ -1,5 +1,6 @@
 
-function Ratings(props){    
+function Ratings(props){
+  
   
     return (
         <div className="RatingsContainer">
@@ -11,21 +12,21 @@ function Ratings(props){
                     <th>Experienced</th> 
                   </tr>
                   <tr>
-                    <td>{props.Rate.mapTitles}</td>
-                    <td>{props.Rate.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
+                    <td>{props.users.Ratings.mapTitles}</td>
+                    <td>{props.users.Ratings.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
                     <td><input type="checkbox" defaultChecked={true}/></td>
                   </tr>
                   <tr>
-                    <td>{props.Ratings1.mapTitles}</td>
-                    <td><div>{props.Ratings1.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</div></td> 
+                    <td>{props.users.Ratings1.mapTitles}</td>
+                    <td>{props.users.Ratings1.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
                   </tr>
                   <tr>
-                    <td>{props.Ratings2.mapTitles}</td>
-                    <td><div>{props.Ratings2.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</div></td> 
+                    <td>{props.users.Ratings2.mapTitles}</td>
+                    <td>{props.users.Ratings2.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
                   </tr>
                   <tr>
-                    <td>{props.Ratings3.mapTitles}</td>
-                    <td><div>{props.Ratings3.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</div></td> 
+                    <td>{props.users.Ratings3.mapTitles}</td>
+                    <td>{props.users.Ratings3.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
                   </tr>
              </tbody>      
            </table> 
