@@ -5,7 +5,7 @@ function Group(props){
            <div className="Group__container">
               <div>
                  <div className="member">is a member</div>
-                 <div className="member__group">all user<br/>{props.user.users.permissionGroup}</div>
+                 <div className="member__group">all user<br/>{props.user.permissionGroup}</div>
                  <span>Select All</span> <span>Unselect All</span>
               </div>
               <b className="Memarrow"> &#8592;<br/>

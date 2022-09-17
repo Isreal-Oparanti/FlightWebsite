@@ -26,12 +26,12 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	const BtnStyle = {
 		opacity: val
 	}
-
+	
 	const [tabstate,setTabState] = useState(1);
-	const action = (index) => {
+	const tabaction = (index) => {
 	  setTabState(index)
      }
-    /**Validatin input state */
+    /**Validating input state */
 	const [Mustfill,setMustfill] =useState({border: val1})
 	const [Mustfill1,setMustfill1] =useState({border: val1})
 	const [Mustfill2,setMustfill2] =useState({border: val1})
@@ -45,6 +45,46 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	const [fulledit,setfulledit] = useState();
 	const [search, setSearch] = useState('');
 	
+
+	const [Selectvalue, setSelectvalue] = useState({
+		maps: [],
+		mapTitles: ''
+	});
+	const [Selectvalue1, setSelectvalue1] = useState({
+		maps: [],
+		mapTitles: ''
+	});
+	const [Selectvalue2, setSelectvalue2] = useState({
+		maps: [],
+		mapTitles: ''
+	});
+	const [Selectvalue3, setSelectvalue3] = useState({
+		maps: [],
+		mapTitles: ''
+	});
+    const [Value, setValue] = useState({
+		zones:[],	   	
+	 })
+	 
+	 const handleChange = (e) => {
+		setSelectvalue({maps: [...Selectvalue.maps, e.target.value] ,mapTitles: 'B762-762-2002R'})
+    }
+	const handleChange1 = (e) => {
+			setSelectvalue1({maps: [...Selectvalue1.maps, e.target.value], mapTitles: 'CD4E-2l345-HRD'})
+	}
+	const handleChange2 = (e) => {
+			setSelectvalue2({maps: [...Selectvalue2.maps, e.target.value], mapTitles: 'FDE-20845-HRD'})
+	}
+	const handleChange3 = (e) => {
+			setSelectvalue3({maps: [...Selectvalue3.maps, e.target.value], mapTitles: 'V762-062-8002A'})
+			console.log(Users)
+	}
+	const handleSelect = (e) => {
+		setUsers((prev) =>{
+			return {...prev, permissionGroup: e.target.value}	
+		})	
+	}
+
 	const [Users, setUsers] = useState({
 		name: '',
 		middlename:'',
@@ -55,8 +95,13 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		homebase2: '',
 		email: '',
 		gender: '',
-		permissionGroup: ''
+		permissionGroup: '',
+		Ratings: Selectvalue,
+		Ratings1: Selectvalue1,
+		Ratings2: Selectvalue2,
+		Ratings3: Selectvalue3
 	});
+	 
 //****User state*********///
 	const [state,setState] = useState({
 		users: [ 
@@ -114,7 +159,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			setBtnstyle(true)
 		}
 	}
-var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,Ratings2,Ratings3	
+ 
 	const addUser = () => {
 		  let name = Users.name +" "+ Users.middlename +" "+ Users.surname;
 		  let code = Users.code;
@@ -122,11 +167,8 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 		  let login = Users.login;
 		  let homebase1 = Users.homebase1;
 		  let homebase2 = Users.homebase2;
-		  let permissionGroup = Users.permissionGroup;
-		  let Ratings =  Selectvalue
-		  let Ratings1 = Selectvalue1;
-		  let Ratings2 = Selectvalue2;
-		  let Ratings3 = Selectvalue3; 
+		  let permissionGroup = Users.permissionGroup; 
+		  
 		  const newUser = {
 				name: name,
 				code: code,
@@ -136,34 +178,33 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 				homebase2: homebase2,
 				permissionGroup: permissionGroup,
 				lastvisit: "14-12-2021 10:23",
-				Ratings: Ratings,
-				Ratings1: Ratings1,
-				Ratings2: Ratings2,
-				Ratings3: Ratings3
+				Ratings: Selectvalue,
+				Ratings1: Selectvalue1,
+				Ratings2: Selectvalue2,
+				Ratings3: Selectvalue3
 			}
 			  setState({ users:[...state.users, newUser]})	 
 	}
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    
-		if(Users.name.trim() === 0){
+		if(Users.name.length === 0){
            setMustfill({border : val2})
-		}else if(Users.surname.trim() === 0){
+		}else if(Users.surname.length === 0){
 			setMustfill1({border : val2})
 		}
-		else if(Users.code.trim() === 0){
+		else if(Users.code.length === 0){
 			setMustfill2({border : val2})
 		}
-		else if(Users.homebase1.trim() === 0){
+		else if(Users.homebase1.length === 0){
 			setMustfill3({border : val2})
 		}
-		else if(Users.login.trim() === 0){
+		else if(Users.login.length === 0){
 			setMustfill4({border : val2})
 		}
-		else if(Users.permissionGroup.trim() === 0){
+		else if(Users.permissionGroup.length === 0){
 			setMustfill5({border : val2})
 		}
-		else if(Users.gender.trim() === 0){
+		else if(Users.gender.length === 0){
 			setMustfill6({color : 'red'})
 		}
 		else{
@@ -177,26 +218,8 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 			addUser()
 		}
 	}
-	const [Selectvalue, setSelectvalue] = useState({
-		maps: [],
-		mapTitles: ''
-	});
-	const [Selectvalue1, setSelectvalue1] = useState({
-		maps: [],
-		mapTitles: ''
-	});
-	const [Selectvalue2, setSelectvalue2] = useState({
-		maps: [],
-		mapTitles: ''
-	});
-	const [Selectvalue3, setSelectvalue3] = useState({
-		maps: [],
-		mapTitles: ''
-	});
-    const [Value, setValue] = useState({
-		zones:[],	   	
-	 })
-	 
+
+
 	 const delTodo = (id) => {
 	    setValue({zones: [...Value.zones.filter(zone => zone.id !== id)] })
 	}
@@ -210,23 +233,7 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 	   }   
 		   setValue({ zones:[...Value.zones, newTodo]});
 	}
-	const handleChange = (e) => {
-			setSelectvalue({maps: [...Selectvalue.maps, e.target.value] ,mapTitles: 'B762-762-2002R'})
-	}
-	const handleChange1 = (e) => {
-			setSelectvalue1({maps: [...Selectvalue1.maps, e.target.value], mapTitles: 'CD4E-2l345-HRD'})
-	}
-	const handleChange2 = (e) => {
-			setSelectvalue2({maps: [...Selectvalue2.maps, e.target.value], mapTitles: 'FDE-20845-HRD'})
-	}
-	const handleChange3 = (e) => {
-			setSelectvalue3({maps: [...Selectvalue3.maps, e.target.value], mapTitles: 'V762-062-8002A'})
-	}
-	const handleSelect = (e) => {
-		setUsers((prev) =>{
-			return {...prev, permissionGroup: e.target.value}	
-		})	
-	}
+	
 	const handleGender = (e) => {
 		setUsers((prev) =>{
 			return {...prev, gender: e.target.id}	
@@ -234,15 +241,21 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 	}
 	const handleFulledit = (e) => {
 		 setfulledit(e.target);
-		//  addUser()
 		 btn(true);
+		
+		 
 	}
 	var btn;
 	const handleFulledit1 = (Button,setButton) => {
-		// console.log(Button,setButton)
 		  btn = setButton
-		//   console.log(btn)
 	} 
+	const openfulledit = () => {
+         console.log(Selectvalue)
+		 setUsers((prev) =>{ return {...prev, Ratings: Selectvalue}})
+		 setUsers((prev) =>{ return {...prev, Ratings1: Selectvalue1}})
+		 setUsers((prev) =>{ return {...prev, Ratings2: Selectvalue2}})
+		 setUsers((prev) =>{ return {...prev, Ratings3: Selectvalue3}})  
+	}
 	// const HandleChildFunc = (ButtonTrue) => {
 	//          console.log(ButtonTrue)
 	// }
@@ -273,7 +286,7 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 					<td className='edit'>Full edit</td>
 				</tr>
 
-				<UserTableItem  User={state.users} fulledit={fulledit} a={handleFulledit1}/>
+				<UserTableItem  User={state.users}  a={handleFulledit1}/>
 			</table>	
 		  <AddUser trigger={ButtonTrue} setTrigger={setButtonTrue}>
 			   <h5 style={{textAlign: "center", fontSize: '20px', marginBottom: "8px"}}>USER EDIT</h5>
@@ -415,7 +428,14 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
 				   </div> 
 				  <div><span>{"  "+Selectvalue3.maps.map(mymap => " "+ mymap+" ")}</span></div>
 			   </div>
-			   <div className='SaveUserButtons'><form onSubmit={handleSubmit}><button style={BtnStyle} disabled={btnstyle}>save</button></form><button onClick={() => {setButtonTrue(false)}}>cancel</button><button onClick={() => {setButtonTrue1(true)}}>Open Full Edit</button></div>
+			   <div className='SaveUserButtons'><form onSubmit={handleSubmit} style={{display: 'inline'}}><button 
+			   style={BtnStyle} 
+			   disabled={btnstyle}>save</button></form>
+			   <button onClick={() => {setButtonTrue(false)}}>cancel</button><button style={BtnStyle} 
+					disabled={btnstyle} 
+					onClick={() => {setButtonTrue1(true)
+					openfulledit()
+					setButtonTrue(false)}}>Open Full Edit</button></div>
 		  </AddUser>
           
 				<button className="AddUserButton" onClick={() => {setButtonTrue(true)}}><span className="plus">+</span> NEW USER</button>
@@ -424,32 +444,32 @@ var name,code,email,login,homebase1,homebase2,permissionGroup,Ratings,Ratings1,R
                        <h1>{Users.name +" "+Users.middlename+" "+Users.surname}</h1>
         <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
-                        <div onClick={()=>action(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
-                        <div onClick={()=>action(2)} className={`${tabstate===2? 'tab1 active-tab' : 'tab1'}`}><span>Groups</span></div>
-                        <div onClick={()=>action(3)} className={`${tabstate===3? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
-                        <div onClick={()=>action(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
-                        <div onClick={()=>action(5)} className={`${tabstate===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
-					<section id="content1" className={`${state===1? 'tab-content1 active-content':'tab-content'}`}>
-					    {/* <BasicInfo user={state} /> */}
-					
+                        <div onClick={()=>tabaction(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
+                        <div onClick={()=>tabaction(2)} className={`${tabstate===2? 'tab1 active-tab' : 'tab1'}`}><span>Groups</span></div>
+                        <div onClick={()=>tabaction(3)} className={`${tabstate===3? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
+                        <div onClick={()=>tabaction(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
+                        <div onClick={()=>tabaction(5)} className={`${tabstate===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
+					 
+
+					<section id="content1" className={`${tabstate===1? 'tab-content1 active-content':'tab-content'}`}>
+					    <BasicInfo user={Users} />
 					</section>
-					<section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
-                         {/* <Groups />   */}
+					<section id="content2" className={`${tabstate===2? 'tab-content1 active-content':'tab-content'}`}> 
+                         <Groups user={Users}/> 
 					</section>
-					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
+					<section id="content3" className={`${tabstate===3? 'tab-content1 active-content':'tab-content'}`}> 
 					     <Endorsement />  
 					</section>
-					<section id="content4" className={`${state===4? 'tab-content1 active-content':'tab-content'}`}>
-			            {/* <Ratings /> */}
+					<section id="content4" className={`${tabstate===4? 'tab-content1 active-content':'tab-content'}`}> 
+			            <Ratings users={Users}/>
 					</section>
-                    <section id="content5" className={`${state===5? 'tab-content1 active-content':'tab-content'}`}>
+                    <section id="content5" className={`${tabstate===5? 'tab-content1 active-content':'tab-content'}`}>
 			              <UserSettings />
 					</section>
 				 </div>
-			</div>
+			  </div>
             <button id="Update" style={{marginLeft: 0}} >Update</button>   
-            </Edit>    
-    
+            </Edit>        
 		</div>  
 	  )
  }

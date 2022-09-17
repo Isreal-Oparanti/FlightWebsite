@@ -1,14 +1,19 @@
 
-function Gsettings(props){  
-    if(props.user.users.name.split(' ').length === 2){
-     var name = props.user.users.name.split(' ')[0]
-    var surname = props.user.users.name.split(' ')[1]    
+function Gsettings(props){
+    if(props.user.name.split(' ').length === 2){
+     var name = props.user.name.split(' ')[0]
+    var surname = props.user.name.split(' ')[1]    
     }
-    else if(props.user.users.name.split(' ').length === 3){
-            name = props.user.users.name.split(' ')[0]
-        var middlename = props.user.users.name.split(' ')[1]
-            surname = props.user.users.name.split(' ')[2]
+    else if(props.user.name.split(' ').length === 3){
+            name = props.user.name.split(' ')[0]
+        var middlename = props.user.name.split(' ')[1]
+            surname = props.user.name.split(' ')[2]
+    }else{
+        name = props.user.name;
+        middlename = props.user.middlename;
+        surname = props.user.surname;
     }
+    
     return (
     <div>
        <div className="User__info">
@@ -118,15 +123,15 @@ function Gsettings(props){
                 <h5>User data</h5><br/>
                 <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Login</label></div>
-                    <div><input type="text" name="name" value={props.user.users.login}  /></div>
+                    <div><input type="text" name="name" value={props.user.login}  /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Code</label></div>
-                    <div><input type="text" name="name" value={props.user.users.code}  /></div>
+                    <div><input type="text" name="name" value={props.user.code}  /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Home base</label></div>
-                    <div><input type="text" name="name" value={props.user.users.login} /></div>
+                    <div><input type="text" name="name" value={props.user.login} /></div>
                </div>
                <div className="AddUsersForm"> 
 					<div><label htmlFor="name">User base</label></div>

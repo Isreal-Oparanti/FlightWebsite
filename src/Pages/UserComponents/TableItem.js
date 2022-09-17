@@ -12,7 +12,7 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
  
  function TableItem(props){
     
-   console.log(props)
+   
     const [ButtonTrue,setButtonTrue] = useState(false);
     props.handlefulledit(ButtonTrue,setButtonTrue)
     const [state,setState] = useState(1);
@@ -41,10 +41,10 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
                         <div onClick={()=>action(4)} className={`${state===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
                         <div onClick={()=>action(5)} className={`${state===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
 					<section id="content1" className={`${state===1? 'tab-content1 active-content':'tab-content'}`}>
-					    <BasicInfo user={props} />
+					    <BasicInfo user={props.users} />
 					</section>
 					<section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
-                         <Groups user={props} />  	
+                         <Groups user={props.users} />  	
 					</section>
 					<section id="content3" className={`${state===3? 'tab-content1 active-content':'tab-content'}`}>
 					     <Endorsement />  	

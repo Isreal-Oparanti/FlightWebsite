@@ -1,7 +1,5 @@
 
 function Ratings(props){
-  
-  
     return (
         <div className="RatingsContainer">
            <table id='Ratingstable' border='1'>
@@ -18,15 +16,18 @@ function Ratings(props){
                   </tr>
                   <tr>
                     <td>{props.users.Ratings1.mapTitles}</td>
-                    <td>{props.users.Ratings1.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
+                    <td>{props.users.Ratings1.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td>
+                    <td></td> 
                   </tr>
                   <tr>
                     <td>{props.users.Ratings2.mapTitles}</td>
                     <td>{props.users.Ratings2.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
+                    <td></td>
                   </tr>
                   <tr>
                     <td>{props.users.Ratings3.mapTitles}</td>
                     <td>{props.users.Ratings3.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
+                    <td></td>
                   </tr>
              </tbody>      
            </table> 

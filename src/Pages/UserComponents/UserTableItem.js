@@ -6,7 +6,9 @@ function Item(props){
     
        return(
             props.User.map((item) => (
+                // console.log(item) 
                <TableItem  key={item.user} users={item} handlefulledit={props.a} fulledit={props.fulledit}   />
+               
            ))          
         )     
     }
