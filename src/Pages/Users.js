@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {v4 as uuidv4} from 'uuid';
 import UserTableItem from "./UserComponents/UserTableItem.js";
 import AddUser from "./UserComponents/AddUser.js";
@@ -426,6 +426,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 						 <option style={{backgroundColor: 'lightgray'}}>LC</option>
 					</select>
 				   </div> 
+			   
 				  <div><span>{"  "+Selectvalue3.maps.map(mymap => " "+ mymap+" ")}</span></div>
 			   </div>
 			   <div className='SaveUserButtons'><form onSubmit={handleSubmit} style={{display: 'inline'}}><button 

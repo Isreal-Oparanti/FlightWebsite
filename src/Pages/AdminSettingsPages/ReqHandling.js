@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import React, { useState } from "react";
 import Rsettings from "./ReqTabComponents/ReqSettings.js";
 import SendRule from "./ReqTabComponents/SendingRule.js";
 import ReqItem from "./ReqTabComponents/ReqItem.js";

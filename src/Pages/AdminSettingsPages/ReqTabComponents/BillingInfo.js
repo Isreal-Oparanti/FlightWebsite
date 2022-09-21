@@ -1,14 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Alt1 from "./AlternativeComp/alt1.js";
 function ReqItem(){
-    
     const [isSubscribed, setIsSubscribed] = useState(false)
     const handleChange = (event) => {
         setIsSubscribed(current => !current)
     }
     return (
     <div>
-        <fieldset>
+         <fieldset>
             <legend>
                 General settings
             </legend>
@@ -49,8 +48,9 @@ function ReqItem(){
              <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox"  /></div>
          </div>
         </fieldset>    
-                            
-        </div>    
+                             
+        </div>
+        
     )
   }
 export default ReqItem

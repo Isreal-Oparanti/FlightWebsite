@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Alt1 from "./AlternativeComp/alt1.js";
  export default function ReqItem(){ 
     const [isSubscribed, setIsSubscribed] = useState(false)

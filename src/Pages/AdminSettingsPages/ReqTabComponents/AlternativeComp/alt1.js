@@ -1,3 +1,4 @@
+import React from 'react';
 function Alternative(props){
     // console.log(props);
    return(

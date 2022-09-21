@@ -1,4 +1,4 @@
-
+import React from 'react'
 function Gsettings(props){
     if(props.user.name.split(' ').length === 2){
      var name = props.user.name.split(' ')[0]

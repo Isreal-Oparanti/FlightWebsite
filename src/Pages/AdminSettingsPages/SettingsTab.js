@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import React, { useState } from "react";
 import Gsettings from "./GeneralSettings.js";
 import Fediting from "./FlightEditing.js";
 import Rhandling from "./ReqHandling.js";
@@ -8,6 +9,7 @@ import Document from "./Document.js";
 	const action = (index) => {
 	  setState(index)
    }
+   
      return (
         <div className="App">
 			<div className="tab_container">
