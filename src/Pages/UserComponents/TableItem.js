@@ -1,6 +1,4 @@
 import  React,{ Fragment, useState } from 'react';
-// import { Link } from 'react-router-dom';
-import PropTypes from "prop-types";
 import edit from "../../Assets/images/edit.png";
 import Edit from "./FullUserEdit.js";
 
@@ -12,7 +10,6 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
  
  function TableItem(props){
     
-   
     const [ButtonTrue,setButtonTrue] = useState(false);
     props.handlefulledit(ButtonTrue,setButtonTrue)
     const [state,setState] = useState(1);

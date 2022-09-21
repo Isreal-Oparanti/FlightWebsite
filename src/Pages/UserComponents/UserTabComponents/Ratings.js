@@ -1,5 +1,8 @@
 import React from 'react';
 function Ratings(props){
+  const arr = []
+  arr.push(props.users.Ratings)
+  console.log(arr)
     return (
         <div className="RatingsContainer">
            <table id='Ratingstable' border='1'>
