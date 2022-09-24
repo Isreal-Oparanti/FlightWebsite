@@ -5,7 +5,8 @@ import AddUser from "./UserComponents/AddUser.js";
 import Edit from "./UserComponents/FullUserEdit.js";
 // import PassportTables from "./UserComponents/passportItem.js";
 import Timezones from './UserComponents/Timezones.js';
-// import Document from "./FullUserEdit.js";
+import scan from "../Assets/images/scan.png";
+ 
 
 import BasicInfo from "./UserComponents/UserTabComponents/BasicInfo.js";
 import Groups from "./UserComponents/UserTabComponents/Groups.js";
@@ -62,8 +63,27 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		maps: [],
 		mapTitles: ''
 	});
+	// const handleDate = () =>{
+	// 	return new Date().toISOString().slice(0,10);
+	// }
+	// console.log(handleDate())
     const [Value, setValue] = useState({
-		zones:[],	   	
+		zones:[
+			{
+				country: <input type="text" maxlength="3"/>,
+				no: <input type="text" id="number" maxlength="10"/>,
+				date_of_issue: <input type="date" required />,
+				expiry_date: <input type="date" required/>,
+				passport: <div className='file-upload'>
+                   <label for="file-input">
+					   <img src={scan} alt={'scan-image'}/>
+				   </label>
+				   <input id="file-input" type='file'/>	   
+				</div>,
+				default: <input type="checkbox" defaultChecked={true}/>,
+				id: uuidv4()	
+			}
+		],	   	
 	 })
 	 
 	 const handleChange = (e) => {
@@ -223,15 +243,32 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	 const delTodo = (id) => {
 	    setValue({zones: [...Value.zones.filter(zone => zone.id !== id)] })
 	}
+
+
 	const onSubmit = (e) => {
 			e.preventDefault();
 			addTimezone();
+			
+			
 	}
 	const addTimezone = () => {
+		
 		const newTodo = {
+			country: <input type="text" maxlength="3"/>,
+			no: <input type="text" id="number" maxlength="10"/>,
+			date_of_issue: <input type="date" required/>,
+			expiry_date: <input type="date" required/>,
+			passport: <div className='file-upload'>
+			<label for="file-input">
+				<img src={scan} alt={'scan-image'}/>
+			</label>
+			<input id="file-input" type='file'/>	   
+		    </div>,
+			default: <input type="checkbox" />,
 			id: uuidv4()
 	   }   
 		   setValue({ zones:[...Value.zones, newTodo]});
+		   console.log(Value.zones[0])
 	}
 	
 	const handleGender = (e) => {
@@ -343,14 +380,14 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			   <form onSubmit={onSubmit}>
 			     <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
 			   </form>	 
-			   <table className="PassportTable" style={{widtd: "100px"}}>
-				   <tr className="PassportTableHead"  >
-					   <td><h5>Country*</h5></td>
+			   <table className="PassportTable" style={{width: "100%"}}>
+				   <tr id="PassportTableHead"  >
+					   <td  style={{width: '57px'}}><h5>Country*</h5></td>
 					   <td><h5>No*</h5></td>
-					   <td><h5>Date of issue</h5></td>
-					   <td><h5>Expiry date*</h5></td>
+					   <td style={{width: '120px'}}><h5>Date of issue</h5></td>
+					   <td style={{width: '120px'}}><h5>Expiry date*</h5></td>
 					   <td><h5>Passport scan</h5></td>
-					   <td><h5>Default</h5></td>
+					   <td style={{width: '57px'}}><h5>Default</h5></td>
 				   </tr>
 				   <Timezones zones={Value.zones}  delTodo={delTodo}/>
 			   </table>

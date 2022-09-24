@@ -9,6 +9,7 @@ class Zones extends React.Component{
            <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>     
          ))
         )
+       console.log(this.props.zones);
    }
 }
  export default Zones 

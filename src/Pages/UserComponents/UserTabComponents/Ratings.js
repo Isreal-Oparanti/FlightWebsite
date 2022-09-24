@@ -1,42 +1,36 @@
 import React from 'react';
 function Ratings(props){
-  const arr = []
-  arr.push(props.users.Ratings)
-  console.log(arr)
+  const Ratingsarr = []
+  Ratingsarr.push(props.users.Ratings)
+  Ratingsarr.push(props.users.Ratings1)
+  Ratingsarr.push(props.users.Ratings2)
+  Ratingsarr.push(props.users.Ratings3)
     return (
-        <div className="RatingsContainer">
+       <div className="RatingsContainer">
            <table id='Ratingstable' border='1'>
-             <tbody>
-                  <tr>
-                    <th>Type</th>
-                    <th>Rating</th>
-                    <th>Experienced</th> 
-                  </tr>
-                  <tr>
-                    <td>{props.users.Ratings.mapTitles}</td>
-                    <td>{props.users.Ratings.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
-                    <td><input type="checkbox" defaultChecked={true}/></td>
-                  </tr>
-                  <tr>
-                    <td>{props.users.Ratings1.mapTitles}</td>
-                    <td>{props.users.Ratings1.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td>
-                    <td></td> 
-                  </tr>
-                  <tr>
-                    <td>{props.users.Ratings2.mapTitles}</td>
-                    <td>{props.users.Ratings2.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>{props.users.Ratings3.mapTitles}</td>
-                    <td>{props.users.Ratings3.maps.map(rate => <p className="rateParagraph">{rate}</p>)}</td> 
-                    <td></td>
-                  </tr>
-             </tbody>      
+              <tbody>
+                    <tr>
+                      <th>Type</th>
+                      <th>Rating</th>
+                      <th>Experienced</th> 
+                    </tr>
+                {Ratingsarr.map((item) => {    
+                  if(item.maps.length !== 0 && item.mapTitles.length !== 0){
+                        return(          
+                          <tr> 
+                              <td>{item.mapTitles}</td>
+                              <td><p className="rateParagraph">{item.maps}</p></td> 
+                              <td></td>
+                          </tr>
+                      )
+                  }            
+                })}
+              </tbody>      
            </table> 
            <button className="AddUserButton" style={{height: '35px'}}><span className="plus"></span>Add new ratings</button>    
-        </div>
-          
+        
+    
+      </div>
     )
   }
 export default Ratings

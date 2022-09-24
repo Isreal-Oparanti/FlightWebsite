@@ -2,13 +2,14 @@ import React from 'react';
 import TimezoneItem from './TimezoneItem.js';
 import PropTypes from "prop-types";
 
+
 class Zones extends React.Component{
-  
    render(){
+     console.log(this.props)
        return(
         this.props.zones.map((zone) => (
-           <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>     
-         ))
+           <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>         
+         )) 
         )
    }
 }
