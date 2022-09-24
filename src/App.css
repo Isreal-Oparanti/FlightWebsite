@@ -851,7 +851,7 @@ table tr td #RuleName{
   border: 1px solid rgba(211, 211, 211, 0.62);
 }
 .PassportTable tr td{
-  /* padding-left: 10px; */
+  padding-left: 10px;
 }
 /* .PassportTable input[type=date]::-webkit-inner-spin-button,
 .PassportTable input[type=date]::-webkit-calender-picker-indicator{
