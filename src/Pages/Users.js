@@ -15,6 +15,7 @@ import Ratings from "./UserComponents/UserTabComponents/Ratings.js";
 import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 
    function Tab(){
+	// const [checkFedit,setcheckFedit] = useState(false)   
 	const [btnstyle,setBtnstyle] = useState(true)
 	var val1 = '1px solid #D3D3D3'
 	var val2 = '1px solid red'
@@ -27,8 +28,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	const BtnStyle = {
 		opacity: val
 	}
-	
-	const [tabstate,setTabState] = useState(1);
+ 	const [tabstate,setTabState] = useState(1);
 	const tabaction = (index) => {
 	  setTabState(index)
      }
@@ -41,7 +41,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	const [Mustfill5,setMustfill5] =useState({border: val1})
 	const [Mustfill6,setMustfill6] =useState({color: 'rgba(0, 0, 0, 0.86)'})
 	/**fullEdit popup state */
-	const [ButtonTrue,setButtonTrue] = useState(false);
+	const [enableUserEdit,setenableUserEdit] = useState(false);
 	const [ButtonTrue1,setButtonTrue1] = useState(false);
 	const [fulledit,setfulledit] = useState();
 	const [search, setSearch] = useState('');
@@ -67,25 +67,6 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	// 	return new Date().toISOString().slice(0,10);
 	// }
 	// console.log(handleDate())
-    const [Value, setValue] = useState({
-		zones:[
-			{
-				country: <input type="text" maxlength="3"/>,
-				no: <input type="text" id="number" maxlength="10"/>,
-				date_of_issue: <input type="date" required />,
-				expiry_date: <input type="date" required/>,
-				passport: <div className='file-upload'>
-                   <label for="file-input">
-					   <img src={scan} alt={'scan-image'}/>
-				   </label>
-				   <input id="file-input" type='file'/>	   
-				</div>,
-				default: <input type="checkbox" defaultChecked={true}/>,
-				id: uuidv4()	
-			}
-		],	   	
-	 })
-	 
 	 const handleChange = (e) => {
 		setSelectvalue({maps: [...Selectvalue.maps, e.target.value] ,mapTitles: 'B762-762-2002R'})
     }
@@ -97,14 +78,42 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	}
 	const handleChange3 = (e) => {
 			setSelectvalue3({maps: [...Selectvalue3.maps, e.target.value], mapTitles: 'V762-062-8002A'})
-			console.log(Users)
+
 	}
 	const handleSelect = (e) => {
+	  const	group = [
+		           {
+					   name: 'admin',
+					   id: uuidv4()
+				   },
+				   {
+					    name: 'crew',
+						id: uuidv4()
+				   },
+				   {
+					    name: 'OPS',
+						id: uuidv4()
+				   },
+				   {
+					    name: 'sales',
+						id: uuidv4()
+				   },
+				   {
+					    name: 'basic',
+						id: uuidv4()
+			   	   }  
+				   
+		        ]
+	  const	group1 = [];
+	  	  group.map((ele) => {
+			if(ele.name !== e.target.value){
+				group1.push(ele)  
+			}
+	  }) 
 		setUsers((prev) =>{
-			return {...prev, permissionGroup: e.target.value}	
+			return {...prev, notselectedgroup: [...group1], selectedgroup: [{name: e.target.value, id: uuidv4()}]}	
 		})	
 	}
-
 	const [Users, setUsers] = useState({
 		name: '',
 		middlename:'',
@@ -115,13 +124,17 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		homebase2: '',
 		email: '',
 		gender: '',
-		permissionGroup: '',
+		selectedgroup: [],
+		notselectedgroup: [],
 		Ratings: Selectvalue,
 		Ratings1: Selectvalue1,
 		Ratings2: Selectvalue2,
-		Ratings3: Selectvalue3
+		Ratings3: Selectvalue3,
+		no: '',
+		date_of_issue: '',
+		expiry_date: ''
 	});
-	 
+	
 //****User state*********///
 	const [state,setState] = useState({
 		users: [ 
@@ -132,6 +145,8 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			homebase1: 'SMJ',
 			homebase2: 'DGN',
 			email: 'Abbort@preairways.com',
+			selectedgroup: Users.selectedgroup,
+			notselectedgroup: Users.notselectedgroup,
 			lastvisit: "14-12-2021 10:23 ",
 			Ratings: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
 			Ratings1: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
@@ -145,6 +160,8 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			homebase1: 'PDF',
 			homebase2: 'CHM',
 			email: 'Abbort@preairways.com',
+			selectedgroup: Users.selectedgroup,
+			notselectedgroup: Users.notselectedgroup,
 			lastvisit: "14-12-2021 10:23 ",
 			Ratings: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
 			Ratings1: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
@@ -160,6 +177,8 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			homebase2: 'CHM',
 			email: 'Abbort@preairways.com',
 			lastvisit: "14-12-2021 10:23 ",
+			selectedgroup: Users.selectedgroup,
+			notselectedgroup: Users.notselectedgroup,
 			Ratings: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
 			Ratings1: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
 			Ratings2: {maps: ['CTP', 'FA1' ], mapTitles: 'B762-762-2002R'},
@@ -168,9 +187,10 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	]
 	});
 	const onChange = (e) => {
+	 
 		const {name, value} = e.target;
 		setUsers((prev) =>{
-			return {...prev, [name]: value}
+    		return {...prev, [name]: value}
 			
 		})
 		if(e.target.value !== ''){
@@ -178,53 +198,72 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		}else{
 			setBtnstyle(true)
 		}
+
 	}
- 
+
+	const [Value, setValue] = useState({
+		zones:[
+			{
+				country: <input type="text" maxlength="3"/>,
+				no: <input type="text" id="number" name='no' maxlength="10" onChange={onChange} />,
+				date_of_issue: <input type="date" name='date_of_issue' required onChange={onChange}/>,
+				expiry_date: <input type="date" name='expiry_date' required onChange={onChange}/>,
+				passport: <div className='file-upload'>
+                   <label for="file-input">
+					   <img src={scan} alt={'scan'}/>
+				   </label>
+				   <input id="file-input" type='file'/>	   
+				</div>,
+				default: <input type="checkbox" defaultChecked={true}/>,
+				id: uuidv4()	
+			}
+		],	   	
+	 })
+
 	const addUser = () => {
-		  let name = Users.name +" "+ Users.middlename +" "+ Users.surname;
-		  let code = Users.code;
-		  let email = Users.email;
-		  let login = Users.login;
-		  let homebase1 = Users.homebase1;
-		  let homebase2 = Users.homebase2;
-		  let permissionGroup = Users.permissionGroup; 
-		  
 		  const newUser = {
-				name: name,
-				code: code,
-				login: login,
-				email: email,
-				homebase1: homebase1,
-				homebase2: homebase2,
-				permissionGroup: permissionGroup,
+				name: Users.name +" "+ Users.middlename +" "+ Users.surname,
+				code: Users.code,
+				login: Users.login,
+				email: Users.email,
+				homebase1: Users.homebase1,
+				homebase2: Users.homebase2,
+				selectedgroup: Users.selectedgroup,
+				notselectedgroup: Users.notselectedgroup,
 				lastvisit: "14-12-2021 10:23",
 				Ratings: Selectvalue,
 				Ratings1: Selectvalue1,
 				Ratings2: Selectvalue2,
-				Ratings3: Selectvalue3
+				Ratings3: Selectvalue3,
+				no: Users.no
 			}
 			  setState({ users:[...state.users, newUser]})	 
 	}
+
+	const {name,surname,code,homebase1,login,gender,selectedgroup} = Users
 	const handleSubmit = (e) => {
+	
 		e.preventDefault();
-		if(Users.name.length === 0){
-           setMustfill({border : val2})
-		}else if(Users.surname.length === 0){
+
+		if(name.length === 0){
+		   setMustfill({border : val2})  
+		}
+		else if(surname.length === 0){
 			setMustfill1({border : val2})
 		}
-		else if(Users.code.length === 0){
+		else if(code.length === 0){
 			setMustfill2({border : val2})
 		}
-		else if(Users.homebase1.length === 0){
+		else if(homebase1.length === 0){
 			setMustfill3({border : val2})
 		}
-		else if(Users.login.length === 0){
+		else if(login.length === 0){
 			setMustfill4({border : val2})
-		}
-		else if(Users.permissionGroup.length === 0){
+		} 
+		else if(selectedgroup.length === 0){
 			setMustfill5({border : val2})
 		}
-		else if(Users.gender.length === 0){
+		else if(gender.length === 0){
 			setMustfill6({color : 'red'})
 		}
 		else{
@@ -238,8 +277,6 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			addUser()
 		}
 	}
-
-
 	 const delTodo = (id) => {
 	    setValue({zones: [...Value.zones.filter(zone => zone.id !== id)] })
 	}
@@ -255,15 +292,15 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		
 		const newTodo = {
 			country: <input type="text" maxlength="3"/>,
-			no: <input type="text" id="number" maxlength="10"/>,
-			date_of_issue: <input type="date" required/>,
-			expiry_date: <input type="date" required/>,
+			no: <input type="text" id="number" name='no' maxlength="10" onChange={onChange} />,
+			date_of_issue: <input type="date" name='date_of_issue' required onChange={onChange}/>,
+			expiry_date: <input type="date" name='expiry_date' required onChange={onChange}/>,
 			passport: <div className='file-upload'>
-			<label for="file-input">
-				<img src={scan} alt={'scan-image'}/>
-			</label>
-			<input id="file-input" type='file'/>	   
-		    </div>,
+			   <label for="file-input">
+				   <img src={scan} alt={'scan'}/>
+			   </label>
+			   <input id="file-input" type='file'/>	   
+			</div>,
 			default: <input type="checkbox" />,
 			id: uuidv4()
 	   }   
@@ -276,18 +313,15 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			return {...prev, gender: e.target.id}	
 		})	
 	}
-	const handleFulledit = (e) => {
-		 setfulledit(e.target);
-		 btn(true);
-		
-		 
-	}
-	var btn;
-	const handleFulledit1 = (Button,setButton) => {
-		  btn = setButton
-	} 
+	// const handleFulledit = (e) => {
+	// 	//  setfulledit(e.target);
+	// 	 //btn(true);
+	// }
+	// var btn;
+	// const handleFulledit1 = (Button,setButton) => {
+	// 	//   btn = setButton
+	// } 
 	const openfulledit = () => {
-         console.log(Selectvalue)
 		 setUsers((prev) =>{ return {...prev, Ratings: Selectvalue}})
 		 setUsers((prev) =>{ return {...prev, Ratings1: Selectvalue1}})
 		 setUsers((prev) =>{ return {...prev, Ratings2: Selectvalue2}})
@@ -319,13 +353,13 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 					<td className='code'>Login</td>
 					<td className='Email'>Email</td>
 					<td className='status'>Status</td>
+					<td className="group">Group</td>
 					<td className='lastvisit'>Last Visit Date</td>
 					<td className='edit'>Full edit</td>
 				</tr>
-
-				<UserTableItem  User={state.users}  a={handleFulledit1}/>
+				<UserTableItem  User={state.users}  />
 			</table>	
-		  <AddUser trigger={ButtonTrue} setTrigger={setButtonTrue}>
+		  <AddUser trigger={enableUserEdit} setTrigger={setenableUserEdit}>
 			   <h5 style={{textAlign: "center", fontSize: '20px', marginBottom: "8px"}}>USER EDIT</h5>
 			   <hr/>
 			   <div className='UserHeader'>person</div>
@@ -337,13 +371,13 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Middle name</label></div>
-					<div><input type="text" name="middlename" placeholder="Middle Name"  onChange={onChange} /></div>
+					<div><input type="text"  id="middlename" name="middlename" placeholder="Middle Name"  onChange={onChange} /></div>
 					<div><label htmlFor="sex">DoB</label></div>
 					<div><input type="text" name="name" /></div>
                </div>
 			   <div className="AddUsersForm"> 
 					<div><label htmlFor="name">Surname*</label></div>
-					<div><input type="text" name="surname" style={Mustfill1} placeholder="Surname" onChange={onChange}/></div>
+					<div><input type="text"  id="surname" name="surname" style={Mustfill1} placeholder="Surname" onChange={onChange}/></div>
 					<div><label htmlFor="sex">Phone</label></div>
 					<div><input type="text" name="name" /></div>
                </div>
@@ -357,7 +391,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
                </div>
 			   <div className="AddUsersForm"> 
 			        <div><label htmlFor="name" >Code*</label></div>
-					<div><input type="text" name="code" style={Mustfill2} placeholder="Code" onChange={onChange} /></div>
+					<div><input type="text"  id="code" name="code" style={Mustfill2} placeholder="Code" onChange={onChange} /></div>
 					<div><label htmlFor="sex">Company</label></div>
 					<div><input type="text" name="name" placeholder="Seach Company"  /></div>
                </div>
@@ -365,12 +399,12 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			        <div><label htmlFor="name">Homebase 1*</label></div>
 					<div><input type="text" name="homebase1" style={Mustfill3} onChange={onChange} /></div>
 					<div><label htmlFor="sex">Login*</label></div>
-					<div><input type="text" name="login" style={Mustfill4} onChange={onChange} /></div>
+					<div><input type="text"  id="login" name="login" style={Mustfill4} onChange={onChange} /></div>
                </div>
  
 			   <div className="AddUsersForm"> 
 			        <div><label>Permission Group*</label></div>
-					<div><select style={Mustfill5} onChange={handleSelect}><option>crew</option><option>Admin</option></select></div>
+					<div><select style={Mustfill5} onChange={handleSelect}><option>Admin</option><option>crew</option><option>OPS</option><option>sales</option><option>basic</option></select></div>
 					<div><label htmlFor="sex">Homebase 2</label></div>
 					<div><input type="text" name="homebase2"  onChange={onChange} /></div>
                </div>
@@ -379,10 +413,11 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
                </div>
 			   <form onSubmit={onSubmit}>
 			     <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
-			   </form>	 
+			   </form>
+			   <div className="addspace"></div>	 
 			   <table className="PassportTable" style={{width: "100%"}}>
-				   <tr id="PassportTableHead"  >
-					   <td  style={{width: '57px'}}><h5>Country*</h5></td>
+				   <tr id="PassportTableHead">
+					   <td  style={{width: '62px'}}><h5>Country*</h5></td>
 					   <td><h5>No*</h5></td>
 					   <td style={{width: '120px'}}><h5>Date of issue</h5></td>
 					   <td style={{width: '120px'}}><h5>Expiry date*</h5></td>
@@ -469,17 +504,25 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			   <div className='SaveUserButtons'><form onSubmit={handleSubmit} style={{display: 'inline'}}><button 
 			   style={BtnStyle} 
 			   disabled={btnstyle}>save</button></form>
-			   <button onClick={() => {setButtonTrue(false)}}>cancel</button><button style={BtnStyle} 
-					disabled={btnstyle} 
-					onClick={() => {setButtonTrue1(true)
+			   <button onClick={() => {setenableUserEdit(false)}}>cancel</button><button  
+					onClick={() => {
+			             if(name.length === 0 || surname.length === 0 || code.length === 0 || 
+				            homebase1.length === 0 || login.length === 0 || gender.length === 0 || 
+							selectedgroup 	.length === 0){
+		
+								alert('Fill all fields with Asterisks (*) to open full edit')					
+						}else{
+							
+                           setButtonTrue1(true)
+						}						 
 					openfulledit()
-					setButtonTrue(false)}}>Open Full Edit</button></div>
+					}}>Open Full Edit</button></div>
 		  </AddUser>
           
-				<button className="AddUserButton" onClick={() => {setButtonTrue(true)}}><span className="plus">+</span> NEW USER</button>
+				<button className="AddUserButton" onClick={() => {setenableUserEdit(true)}}><span className="plus">+</span> NEW USER</button>
 			{/* <Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1}/> */}
 			<Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1} >
-                       <h1>{Users.name +" "+Users.middlename+" "+Users.surname}</h1>
+                       <h1 className="UserHeaderText">{Users.name +" "+Users.middlename+" "+Users.surname}{' '}({Users.login})</h1>
         <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>tabaction(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
@@ -511,5 +554,4 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		</div>  
 	  )
  }
- export default Tab
- 
+ export default Tab;

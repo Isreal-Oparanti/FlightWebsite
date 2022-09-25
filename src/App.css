@@ -158,6 +158,10 @@ body {
   background: #FFF;
   box-shadow: inset 0 2px #55c578;
  }
+ .tab1_container .active-tab {
+  background: #FFF;
+  box-shadow: inset 0 2px #55c578;
+ }
  .tab_container1 .active-tab {
   background: #FFF;
   box-shadow: inset 0 2px #55c578;
@@ -454,7 +458,7 @@ legend{
    border: 1px solid gray;
    font-size: 12px;
    letter-spacing: 1px;
-   font-weight: 900;
+   font-weight: 100;
    font-family: tahoma;
    width: 50px;
    height: 100%;
@@ -604,6 +608,9 @@ table tr td #RuleName{
 .code, .status, .edit{
   width: 40px;
 }
+.group{
+  width: 75px;
+}
  .code{
     text-transform: capitalize !important;
  }
@@ -622,7 +629,7 @@ table tr td #RuleName{
 }
 
 .UserTable tr td,th{
-   padding-left: 30px;
+   padding-left: 20px;
 }
 .UserTable tr td:first-child{
   text-transform: capitalize; 
@@ -749,21 +756,49 @@ table tr td #RuleName{
 .AddUsersForm{
   display: flex;
 }
+.AddUsersForm1{
+  display: flex;
+}
+.AddUsersForm div{
+  flex: 1;
+}
+.AddUsersForm1 div{
+  flex: 1;
+}
+
 #firstChild{
   margin-top: 10px;
 }
 #firstChild #alignSex{
-  margin-left: 5px;
+  margin-left: -5px;
+}
+#username{
+  margin-right: 5px !important;
+  text-transform: capitalize !important;
+}
+#surname, #middlename{
+  text-transform: capitalize !important;
+}
+#code, #login{
+  text-transform: uppercase
 }
 .AddUsersForm div{
-  flex: 1;
   padding: 4px 4px 0px 4px;
-  margin-right: 10px;
   font-size: 0.7rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgba(0, 0, 0, 0.86);
 }
- .AddUsersForm div input[type=text], .AddUsersForm select,input[type=email]{
+.AddUsersForm1 div{
+  padding: 4px 4px 0px 4px;
+  font-size: 0.7rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(0, 0, 0, 0.86);
+}
+.AddUsersForm1 div:first-child{
+  flex: 2.5;
+}
+
+.AddUsersForm div input[type=text], .AddUsersForm select,input[type=email]{
   border: 1.9px solid #DEDEDE;
   height: 22px;
   width: 170px;
@@ -777,23 +812,30 @@ table tr td #RuleName{
 .last2{
    margin: 0 !important;
    margin-right: 18.45rem !important;
-}
+  }
 .AddUsersForm .userName{
-  width: 165px;
+  width: 100px;
   display: flex;
+  padding: 0;
+  margin-right: 66px;
+  margin-top: 4px;
 } 
+.AddUsersForm .userName div{
+  padding: 0;
+}
 .AddUsersForm .userName span{ 
-  flex: 1;  
+  flex: 1;
 }
 .AddUsersForm .userName input{
   flex: 8;  
 }
+ 
 .AddUsersForm select{
   opacity: 0.7;
 }
-#username{
-  margin-right: -4px;
-}
+/* #username{
+  margin-right: -1px;
+} */
 .UserHeader button{
   padding: 3px;
   color: #fff;
@@ -809,15 +851,21 @@ table tr td #RuleName{
   height: 20px;
   font-weight: 900;
   border-collapse: collapse;
-  width: 100%;
+  width: 90% !important;
 }
 #PassportTableHead{
   text-transform: uppercase;
+  /* border-top: 1px dotted rgba(0, 68, 255, 0.4); */
   height: 6px;
+  padding: 100px !important; 
   background-color: rgba(211, 211, 211, 0.19);
-  border-top: 1px solid rgba(0, 68, 255, 0.54);
-  border-bottom: 2px solid rgba(15, 4, 4, 0.23);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.62);
   width: 100% !important;
+}
+.addspace{
+  /* border-top: 1px solid rgba(211, 211, 211, 0.62); */
+  background-color: rgba(211, 211, 211, 0.19);
+  height: 3px;
 }
 .PassportTableHead tr td{
   background-color: red !important;
@@ -921,8 +969,9 @@ input[type=date]:focus::-webkit-datetime-edit{
 } 
 .SaveUserButtons button{
    border: 1px solid gray;
-   padding: 3px;
+   padding: 4px;
    cursor: pointer;
+   letter-spacing: 1px;
    border-radius: 3px;
    font-size: 10px;
    text-transform: uppercase;
@@ -959,11 +1008,11 @@ input[type=date]:focus::-webkit-datetime-edit{
   position: absolute;
   top: 0;
   left: 0;
-  margin-top: 48px;
   width: 100%;
-  height: 92%;
-  background-color:  #fff;
+  padding: 5px 0px 0px 0px !important;
+  background-color: #fff;
   display: flex;
+  height: 100%;
   /* justify-content: center; */
 
 }
@@ -973,8 +1022,13 @@ input[type=date]:focus::-webkit-datetime-edit{
   padding: 0px 10px 10px 10px;
   background-color: #fff;
   overflow-y: auto !important;
-  /* background-color:  rgba(34, 34, 34, 0.35); */
  
+}
+.UserHeaderText{
+  color: rgba(0, 0, 0, 0.84);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 3px;
 }
 .back-btn{
   position: relative;
@@ -996,6 +1050,7 @@ input[type=date]:focus::-webkit-datetime-edit{
    color: #fff;
    margin-bottom: 20px;
 }
+/* .adjustAlign{ */
 
  .User__info{
    padding: 20px;
@@ -1019,9 +1074,13 @@ input[type=date]:focus::-webkit-datetime-edit{
   border: 2px solid rgba(211, 211, 211, 0.62);
   outline-color: lightgreen;
   padding: 2px;
+  
+}
+.User__info textarea{
+  height: 55px;
 }
 .User__info input[type=checkbox]{
-   margin-left: -8px;
+   margin-left: -4px;
 }
 .AddUsersPassports{
   background-color: rgba(128, 128, 128, 0.2);
@@ -1034,11 +1093,11 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 
 .AddUsersPassports1{
-  background-color: rgba(255, 255, 255, 0.53); 
+  background-color: rgba(255, 255, 255, 0.23); 
 }
 .AddUsersPassports select{
   border: 1px solid rgba(114, 102, 102, 0.4); 
-  width: 155px;
+  width: 187px;
   height: 20px;
   border-radius: 2px; 
 }
@@ -1046,7 +1105,10 @@ input[type=date]:focus::-webkit-datetime-edit{
   height: 20px;
   border-radius: 2px;
   border: 1px solid rgba(114, 102, 102, 0.27);
-  width: 50px;
+  width: 90px;
+  padding: 3px;
+  font-size: 0.8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .hrline{
   position: absolute;
@@ -1060,6 +1122,7 @@ input[type=date]:focus::-webkit-datetime-edit{
   display: flex;
   width: 45%;
   color: rgba(0, 0, 0, 0.79);
+  font-size: 0.75rem;
 }
 .Group__container div{
   flex: 1;
@@ -1136,4 +1199,17 @@ input[type=date]:focus::-webkit-datetime-edit{
   margin: 10px 100px 0 22px;
   border: 1px solid rgba(0, 0, 0, 0.36) !important;
   padding: 5px;
+} 
+#group_btn{
+  padding: 2px;
+  border: 1px solid rgba(17, 97, 43, 0.73);
+  color: rgba(17, 97, 42, 0.87);
+  border-radius: 2px;
+}
+#GroupParagraph span{
+  width: 30px;
+  border: none;
+}
+.group_name{
+  font-size: 1rem;
 }

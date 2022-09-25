@@ -33,7 +33,7 @@ class FlightSettings extends React.Component{
                </div>
                <div className="Fsettings"> 
                    <div><label htmlFor="radio1">Default Rotation Time</label></div>
-                   <div><input type="text" defultvalue="01:00" id="Dtnote" name="check1"   /></div>
+                   <div><input type="text" defaultValue="01:00" id="Dtnote" name="check1"   /></div>
                </div>
                <div className="Fsettings"> 
                    <div><label htmlFor="radio1">Check Airport opening hour</label></div>

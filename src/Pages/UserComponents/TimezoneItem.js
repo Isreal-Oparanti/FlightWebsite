@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import Cancel from "../../Assets/images/cancel.png";
 export class TodoItem extends React.Component{
     render(){
-      
-     
      const {id, name,utc} = this.props.todo;
-       
+
        return (                
                   <tr className="PassportTableData">
 					<td>{this.props.todo.country}</td>

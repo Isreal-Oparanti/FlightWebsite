@@ -11,25 +11,32 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
  function TableItem(props){
     
     const [ButtonTrue,setButtonTrue] = useState(false);
-    props.handlefulledit(ButtonTrue,setButtonTrue)
+    // props.handlefulledit(ButtonTrue,setButtonTrue)
     const [state,setState] = useState(1);
         const action = (index) => {
           setState(index)
-    }
-    // props.Gettingfunc(setButtonTrue)
+    } 
+    
+    const {name,code,login,email,lastvisit} = props.users; 
        return(  
          <Fragment>      
             <tr className="UserTableRow" border='1'>
-                <td>{props.users.name}</td>
-                <td>{props.users.code}</td>
-                <td>{props.users.login}</td>
-                <td>{props.users.email}</td>
+                <td>{name}</td>
+                <td>{code}</td>
+                <td>{login}</td>
+                <td>{email}</td>
                 <td><input type="checkbox" defaultChecked="true"/></td>
-                <td>{props.users.lastvisit}</td>
+                <td><div className="AddUsersForm">
+					<div><input type="text"  style={{width: '80%', marginBottom: '3px'}}  
+                    value={props.users.selectedgroup.map((e,index)=> {
+                        return e.name
+                      })} /></div></div>
+               </td>
+                <td style={{fontFamily: 'Verdana', fontSize: '12px'}}>{lastvisit}</td>
                 <td><img src={edit} alt="edit images" onClick={() => {setButtonTrue(true)}}/></td>         
             </tr>
             <Edit trigger={ButtonTrue} setTrigger={setButtonTrue} >
-                       <h1>{props.users.name}</h1>
+                       <h1 className="UserHeaderText">{props.users.name}</h1>
         <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>action(1)} className={`${state===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
@@ -56,7 +63,6 @@ import UserSettings from "./UserTabComponents/UserSettings.js";
 			</div>
             <button id="Update" style={{marginLeft: 0}} >Update</button>   
             </Edit>    
-                      
         </Fragment>
        )
    }    

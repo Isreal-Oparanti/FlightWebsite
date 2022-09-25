@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 
 
 class Zones extends React.Component{
-   render(){
-     console.log(this.props)
+   render(){ 
        return(
         this.props.zones.map((zone) => (
            <TimezoneItem todo={zone} key={zone.id} delTodo={this.props.delTodo}/>         
