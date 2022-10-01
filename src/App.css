@@ -1120,7 +1120,7 @@ input[type=date]:focus::-webkit-datetime-edit{
 .Group__container{
   padding: 20px;
   display: flex;
-  width: 45%;
+  width: 38%;
   color: rgba(0, 0, 0, 0.79);
   font-size: 0.75rem;
 }
@@ -1130,11 +1130,11 @@ input[type=date]:focus::-webkit-datetime-edit{
   width: 100%;
   padding: 12px;
   border: 1px solid green;
-  border-radius: 7px;
+  border-radius: 17px;
 }
 .member__group{
   margin: 5px 5px 7px 0px;
-  height: 15rem;
+  height: 16rem;
 }
 .member{
   border-radius: 0px !important;
@@ -1144,7 +1144,7 @@ input[type=date]:focus::-webkit-datetime-edit{
 .Memarrow{
   margin: auto;
   color: green;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 900;
 }
 .Group__container span{
@@ -1201,9 +1201,10 @@ input[type=date]:focus::-webkit-datetime-edit{
   padding: 5px;
 } 
 #group_btn{
+  width: 100%;
   padding: 2px;
   border: 1px solid rgba(17, 97, 43, 0.73);
-  color: rgba(17, 97, 42, 0.87);
+  color: rgba(17, 97, 41, 0.94);
   border-radius: 2px;
 }
 #GroupParagraph span{

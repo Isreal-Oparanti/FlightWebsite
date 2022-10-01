@@ -275,6 +275,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			setMustfill5({border : val1})
 			setMustfill6({border : 'rgba(0, 0, 0, 0.86)'})
 			addUser()
+			setenableUserEdit(false)
 		}
 	}
 	 const delTodo = (id) => {
@@ -325,7 +326,9 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 		 setUsers((prev) =>{ return {...prev, Ratings: Selectvalue}})
 		 setUsers((prev) =>{ return {...prev, Ratings1: Selectvalue1}})
 		 setUsers((prev) =>{ return {...prev, Ratings2: Selectvalue2}})
-		 setUsers((prev) =>{ return {...prev, Ratings3: Selectvalue3}})  
+		 setUsers((prev) =>{ return {...prev, Ratings3: Selectvalue3}})
+		 console.log(Users.selectedgroup)
+		 console.log(Users.notselectedgroup)  
 	}
 	// const HandleChildFunc = (ButtonTrue) => {
 	//          console.log(ButtonTrue)
@@ -339,6 +342,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 	// 		})		           
 	// }
 	// searchQuery(users)
+	
 
      return (
         <div className="UserApp">
@@ -503,10 +507,11 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			   </div>
 			   <div className='SaveUserButtons'><form onSubmit={handleSubmit} style={{display: 'inline'}}><button 
 			   style={BtnStyle} 
-			   disabled={btnstyle}>save</button></form>
-			   <button onClick={() => {setenableUserEdit(false)}}>cancel</button><button  
+			   disabled={btnstyle}  >save</button></form>
+
+			   <button onClick={() => {setenableUserEdit(false)}}>cancel</button><button style={BtnStyle}  disabled={btnstyle}  
 					onClick={() => {
-			             if(name.length === 0 || surname.length === 0 || code.length === 0 || 
+			             {/* if(name.length === 0 || surname.length === 0 || code.length === 0 || 
 				            homebase1.length === 0 || login.length === 0 || gender.length === 0 || 
 							selectedgroup 	.length === 0){
 		
@@ -514,7 +519,8 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 						}else{
 							
                            setButtonTrue1(true)
-						}						 
+						}						  */}
+						setButtonTrue1(true)
 					openfulledit()
 					}}>Open Full Edit</button></div>
 		  </AddUser>
@@ -523,6 +529,7 @@ import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
 			{/* <Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1}/> */}
 			<Edit trigger={ButtonTrue1} setTrigger={setButtonTrue1} >
                        <h1 className="UserHeaderText">{Users.name +" "+Users.middlename+" "+Users.surname}{' '}({Users.login})</h1>
+					   {/* <h1 className="UserHeaderText">{Users.name +" "+Users.middlename+" "+Users.surname}{' '}({Users.login})</h1> */}
         <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			<div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>tabaction(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
