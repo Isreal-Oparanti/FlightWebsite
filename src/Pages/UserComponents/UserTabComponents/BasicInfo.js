@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Timezones from "../Timezones.js";
 function BasicInfo(props){
     
     ///***handling name/middlename and surname******////   
@@ -58,6 +59,10 @@ function BasicInfo(props){
                        <div><label htmlFor="name">Known as*</label></div>
                        <div><input type="text" name="name"  value={state.Knownas}  onChange={(e) => setState({Knownas: e.target.value})} /></div>
                   </div> */}
+                  <div className="AddUsersForm"> 
+			        <div><label>Permission Group*</label></div>
+							<div><select><option>Admin</option><option>crew</option><option>OPS</option><option>sales</option><option>basic</option></select></div>
+                      </div>
                   <div className="AddUsersForm"> 
                         <div><label htmlFor="sex" id="alignSex">Gender*</label></div>
                        <div><div className="userName"><span>M</span><input type="radio" name="sex" id="sex" defaultChecked={state.male}/><span>F</span><input type="radio" name="sex" id='sex' defaultChecked={state.female}/></div></div>
@@ -134,8 +139,10 @@ function BasicInfo(props){
                   <hr style={{width: '14rem'}}/><br/>
                   <h5>Email</h5><br/>
                   <div className="AddUsersForm"> 
-                     <div>All system <b>e-mail</b> are sent to work <b>e-mail</b></div>
-                  </div>
+                     <div 
+                        style={{marginBottom: '10px'}}>
+                        All system <b>e-mail</b> are sent to work <b>e-mail</b></div>
+                     </div>
                   <div className="AddUsersForm"> 
                        <div><label htmlFor="name">Work</label></div>
                        <div><textarea>{state.email}</textarea></div>
@@ -204,20 +211,46 @@ function BasicInfo(props){
                </div>
                  <div id='lastChild'>
                    <h5>Passports</h5><br/>
-                   <div className="AddUsersPassports"> 
+                   <form >
+			          <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
+			       </form>
+                   <table className="PassportTable" >
+						<tr id="PassportTableHead">
+							<td  style={{width: '62px'}}>
+								<h5>Country*</h5>
+							</td>
+							<td>
+								<h5>No*</h5>
+							</td>
+							<td style={{width: '120px'}}>
+								<h5>Date of issue</h5>
+							</td>
+							<td style={{width: '120px'}}> 
+								<h5>Expiry date*</h5>
+							</td>
+							<td>
+								<h5>Passport scan</h5>
+							</td>
+							<td style={{width: '57px'}}>
+								<h5>Default</h5>
+							</td>
+						</tr>
+				     	{/* <Timezones zones={Value.zones}  delTodo={delTodo}/> */}
+                     </table>
+			        {/* <div className="AddUsersPassports"> 
                        <div style={{flex: '2'}}>Country</div>
                        <div>No</div>
                        <div>Date of issue</div>
                        <div>Expires</div>
-                       {/* <div>Notes</div> */}
-                  </div>
-                  <div className="AddUsersPassports AddUsersPassports1"> 
+                    
+                  </div> */}
+                  {/* <div className="AddUsersPassports AddUsersPassports1"> 
                        <div style={{flex: '2'}}><select><option>main</option></select></div>
                        <div><input type="text" maxlength="10" value={state.no} onChange={(e)=> setState({no: e.target.value})}/></div>
                        <div><input type="text" value={state.date_of_issue} onChange={(e)=> setState({date_of_issue: e.target.value})} /></div>
                        <div><input type="text" value={state.expiry_date} onChange={(e)=> setState({expiry_date: e.target.value})}/></div>
-                       {/* <div><input type="text" /></div> */}
-                  </div>
+                       <div><input type="text" /></div> */}
+                  {/* </div> */}
                </div>
           </div>       
        </div>    

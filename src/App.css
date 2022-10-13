@@ -678,24 +678,23 @@ table tr td #RuleName{
   padding: 25px 20px 10px 20px;
   width: 608px;
   margin:auto;
-  height: 95%;
+  height: auto;
   background-color: #fff;
   box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.51);
   overflow-y: auto !important;
   transition: all .2s;
 }
 .UserPop-up::-webkit-scrollbar{
-  width: 10px;
-  
+  width: 8px;
 }
 .UserPop-up::-webkit-scrollbar-track{
-   box-shadow: inset 0 0 2px grey;
-   border-radius: 10px;
+   box-shadow: inset 0 0 3px grey;
+   border-radius: 0px;
    cursor: pointer;
 }
 .UserPop-up::-webkit-scrollbar-thumb{
-  background-color: lightgreen;
-  border-radius: 10px;
+  background-color: rgba(153, 153, 153, 0.7);
+  border-radius: 0px;
 }
 .close-btn{
   position: absolute;
@@ -709,7 +708,6 @@ table tr td #RuleName{
   background: #fff;
   transition: all .2s;
 }
-
 .close-btn1{
    cursor: pointer;
   color: rgba(0, 0, 0, 0.69);
@@ -848,7 +846,7 @@ table tr td #RuleName{
 }
 .PassportTable{
   font-size: 12px;
-  height: 20px;
+  height: 10px;
   font-weight: 900;
   border-collapse: collapse;
   width: 90% !important;
@@ -856,11 +854,15 @@ table tr td #RuleName{
 #PassportTableHead{
   text-transform: uppercase;
   /* border-top: 1px dotted rgba(0, 68, 255, 0.4); */
-  height: 6px;
-  padding: 100px !important; 
+  /* height: 6px; */
+  /* padding: 100px !important;  */
   background-color: rgba(211, 211, 211, 0.19);
   border-bottom: 1px solid rgba(211, 211, 211, 0.62);
-  width: 100% !important;
+  /* width: 100% !important; */
+}
+.User__info .PassportTable h5{
+   font-size: 0.6rem;
+   text-transform: uppercase;
 }
 .addspace{
   /* border-top: 1px solid rgba(211, 211, 211, 0.62); */
@@ -1064,8 +1066,11 @@ input[type=date]:focus::-webkit-datetime-edit{
  }
  .User__info #lastChild{
    color: rgba(0, 0, 0, 0.88);
-   flex: 1.5;
+   flex: 1.7; 
  }
+ .User__info #lastChild .UserHeader{
+   width: 100%;
+}
  .User__info h5{
    color: rgba(0, 0, 0, 0.75);
    font-size: 20px;
@@ -1074,15 +1079,18 @@ input[type=date]:focus::-webkit-datetime-edit{
   border: 2px solid rgba(211, 211, 211, 0.62);
   outline-color: lightgreen;
   padding: 2px;
+  /* margin-bottom: 10px; */
   
 }
 .User__info textarea{
   height: 55px;
 }
+
 .User__info input[type=checkbox]{
    margin-left: -4px;
 }
-.AddUsersPassports{
+
+/* .AddUsersPassports{
   background-color: rgba(128, 128, 128, 0.2);
   padding: 3px;
   display: flex;
@@ -1109,7 +1117,7 @@ input[type=date]:focus::-webkit-datetime-edit{
   padding: 3px;
   font-size: 0.8rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */
 .hrline{
   position: absolute;
   height: 46px;

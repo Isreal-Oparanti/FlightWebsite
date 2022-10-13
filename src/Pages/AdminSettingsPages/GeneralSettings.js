@@ -120,7 +120,7 @@ class Gsettings extends React.Component{
             </fieldset> 
             <fieldset>
             <legend>
-                Basis
+                Bases
             </legend>
             
             <div className="BS BS_name">    

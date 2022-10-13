@@ -29,7 +29,7 @@ function Tab() {
  	const [tabstate,setTabState] = useState(1);
 	const tabaction = (index) => {
 	  setTabState(index)
-     }
+    }
     /**Validating input state */
 	const [Mustfill,setMustfill] =useState({border: val1})
 	const [Mustfill1,setMustfill1] =useState({border: val1})
@@ -389,18 +389,16 @@ function Tab() {
  
 			   <div className="AddUsersForm"> 
 			        <div><label>Permission Group*</label></div>
-					<div><select style={Mustfill5} onChange={handleSelect}><option>Admin</option><option>crew</option><option>OPS</option><option>sales</option><option>basic</option></select></div>
-					<div><label htmlFor="sex">Homebase 2</label></div>
-					<div><input type="text" name="homebase2"  onChange={onChange} /></div>
-               </div>
-			   <div className="AddUsersForm"> 
-					
-               </div>
+							<div><select style={Mustfill5} onChange={handleSelect}><option>Admin</option><option>crew</option><option>OPS</option><option>sales</option><option>basic</option></select></div>
+							<div><label htmlFor="sex">Homebase 2</label></div>
+							<div><input type="text" name="homebase2"  onChange={onChange} /></div>
+         </div>
+			   
 			   <form onSubmit={onSubmit}>
 			     <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
 			   </form>
 			   <div className="addspace"></div>
-        <table className="PassportTable" style={{width: "100%"}}>
+           <table className="PassportTable" style={{width: "100%"}}>
 						<tr id="PassportTableHead">
 							<td  style={{width: '62px'}}>
 								<h5>Country*</h5>

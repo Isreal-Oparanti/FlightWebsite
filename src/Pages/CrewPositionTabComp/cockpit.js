@@ -57,14 +57,7 @@ function Cockpit({Aircraft}){
                           handleChangeDefault={handleChangeDefault} 
                           item={ele} 
                         />
-              })
-                
-              }
-              {/* <DataItem handleChange={handleChange} handleChangeDefault={handleChangeDefault} Aircraft={Aircraft}
-               option1={option1} option2={option2} option3={option3} option4={option4}/>        */}
-
-              {/* <button onClick={handleUpdate}>update</button>               */}
-                       
+              })}    
           </div>
        )
      }
