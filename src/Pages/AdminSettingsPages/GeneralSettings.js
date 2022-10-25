@@ -2,6 +2,7 @@ import React from 'react';
 import Timezones from './BasesComponents/Timezones.js';
 import AddTimezone from './BasesComponents/AddTimezone.js';
 import Wrong from './BasesComponents/Wrong.js';
+import Input from '../../components/inputs'
 import {v4 as uuidv4} from 'uuid';
 
 
@@ -59,21 +60,21 @@ class Gsettings extends React.Component{
             </legend>
             <div className="GS">    
                 <div id="cont"><label htmlFor="twoFactor"><span>Force two factor authentication for all users</span></label></div>
-                <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox"  defaultChecked={true}/></div>
+                <div><Input id="twoFactor" className="Inputs" type="checkbox" name="checkbox"  defaultChecked={true}/></div>
             </div>
 
             <div className="GS">    
                 <div id="cont"><label htmlFor="date"><span>Enter Date<span id="smalls"> (Format: month/day/year)</span></span></label></div>
-                <div><span><input type="date" id='date'  /></span></div>
+                <div><span><Input type="date" id='date'  /></span></div>
             </div>
              
             <div className="GS">    
                 <div id="cont"><label htmlFor="fuel"><span>Default fuel unit</span></label></div>
-                <div><input  type="radio" name="radio" id="fuel" className="inputs radio first" defaultChecked={true} /><span>kg</span><input  type="radio" name="radio" id="fuel" className="inputs radio" /><span>ibs</span></div>
+                <div><Input  type="radio" name="radio" id="fuel" className="Inputs radio first" defaultChecked={true} /><span>kg</span><Input  type="radio" name="radio" id="fuel" className="Inputs radio" /><span>ibs</span></div>
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="weight"><span>Default weight unit</span></label></div>
-                <div><input type="radio" name="weight-radio" id="weight" className="inputs radio first" defaultChecked={true} /><span>kg</span><input  type="radio" name="weight-radio"  id="weight" className="inputs radio" /><span>ibs</span></div>
+                <div><Input type="radio" name="weight-radio" id="weight" className="Inputs radio first" defaultChecked={true} /><span>kg</span><Input  type="radio" name="weight-radio"  id="weight" className="Inputs radio" /><span>ibs</span></div>
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="region"><span>Default airport category</span></label></div>
@@ -93,19 +94,19 @@ class Gsettings extends React.Component{
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="region"><span>Default Quantity unit for fuel prices</span></label></div>
-                <div><select id='region' className="inputs"><option>kg</option><option>Ltrs</option><option>lbs</option></select></div>    
+                <div><select id='region' className="Inputs"><option>kg</option><option>Ltrs</option><option>lbs</option></select></div>    
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="twoFactor"><span>Option will change position of aircraft on Calender page</span></label></div>
-                <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
+                <div><Input id="twoFactor" className="Inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="twoFactor"><span>Display pilot experience table in users profile</span></label></div>
-                <div><input id="twoFactor" className="inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
+                <div><Input id="twoFactor" className="Inputs" type="checkbox" name="checkbox" defaultChecked={true} /></div>
             </div>
             <div className="GS">    
                 <div id="cont"><label htmlFor="twoFactor"><span>Crew Age Validation:</span></label></div>
-                <div><select id='region' className="inputs"><option>Enable > 60 years</option><option>Enable > 65 years</option><option>Disable</option></select></div>
+                <div><select id='region' className="Inputs"><option>Enable > 60 years</option><option>Enable > 65 years</option><option>Disable</option></select></div>
             </div>
             <div className="timeline">    
                 <a href="/">Timeline additional markers</a>
@@ -115,7 +116,7 @@ class Gsettings extends React.Component{
                 <legend>Trios inbox settings</legend>
                 <div className="GS">    
                     <div id="cont"><label htmlFor="Notify"><span>Notify users about new messages in their inbox</span></label></div>
-                    <div><input type="radio" name="Notify" id="Notify" className="inputs radio first"defaultChecked={true} /><span>Yes</span><input  type="radio" name="Notify" id="Notify" className="inputs radio" /><span>No</span></div>
+                    <div><Input type="radio" name="Notify" id="Notify" className="Inputs radio first"defaultChecked={true} /><span>Yes</span><Input  type="radio" name="Notify" id="Notify" className="Inputs radio" /><span>No</span></div>
                 </div>   
             </fieldset> 
             <fieldset>

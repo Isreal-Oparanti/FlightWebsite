@@ -10,7 +10,7 @@
         { id: uuidv4(), craft: 'ofc', checked: false, Default: false},
         { id: uuidv4(), craft: 'gi', checked: false, Default: false},
         { id: uuidv4(), craft: 'st', checked: false, Default: false},
-        { id: uuidv4(), craft: 'fg', checked: false, Default: false},
+        { id: uuidv4(), craft: 'lg', checked: false, Default: false},
     ]
     export const option2 =  [
         { id: uuidv4(), craft: 'fdp', checked: false, Default: false},

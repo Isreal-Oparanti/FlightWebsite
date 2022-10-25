@@ -183,7 +183,6 @@ fieldset {
   width: 50px;
   flex: 2;
   margin-right: 5rem; }
-
 .BS {
   width: 90%;
   display: flex;
@@ -197,11 +196,11 @@ fieldset {
   .DS div {
      flex: 1;
    }
-   .DS select {
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.38);
-    /* padding-right: 0rem; */
-    font-family: monospace; }
+  .DS select {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  /* padding-right: 0rem; */
+  font-family: monospace; }
   
 select {
   outline: none;
@@ -680,9 +679,28 @@ table tr td #RuleName{
   margin:auto;
   height: auto;
   background-color: #fff;
-  box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.51);
+  box-shadow: 1px 0px 7px 0px rgba(34, 34, 34, 0.49);
   overflow-y: auto !important;
   transition: all .2s;
+}
+.UserPop-medium2{
+  width: 100%;
+  box-shadow: none;
+  height: 100%;
+}
+UserPop-medium2_container{
+  height: 90%;
+}
+/* .AddUsers_container{
+   height: 95% ;
+} */
+.AddUsers .container{
+  width: 800px;
+  margin-top: 10px;
+  box-shadow: 1px 0px 7px 0px rgba(34, 34, 34, 0.49);
+  height: 97%;
+  padding: 20px 3px 3px 3px;
+  background-color: rgba(135, 208, 250, 1);
 }
 .UserPop-up::-webkit-scrollbar{
   width: 8px;
@@ -1015,8 +1033,6 @@ input[type=date]:focus::-webkit-datetime-edit{
   background-color: #fff;
   display: flex;
   height: 100%;
-  /* justify-content: center; */
-
 }
 .UserPop-Edit{
   width: 100%;
@@ -1305,4 +1321,120 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 .includes input{
   margin-right: 8px;
+}
+
+#CrewEndorse{
+  width: 45%;
+  margin-top: 20px !important;
+}
+#CrewEndorse .PassportTable #PassportTableHead{
+  
+  text-transform: capitalize;
+  border-top: 1px solid #DEDEDE;
+}
+#CrewEndorse .PassportTable #PassportTableHead td{
+  padding: 6px;
+  font-size: 0.75rem;
+}
+.endorse_container{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.4rem;
+} 
+.endorse_container div{
+  flex: 1;
+}
+.endorse_container div:nth-child(2){
+  flex: 1.2;
+}
+
+.endorse_container fieldset, .endorse2 fieldset{
+  margin: 0;
+  padding: 6px;
+  width: 100%;
+  margin-top: 6px;
+  font-size: 1rem;
+}
+.endorse2 fieldset{
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-top: 30px !important;
+  width: 140px !important;
+  padding: 2px;
+}
+.endorse_container fieldset legend{
+  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.endorse_container fieldset input[type='text']{
+   width: 50px;
+}
+.endorse1, .endorseContainer2,.endorseContainer2_sub{
+  display: flex;
+  color: #000;
+  font-size: 0.8rem;
+
+}
+ .endorseHeader{
+  width: 100%;
+  padding-left: 20px;
+  background-color: #fff;
+  border: 2px solid #14A7BB;
+  border-radius: 2px;
+}
+.endorse1 div{
+  flex: 1;
+  margin-bottom: 5px; 
+}
+.endorse1 div span, .endorse2 div span{
+  margin-left: 5px; 
+}
+
+.endorseContainer2_sub div {
+  flex: 1;
+  display:  inline-block;
+}
+.endorseContainer2_sub .endorseHeader{
+  background-color: #fff !important;
+  position: absolute;
+  width: 60%;
+  border: 2px solid #14A7BB;
+  border-radius: 2px;
+}
+
+.endorse1 input[type=text]{
+   width: 80%;
+   height: 22px;
+}
+.endorse1 textarea{
+  height: 5rem;
+  width: 20rem;
+  margin-top: 10px;
+}
+ 
+.endorseContainer2 div{
+  flex: 1;
+ }  
+.endorseContainer2_sub div fieldset{
+  width: 100px;
+}
+.endorseContainer2_sub div fieldset legend{
+   font-size: 0.9rem;
+}
+#passportTablerow{
+  color: rgba(0, 0, 0, 0.97);
+  font-weight: 400;
+  font-family: Tahoma, sans-serif;
+  border-bottom: 1px solid #D3D3D3;
+}
+#passportTablerow td{
+   padding: 10px;
+   text-transform: capitalize;
+}
+#aircraftType{
+  width: 160px !important;
 }

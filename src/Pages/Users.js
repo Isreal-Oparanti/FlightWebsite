@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import UserTableItem from "./UserComponents/UserTableItem.js";
 import AddUser from "./UserComponents/AddUser.js";
+import TimezoneItem from './UserComponents/TimezoneItem.js';
 import Edit from "./UserComponents/FullUserEdit.js";
 import scan from "../Assets/images/scan.png";
 // import PassportTables from "./UserComponents/passportItem.js";
-import Timezones from "./UserComponents/Timezones.js";
 // import Document from "./FullUserEdit.js";
 
 import BasicInfo from "./UserComponents/UserTabComponents/BasicInfo.js";
 import Groups from "./UserComponents/UserTabComponents/Groups.js";
 import Endorsement from "./UserComponents/UserTabComponents/Endorsement.js";
 import Ratings from "./UserComponents/UserTabComponents/Ratings.js"; 
-import UserSettings from "./UserComponents/UserTabComponents/UserSettings.js";
+import LoginHistory from "./UserComponents/UserTabComponents/LoginHistory.js";
 function Tab() {
 	const [btnstyle,setBtnstyle] = useState(true)
 	var val1 = '1px solid #D3D3D3'
@@ -201,18 +201,14 @@ function Tab() {
 	const [Value, setValue] = useState({
 		zones:[
 			{
-				country: <input type="text" maxlength="3"/>,
-				no: <input type="text" id="number" name='no' maxlength="10" onChange={onChange} />,
-				date_of_issue: <input type="date" name='date_of_issue' required onChange={onChange}/>,
-				expiry_date: <input type="date" name='expiry_date' required onChange={onChange}/>,
-				passport: <div className='file-upload'>
-                   <label for="file-input">
-					   <img src={scan} alt={'scan'}/>
-				   </label>
-				   <input id="file-input" type='file'/>	   
-				</div>,
-				default: <input type="checkbox" defaultChecked={true}/>,
-				id: uuidv4()	
+			  country: '',  
+				no:  '',
+				date_of_issue:  '',
+				expiry_date:  '',
+				passport: '',
+				default: '',
+				id: uuidv4()
+			 	 	
 			}
 		],	   	
 	 })
@@ -279,27 +275,19 @@ function Tab() {
 	    setValue({zones: [...Value.zones.filter(zone => zone.id !== id)] })
 	}
 
-
 	const onSubmit = (e) => {
 			e.preventDefault();
-			addTimezone();
-			
-			
+			addTimezone();	
 	}
 	const addTimezone = () => {
 		
 		const newTodo = {
-			country: <input type="text" maxlength="3"/>,
-			no: <input type="text" id="number" name='no' maxlength="10" onChange={onChange} />,
-			date_of_issue: <input type="date" name='date_of_issue' required onChange={onChange}/>,
-			expiry_date: <input type="date" name='expiry_date' required onChange={onChange}/>,
-			passport: <div className='file-upload'>
-			   <label for="file-input">
-				   <img src={scan} alt={'scan'}/>
-			   </label>
-			   <input id="file-input" type='file'/>	   
-			</div>,
-			default: <input type="checkbox" />,
+			country: '',  
+			no:  '',
+			date_of_issue:  '',
+			expiry_date:  '',
+			passport: '',
+			default: '',
 			id: uuidv4()
 	   }   
 		   setValue({ zones:[...Value.zones, newTodo]});
@@ -342,7 +330,12 @@ function Tab() {
 					<td className='lastvisit'>Last Visit Date</td>
 					<td className='edit'>Full edit</td>
 				</tr>
-				<UserTableItem  User={state.users}  />
+						<UserTableItem   
+								User={state.users} 
+								Value={Value} 
+								delTodo={delTodo} 
+								onSubmit={onSubmit}
+						/>
 			</table>	
 		  <AddUser trigger={enableUserEdit} setTrigger={setenableUserEdit}>
 			   <h5 style={{textAlign: "center", fontSize: '20px', marginBottom: "8px"}}>USER EDIT</h5>
@@ -369,8 +362,6 @@ function Tab() {
 			   <div className="AddUsersForm">
 			        <div><label htmlFor="name">Labels</label></div>
 					<div><select><option>...</option></select></div> 
-					{/* <div><label htmlFor="name">Known as*</label></div>
-					<div><input type="text" name="name"  onChange={onChange}/></div> */}
 					<div><label htmlFor="email">E-mail</label></div>
 					<div><input type="email" name="email" onChange={onChange} /></div>
                </div>
@@ -419,7 +410,17 @@ function Tab() {
 								<h5>Default</h5>
 							</td>
 						</tr>
-						<Timezones zones={Value.zones}  delTodo={delTodo}/>
+            {Value.zones.map((item) => (
+               <TimezoneItem 
+							     item={item} 
+									 value={Value}
+									 key={item.id}  
+									 onChange={onChange} 
+									 delTodo={delTodo}
+							 />     
+         ))}
+
+						{/* <Timezones zones={Value.zones}  delTodo={delTodo}/> */}
       </table>
         <div className="UserHeader">Ratings</div>
         <div className="Ratings UserHeader">
@@ -529,7 +530,7 @@ function Tab() {
 
         <button 
             onClick={() => {
-                 setenableUserEdit(false)
+                setenableUserEdit(false)
             }}>
             cancel
         </button>
@@ -543,7 +544,6 @@ function Tab() {
         
                     alert('Fill all fields with Asterisks (*) to open full edit')					
                 }else{
-                  
                                 setButtonTrue1(true)
                 }						  */}
                 setButtonTrue1(true)
@@ -575,19 +575,19 @@ function Tab() {
                         <div onClick={()=>tabaction(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
                         <div onClick={()=>tabaction(5)} className={`${tabstate===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
 					<section id="content1" className={`${tabstate===1? 'tab-content1 active-content':'tab-content'}`}>
-					    <BasicInfo user={Users} />
+					      <BasicInfo user={Users} />
 					</section>
 					<section id="content2" className={`${tabstate===2? 'tab-content1 active-content':'tab-content'}`}> 
-                         <Groups user={Users}/> 
+                  <Groups user={Users}/> 
 					</section>
 					<section id="content3" className={`${tabstate===3? 'tab-content1 active-content':'tab-content'}`}> 
-					     <Endorsement />  
+					        <Endorsement />  
 					</section>
 					<section id="content4" className={`${tabstate===4? 'tab-content1 active-content':'tab-content'}`}> 
 			            <Ratings users={Users}/>
 					</section>
-                    <section id="content5" className={`${tabstate===5? 'tab-content1 active-content':'tab-content'}`}>
-			              <UserSettings />
+          <section id="content5" className={`${tabstate===5? 'tab-content1 active-content':'tab-content'}`}>
+			           <LoginHistory />
 					</section>
 				 </div>
 			  </div>

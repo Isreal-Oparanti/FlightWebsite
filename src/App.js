@@ -3,6 +3,8 @@ import AdminSettings from './Pages/AdminSettings.js';
 import SettingsTab from './Pages/AdminSettingsPages/SettingsTab.js';
 import Users from './Pages/Users.js';
 import CrewPositions from './Pages/CrewPositions.js';
+import CrewEndorsement from './Pages/CrewEndorsement.js';
+
 import './App.css';
 import './style.css';
 // importing components....///
@@ -13,7 +15,6 @@ import Crew from './Pages/NavPages/Crew.js';
 import Handling from './Pages/NavPages/Handling.js';
 import Mix from './Pages/NavPages/Mix.js';
 import Report from './Pages/NavPages/Report';
-
 
 import { BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom';
 window.myUTC = 'mine';
@@ -54,6 +55,7 @@ function App() {
               <Route path="/url/to/SettingsTab" element={<SettingsTab />} />
               <Route path="/url/to/Users" element={<Users />} />
               <Route path="/url/to/CrewPositions" element={<CrewPositions />} />
+              <Route path="/url/to/CrewEndorsement" element={<CrewEndorsement />} />
               {/* <Route path="*" element={<NoMatch />} /> */}
             </Routes>       
           </Router>

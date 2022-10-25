@@ -42,6 +42,7 @@ import Positioning from "./CrewPositionTabComp/position.js";
                         </select>
                     </div>
                 </div>      
+                
                 <div style={{backgroundColor: 'ghostwhite'}}>
                     <label htmlFor='include' style={{margin: '0px 10px 0px 7px'}}>Include</label>
                     <input type='checkbox' onChange={handleChange}/>

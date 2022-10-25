@@ -6,7 +6,15 @@ function Item(props){
     
        return(
             props.User.map((item) => (
-               <TableItem  key={item.user} users={item} handlefulledit={props.a} fulledit={props.fulledit}   />
+               <TableItem  
+                   key={item.user} 
+                   users={item} 
+                   handlefulledit={props.a} 
+                   fulledit={props.fulledit}
+                   Value={props.Value}
+                   delTodo={props.delTodo}
+                   onSubmit={props.onSubmit}   
+               />
            ))          
         )     
     }

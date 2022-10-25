@@ -1,9 +1,42 @@
 import React, { useState } from "react";
+import { setGlobalState, useSetGlobalState } from "../../../states";
 import Endorsements from "./EndorsementComp/EndorsementFile.js";
 import OnlineTraining from "./EndorsementComp/OnlineTraining.js";
-import PracticalTraining from "./EndorsementComp/PersonalTraning.js";
+import PracticalTraining from "./EndorsementComp/PersonalTraning.js"
+  
  function Endorsement(){ 
   const [state,setState] = useState(1);
+  setGlobalState({
+    endorse: [ 
+        {
+            endorsement: 'Medical',
+            cockpit: 'cpt1',
+            cabin: 'fa1',
+            ground: '',
+            maintanance: '',
+            aircraftType: 'C56X Licence',
+            endorsementType: 'licence' 
+       },
+       {
+            endorsement: 'Line Check',
+            cockpit: 'cpt',
+            cabin: '',
+            ground: '',
+            maintanance: 'ss',
+            aircraftType: 'all' ,
+            endorsementType: ''
+       }, 
+       {
+            endorsement: 'Nigeria Visa',
+            cockpit: 'cpt2',
+            cabin: 'fa5',
+            ground: '',
+            maintanance: 'd',
+            aircraftType: 'all',
+            endorsementType: 'visa' 
+       }
+], state
+  })
   const action = (index) => {
     setState(index)
   }

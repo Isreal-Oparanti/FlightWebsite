@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Timezones from "../Timezones.js";
+import TimezoneItem from "../TimezoneItem.js";
 function BasicInfo(props){
-    
+    console.log(props)
     ///***handling name/middlename and surname******////   
        if(props.user.name.split(' ').length === 2){
            var name = props.user.name.split(' ')[0]
@@ -211,7 +211,7 @@ function BasicInfo(props){
                </div>
                  <div id='lastChild'>
                    <h5>Passports</h5><br/>
-                   <form >
+                   <form onSubmit={props.onSubmit}>
 			          <div className='UserHeader'>Passports<button>NEW PASSPORT</button></div>
 			       </form>
                    <table className="PassportTable" >
@@ -235,7 +235,14 @@ function BasicInfo(props){
 								<h5>Default</h5>
 							</td>
 						</tr>
-				     	{/* <Timezones zones={Value.zones}  delTodo={delTodo}/> */}
+                        {props.Value.zones.map((item) => (
+                            <TimezoneItem 
+							     item={item} 
+									 value={props.Value}
+									 key={item.id}  
+									 delTodo={props.delTodo}
+							 />     
+                        ))}
                      </table>
 			        {/* <div className="AddUsersPassports"> 
                        <div style={{flex: '2'}}>Country</div>
