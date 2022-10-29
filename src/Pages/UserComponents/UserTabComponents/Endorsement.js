@@ -1,54 +1,26 @@
 import React, { useState } from "react";
-import { setGlobalState, useSetGlobalState } from "../../../states";
+import { setGlobalState, useGlobalState } from "../../../states";
 import Endorsements from "./EndorsementComp/EndorsementFile.js";
 import OnlineTraining from "./EndorsementComp/OnlineTraining.js";
 import PracticalTraining from "./EndorsementComp/PersonalTraning.js"
   
  function Endorsement(){ 
   const [state,setState] = useState(1);
-  setGlobalState({
-    endorse: [ 
-        {
-            endorsement: 'Medical',
-            cockpit: 'cpt1',
-            cabin: 'fa1',
-            ground: '',
-            maintanance: '',
-            aircraftType: 'C56X Licence',
-            endorsementType: 'licence' 
-       },
-       {
-            endorsement: 'Line Check',
-            cockpit: 'cpt',
-            cabin: '',
-            ground: '',
-            maintanance: 'ss',
-            aircraftType: 'all' ,
-            endorsementType: ''
-       }, 
-       {
-            endorsement: 'Nigeria Visa',
-            cockpit: 'cpt2',
-            cabin: 'fa5',
-            ground: '',
-            maintanance: 'd',
-            aircraftType: 'all',
-            endorsementType: 'visa' 
-       }
-], state
-  })
+  const [endorse] = useGlobalState('endorse');
+
+//   console.log(setGlobalState({name: 'same'}))
   const action = (index) => {
     setState(index)
   }
-
     return (
+
       <div className="ReqApp">
-       <div className="tab1_container"style={{width: "40%", fontSize: '11.83px', padding: '0px'}}>
+       <div className="tab1_container"style={{width: "36%", fontSize: '11.83px', padding: '0px'}}>
           <div onClick={()=>action(1)} className={`${state===1? 'tab1 active-tab' : 'tab1'}`}><span>Endorsement</span></div>
           <div onClick={()=>action(2)} className={`${state===2? 'tab1 active-tab' : 'tab1'}`}><span>Online Training</span></div>
           <div onClick={()=>action(3)} className={`${state===3? 'tab1 active-tab' : 'tab1'}`}><span>Practical Training</span></div>
             <section id="content1" className={`${state===1? 'tab-content1 active-content':'tab-content'}`}>
-                <Endorsements/>
+                <Endorsements endorse={endorse}/>
             </section>
             <section id="content2" className={`${state===2? 'tab-content1 active-content':'tab-content'}`}>
                 more... 	

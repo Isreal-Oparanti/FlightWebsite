@@ -227,6 +227,7 @@ function FlightSettings(){
                    <legend>
                        Custom Delay Code
                    </legend>
+                   
                    <input 
                         type='submit'
                         onClick={addCodes}  

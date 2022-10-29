@@ -1,10 +1,8 @@
 import React from 'react'
-function Cockpit({state}){
-    console.log(state)
-          return (
-            
+function Cockpit({Endorsement}){
+            return (
              <>
-             {  state.endorse.map((ele,index) =>{
+             {  Endorsement.map((ele,index) =>{
                    return <tr key={index} id='passportTablerow'>
                         <td>{ele.endorsement}</td>
                         <td>{ele.cockpit?<input type='checkbox'  defaultChecked={true}/>: ''}</td>

@@ -2,7 +2,6 @@ import React from "react";
 import Tabs from "../../../../components/Tabs";
 import BasicInfo from "./BasicInfo";
 import Endorsement from "./Endorsement";
-import Groups from "./Groups";
 import Ratings from "./Ratings";
 import userSettings from "./UserSettings";
 
@@ -15,7 +14,6 @@ function Edit() {
         <Tabs
           items={[
             { label: "Basic Information", content: BasicInfo },
-            { label: "Groups", content: Groups },
             { label: "Personal Endorsements", content: Endorsement },
             { label: "Ratings", content: Ratings },
             { label: "User settings", content: userSettings },

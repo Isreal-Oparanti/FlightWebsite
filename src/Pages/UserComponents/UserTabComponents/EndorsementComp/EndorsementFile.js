@@ -1,81 +1,31 @@
-import React from 'react'; 
+import React,{ useState } from 'react'; 
+import { v4 as uuidv4 } from "uuid";
+import EndorseItem from './EndorseItem.js'
+function Endorse({endorse}){
 
-function Endorse(){
-       return(
-           <>
-             <div className="UserHeader">
-                 <div>Endorsement</div>
-                 <div>Number</div>
-                 <div>Date of issue</div>
-                 <div>Expiry Date</div>
-                 <div>Remains</div>
-                 <div>Notes</div>
-                 <div>Scan</div>
-             </div>
-             <div className="UserHeader2">
-                <div>Abuja visa</div>
-                <div><input type="text"/></div>
-                <div><input type="text"/></div>
-                <div><input type="text"/></div>
-                <div></div>
-                <div><input type="text"/></div>
-                <div>(max 20MB)<br/><u>Add new files</u></div>
-            </div>
-             <div className="UserHeader2">
-                <div>Medical</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
-            </div>
-            <div className="UserHeader2">
-                <div>License</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
-            </div>
-            <div className="UserHeader2">
-                <div>Us Visa</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
+    const [value, setValue] = useState('')
+
+        return(
+           <div>
+               <table className="PassportTable" >
+				   <tr id="PassportTableHead">
+				   <td>Endorsement</td>
+                   <td style={{width: '140px'}}>Number</td>
+				   <td style={{width: '120px'}}>Date of issue</td>
+                   <td style={{width: '120px'}}>Expiry Date</td>
+				   <td>Remains</td>
+				   <td id='aircraftType' style={{width: '190px'}}>Notes</td>
+                   <td id='aircraftType'>Scan</td>
+  				</tr>
+              {
+                  
+                  endorse.map((ele, index)=>{
+                        return  <EndorseItem item={ele.id} key={index} ele={ele} endorse={endorse}/> 
+                  })
+              }
+              </table>
+
            </div>
-           <div className="UserHeader2">
-                <div>Line Check</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
-           </div>
-           <div className="UserHeader2">
-                <div>Passport</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
-            </div>
-            <div className="UserHeader2">
-                <div>VISA</div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>(max 20MB)</div>
-            </div>
-           </>
        )     
 }
  export default Endorse; 

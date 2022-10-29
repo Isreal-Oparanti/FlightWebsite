@@ -3,6 +3,7 @@ import {cockpit,cabin,ground,maintanance} from './data.js'
 import Singleton from './SingleItem.js' 
 function Endorse({onChange, setEndorse, state,endorse, onSubmit, setNewEndorse}){
     
+    
     const [Aircraft, setAircraft] = useState({
         craft: ['all','B762-767-200ER','BE20-KING AIR 200 S','B762-767-200EREE','E120 Embrair 120']
     })
@@ -12,12 +13,10 @@ function Endorse({onChange, setEndorse, state,endorse, onSubmit, setNewEndorse})
        
         if(checked){  
            cockpit.map((ele,index) => {
-         
                 if(ele.craft === e.target.value){
                 cockpit[index].checked = true  
                 setEndorse((prev) =>{
                     return {...prev, cockpit: e.target.value}
-                    
                 })
                }
            })  
@@ -26,8 +25,7 @@ function Endorse({onChange, setEndorse, state,endorse, onSubmit, setNewEndorse})
                if(ele.craft === e.target.value){
                 cockpit[index].checked = false
                 setEndorse((prev) =>{
-                    return {...prev, cockpit: ''}
-                    
+                    return {...prev, cockpit: ''}    
                 })  
                }
             })
@@ -136,10 +134,10 @@ function Endorse({onChange, setEndorse, state,endorse, onSubmit, setNewEndorse})
                                    <b>Revalidation rules</b>
                                </legend>
                             <div className="endorse1">
-                               <div><label>Validity time(months)</label></div><div><input type="text" name='validityTime' value={state.validityTime} onChange={onChange}/></div>
+                               <div><label>Validity time(months)</label></div><div><input type="text" name='validityTime' maxlength='2' value={state.validityTime} onChange={onChange}/></div>
                             </div>
                             <div className="endorse1">
-                               <div><label>Revalidation windows(days)</label></div><div><input type="text" name="revalidationDays" value={state.revalidationDays} onChange={onChange}/></div>
+                               <div><label>Revalidation windows(days)</label></div><div><input type="text" name="revalidationDays" maxlength='2' value={state.revalidationDays} onChange={onChange}/></div>
                             </div>
                             <div className="endorse1">
                             <div><input type="checkbox" style={{marginRight: '10px'}}/><label>Round to the end of the month if outside revalidation window</label></div> 
@@ -241,6 +239,3 @@ function Endorse({onChange, setEndorse, state,endorse, onSubmit, setNewEndorse})
       )
      }
 export default Endorse;
-
-
- 

@@ -9,7 +9,6 @@ import scan from "../Assets/images/scan.png";
 // import Document from "./FullUserEdit.js";
 
 import BasicInfo from "./UserComponents/UserTabComponents/BasicInfo.js";
-import Groups from "./UserComponents/UserTabComponents/Groups.js";
 import Endorsement from "./UserComponents/UserTabComponents/Endorsement.js";
 import Ratings from "./UserComponents/UserTabComponents/Ratings.js"; 
 import LoginHistory from "./UserComponents/UserTabComponents/LoginHistory.js";
@@ -570,23 +569,19 @@ function Tab() {
            <div className="ReqApp" style={{borderBottom: '2px solid #999'}}>
 			     <div className="tab1_container"style={{width: "50%", fontSize: '11.83px'}}>
                         <div onClick={()=>tabaction(1)} className={`${tabstate===1? 'tab1 active-tab' : 'tab1'}`}><span>Basic Information</span></div>
-                        <div onClick={()=>tabaction(2)} className={`${tabstate===2? 'tab1 active-tab' : 'tab1'}`}><span>Groups</span></div>
-                        <div onClick={()=>tabaction(3)} className={`${tabstate===3? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
-                        <div onClick={()=>tabaction(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
-                        <div onClick={()=>tabaction(5)} className={`${tabstate===5? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
+                        <div onClick={()=>tabaction(2)} className={`${tabstate===2? 'tab1 active-tab' : 'tab1'}`}><span>Personanl Endorsements</span></div>
+                        <div onClick={()=>tabaction(3)} className={`${tabstate===3? 'tab1 active-tab' : 'tab1'}`}><span>Ratings</span></div>
+                        <div onClick={()=>tabaction(4)} className={`${tabstate===4? 'tab1 active-tab' : 'tab1'}`}><span>User settings</span></div>
 					<section id="content1" className={`${tabstate===1? 'tab-content1 active-content':'tab-content'}`}>
 					      <BasicInfo user={Users} />
 					</section>
-					<section id="content2" className={`${tabstate===2? 'tab-content1 active-content':'tab-content'}`}> 
-                  <Groups user={Users}/> 
-					</section>
-					<section id="content3" className={`${tabstate===3? 'tab-content1 active-content':'tab-content'}`}> 
+					<section id="content3" className={`${tabstate===2? 'tab-content1 active-content':'tab-content'}`}> 
 					        <Endorsement />  
 					</section>
-					<section id="content4" className={`${tabstate===4? 'tab-content1 active-content':'tab-content'}`}> 
+					<section id="content4" className={`${tabstate===3? 'tab-content1 active-content':'tab-content'}`}> 
 			            <Ratings users={Users}/>
 					</section>
-          <section id="content5" className={`${tabstate===5? 'tab-content1 active-content':'tab-content'}`}>
+          <section id="content5" className={`${tabstate===4? 'tab-content1 active-content':'tab-content'}`}>
 			           <LoginHistory />
 					</section>
 				 </div>

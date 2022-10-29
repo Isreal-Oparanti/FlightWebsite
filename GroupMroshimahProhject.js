@@ -95,8 +95,7 @@ function Group(props){
                                       setchange(element.name)         
                                   }
                           }}/></span></p></label>
-                      }):
-                              
+                      }):       
                       state1.arr.map((ele, index) => {
                           return <label><p id="GroupParagraph" key={ele.id}><span className='group_name'>{ele.name}</span><span style={{margin: '10px'}}><input type='checkbox' value="check" onChange={(e)=> {
                                   if(e.target.checked == true){

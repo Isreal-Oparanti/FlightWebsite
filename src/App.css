@@ -146,7 +146,6 @@ body {
 .active-content {
   display: block;
   width: 100%;
-  /* padding: 10px; */
   background: #FFF;
   color: #999;
   border-bottom: 2px solid #222; }
@@ -219,7 +218,8 @@ select {
   margin-left: 0; }
 
 .cross {
-  color: red; }
+  color: red; 
+}
 
 #cont {
   width: 20rem; }
@@ -677,7 +677,7 @@ table tr td #RuleName{
   padding: 25px 20px 10px 20px;
   width: 608px;
   margin:auto;
-  height: auto;
+  height: 95%;
   background-color: #fff;
   box-shadow: 1px 0px 7px 0px rgba(34, 34, 34, 0.49);
   overflow-y: auto !important;
@@ -703,7 +703,7 @@ UserPop-medium2_container{
   background-color: rgba(135, 208, 250, 1);
 }
 .UserPop-up::-webkit-scrollbar{
-  width: 8px;
+  width: 10px;
 }
 .UserPop-up::-webkit-scrollbar-track{
    box-shadow: inset 0 0 3px grey;
@@ -719,15 +719,16 @@ UserPop-medium2_container{
   cursor: pointer;
   top: 10px;
   right: 16px;
-  border: none;
-  color: rgba(0, 0, 0, 0.69);
   font-size: 1.4rem;
   font-weight: 900;
   background: #fff;
   transition: all .2s;
+  border: none;
 }
 .close-btn1{
-   cursor: pointer;
+  border: none;
+  color: rgba(0, 0, 0, 0.69);
+  cursor: pointer;
   color: rgba(0, 0, 0, 0.69);
   font-size: 18px;  
 }
@@ -748,9 +749,11 @@ UserPop-medium2_container{
   border-bottom: 1px solid rgba(71, 205, 223, 0.2);
   border-top: 1px solid rgba(71, 205, 223, 0.2);
 }
+
 .UserHeader div{
   flex: 1;
 }
+   
 .UserHeader div:nth-child(2), .UserHeader div:nth-child(6){
   flex: 2;
 }
@@ -758,6 +761,7 @@ UserPop-medium2_container{
   display: flex;
   margin-top: 4px;
 }
+
 .UserHeader2 div{
   flex: 1;
   color: #000;
@@ -947,6 +951,11 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 .file-upload>input{
   display: none;
+}
+.file-upload label{
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 10px;
 }
 .PassportTableData input[type=checkbox]{
   margin-top: 4px;
