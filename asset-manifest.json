@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/FlightWebsite/static/css/main.63b5c892.css",
-    "main.js": "/FlightWebsite/static/js/main.c777cbdd.js",
+    "main.css": "/FlightWebsite/static/css/main.58f55024.css",
+    "main.js": "/FlightWebsite/static/js/main.0eb985c0.js",
     "static/js/787.d535e6b0.chunk.js": "/FlightWebsite/static/js/787.d535e6b0.chunk.js",
     "static/media/cancel.png": "/FlightWebsite/static/media/cancel.72b833a6363ee62daf9d.png",
     "static/media/edit.png": "/FlightWebsite/static/media/edit.3f69390cbd68d6a92fc3.png",
     "static/media/scan.png": "/FlightWebsite/static/media/scan.690dbaa799bc38467268.png",
     "index.html": "/FlightWebsite/index.html",
-    "main.63b5c892.css.map": "/FlightWebsite/static/css/main.63b5c892.css.map",
-    "main.c777cbdd.js.map": "/FlightWebsite/static/js/main.c777cbdd.js.map",
+    "main.58f55024.css.map": "/FlightWebsite/static/css/main.58f55024.css.map",
+    "main.0eb985c0.js.map": "/FlightWebsite/static/js/main.0eb985c0.js.map",
     "787.d535e6b0.chunk.js.map": "/FlightWebsite/static/js/787.d535e6b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63b5c892.css",
-    "static/js/main.c777cbdd.js"
+    "static/css/main.58f55024.css",
+    "static/js/main.0eb985c0.js"
   ]
 }
