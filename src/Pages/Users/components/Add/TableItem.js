@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 // import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
-import edit from "../../Assets/images/edit.png";
+import edit from "../../../../Assets/images/edit.png";
 import Edit from "./FullUserEdit.js";
 
 import BasicInfo from "./UserTabComponents/BasicInfo.js";

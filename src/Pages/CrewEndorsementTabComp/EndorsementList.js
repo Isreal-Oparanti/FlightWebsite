@@ -69,8 +69,6 @@ const addEndorse = () => {
     }
       setGlobalState('endorse' , [...endorsement, newEndorse])	 
 }
-
- 
 const onChange = (e) => {
    
   const {name, value} = e.target;
@@ -79,6 +77,7 @@ const onChange = (e) => {
          return {...prev, [name]: value}
      })
   }
+  
   const onSubmit = (e) => {
     console.log(endorse.endorsement)
     e.preventDefault();

@@ -1384,13 +1384,12 @@ input[type=date]:focus::-webkit-datetime-edit{
 }
 .endorse1, .endorseContainer2,.endorseContainer2_sub{
   display: flex;
-  color: #000;
   font-size: 0.8rem;
 
 }
  .endorseHeader{
   width: 100%;
-  padding-left: 20px;
+  padding: 5px 0px 5px 15px;
   background-color: #fff;
   border: 2px solid #14A7BB;
   border-radius: 2px;
@@ -1447,3 +1446,43 @@ input[type=date]:focus::-webkit-datetime-edit{
 #aircraftType{
   width: 160px !important;
 }
+/* mailing-rules*/
+.mailingcheck{
+  padding: 20px;
+  color: #000;
+  font-size: 15px;
+}
+#mailingcheck2{
+  padding: 10px 0px 10px 0px !important;
+  background-color: red !important; 
+  font-size: 15px;
+}
+#endorsementNotifications{
+  width: 40%;
+  display: flex;
+  padding-top: 0px;
+ }
+ #endorsementNotifications div{
+   flex: 1;
+ }
+  
+ .mailingHead{
+   display: flex;
+   padding-top: 0;
+ }
+ .mailingHead div{
+   flex: 1;
+   width: 90%;
+    
+ }
+ .endorseFunction{
+   display: flex;
+   width: 110%;
+  }
+ .endorseFunction div{
+   flex: 1;
+ }
+ #last-endorse{
+   flex: 1.3;
+  
+ }

@@ -41,7 +41,6 @@ function App() {
                   <a href="/"><i id='icon' className="fas fa-user"></i></a>
               </div>
               </nav>
-         
             </header>
             <Routes>
               <Route path="/" element={<Sched />} />
@@ -62,5 +61,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

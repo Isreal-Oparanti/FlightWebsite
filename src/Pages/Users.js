@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import UserTableItem from "./UserComponents/UserTableItem.js";
-import AddUser from "./UserComponents/AddUser.js";
-import TimezoneItem from './UserComponents/TimezoneItem.js';
-import Edit from "./UserComponents/FullUserEdit.js";
+import UserTableItem from "./Users/components/Add/UserTableItem.js";
+import AddUser from "./Users/components/Add/AddUser.js";
+import TimezoneItem from './Users/components/Add/TimezoneItem';
+import Edit from "./Users/components/Add/FullUserEdit.js";
 import scan from "../Assets/images/scan.png";
 // import PassportTables from "./UserComponents/passportItem.js";
 // import Document from "./FullUserEdit.js";
 
-import BasicInfo from "./UserComponents/UserTabComponents/BasicInfo.js";
-import Endorsement from "./UserComponents/UserTabComponents/Endorsement.js";
-import Ratings from "./UserComponents/UserTabComponents/Ratings.js"; 
-import LoginHistory from "./UserComponents/UserTabComponents/LoginHistory.js";
+import BasicInfo from "./Users/components/Add/UserTabComponents/BasicInfo.js";
+import Endorsement from "./Users/components/Add/UserTabComponents/Endorsement.js";
+import Ratings from "./Users/components/Add/UserTabComponents/Ratings.js"; 
+import LoginHistory from "./Users/components/Add/UserTabComponents/LoginHistory.js";
 function Tab() {
 	const [btnstyle,setBtnstyle] = useState(true)
 	var val1 = '1px solid #D3D3D3'
